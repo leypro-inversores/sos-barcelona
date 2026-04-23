@@ -1,0 +1,94 @@
+import React from 'react';
+import { Link } from 'react-router-dom';
+import { motion } from 'framer-motion';
+import { ChevronLeft, Instagram, Youtube, Heart } from 'lucide-react';
+import SOSLogo from '../components/landing/SOSLogo';
+
+const PASTORES = [
+  {
+    id: 1,
+    name: "Pastor Principal",
+    role: "Pastor General — SOS Medellín & Barcelona",
+    bio: "Con más de 15 años de ministerio, nuestro pastor ha visto a Dios transformar miles de vidas en Colombia y España. Su visión es simple: llevar a las personas a una relación real con Jesús que cambie todo.",
+    verse: '"Porque yo sé los planes que tengo para vosotros..." — Jeremías 29:11',
+    photo: "https://media.base44.com/images/public/69ea6ca06c4574e55a2de28d/20eb32156_generated_00136330.png",
+    location: "Medellín, Colombia",
+  },
+  {
+    id: 2,
+    name: "Pastora de Familia",
+    role: "Pastora — Familias y Matrimonios",
+    bio: "Apasionada por ver familias restauradas y matrimonios que reflejen el amor de Dios. Lidera el ministerio de familias y las escuelas de parejas de la iglesia.",
+    verse: '"El amor nunca deja de ser..." — 1 Corintios 13:8',
+    photo: "https://media.base44.com/images/public/69ea6ca06c4574e55a2de28d/c58f199e3_generated_e7d53658.png",
+    location: "Medellín, Colombia",
+  },
+  {
+    id: 3,
+    name: "Pastor de Jóvenes",
+    role: "Pastor — Ministerio Joven & Barcelona",
+    bio: "Lidera la sede de Barcelona con energía y propósito. Cree que esta generación está llamada a cambiar el mundo con el evangelio. Su pasión: despertar el potencial de los jóvenes.",
+    verse: '"No dejes que nadie te menosprecie por ser joven..." — 1 Timoteo 4:12',
+    photo: "https://media.base44.com/images/public/69ea6ca06c4574e55a2de28d/fca46ef15_generated_ade8d6a9.png",
+    location: "Barcelona, España",
+  },
+];
+
+export default function Pastores() {
+  return (
+    <div className="min-h-screen bg-background">
+      {/* Header */}
+      <div className="bg-foreground text-background py-6 px-6">
+        <div className="max-w-6xl mx-auto flex items-center gap-4">
+          <Link to="/" className="flex items-center gap-3">
+            <SOSLogo size={44} />
+            <div>
+              <p className="font-bold text-lg leading-none">SOS</p>
+              <p className="text-xs text-background/60 tracking-widest uppercase">Barcelona</p>
+            </div>
+          </Link>
+          <Link to="/" className="ml-auto flex items-center gap-1 text-background/40 hover:text-background text-sm transition-colors">
+            <ChevronLeft className="w-4 h-4" /> Inicio
+          </Link>
+        </div>
+      </div>
+
+      <div className="max-w-6xl mx-auto px-6 py-16">
+        <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} className="text-center mb-16">
+          <span className="text-primary text-sm tracking-[0.25em] uppercase font-semibold block mb-4">Liderazgo</span>
+          <h1 className="font-display text-4xl md:text-5xl font-medium text-foreground mb-4">Nuestros Pastores</h1>
+          <p className="text-muted-foreground font-light text-lg max-w-xl mx-auto">Personas reales con un llamado real — guiando la familia de SOS con amor, carácter y fe.</p>
+        </motion.div>
+
+        <div className="space-y-16">
+          {PASTORES.map((pastor, i) => (
+            <motion.div
+              key={pastor.id}
+              initial={{ opacity: 0, y: 40 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6, delay: i * 0.15 }}
+              className={`grid md:grid-cols-2 gap-12 items-center ${i % 2 === 1 ? 'md:grid-flow-dense' : ''}`}
+            >
+              {/* Photo */}
+              <div className={`${i % 2 === 1 ? 'md:col-start-2' : ''}`}>
+                <div className="aspect-[4/5] rounded-2xl overflow-hidden">
+                  <img src={pastor.photo} alt={pastor.name} className="w-full h-full object-cover" />
+                </div>
+              </div>
+              {/* Info */}
+              <div className={`${i % 2 === 1 ? 'md:col-start-1 md:row-start-1' : ''}`}>
+                <span className="text-xs font-semibold text-primary tracking-widest uppercase block mb-4">{pastor.location}</span>
+                <h2 className="font-display text-3xl md:text-4xl font-medium text-foreground mb-2">{pastor.name}</h2>
+                <p className="text-primary font-semibold mb-6">{pastor.role}</p>
+                <p className="text-muted-foreground font-light leading-relaxed text-lg mb-8">{pastor.bio}</p>
+                <div className="border-l-4 border-primary pl-5">
+                  <p className="text-foreground/70 font-light italic text-base leading-relaxed">{pastor.verse}</p>
+                </div>
+              </div>
+            </motion.div>
+          ))}
+        </div>
+      </div>
+    </div>
+  );
+}

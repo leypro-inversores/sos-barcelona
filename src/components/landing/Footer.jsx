@@ -1,5 +1,7 @@
 import React from 'react';
-import { Instagram, MapPin, Clock, Youtube } from 'lucide-react';
+import { Link } from 'react-router-dom';
+import { Instagram, MapPin, Clock, Youtube, Phone } from 'lucide-react';
+import SOSLogo from './SOSLogo';
 
 export default function Footer() {
   return (
@@ -8,26 +10,50 @@ export default function Footer() {
         <div className="grid md:grid-cols-3 gap-12 mb-12">
           {/* Brand */}
           <div>
-            <div className="flex items-center gap-2 mb-4">
-              <span className="text-2xl font-bold tracking-wider">S.O.S</span>
-              <span className="text-xs font-light tracking-widest uppercase text-background/60">Barcelona</span>
-            </div>
-            <p className="text-background/60 font-light leading-relaxed">
+            <Link to="/" className="flex items-center gap-3 mb-5">
+              <SOSLogo size={48} />
+              <div>
+                <span className="block text-xl font-bold tracking-wider">SOS</span>
+                <span className="block text-xs font-light tracking-widest uppercase text-background/60">Barcelona</span>
+              </div>
+            </Link>
+            <p className="text-background/60 font-light leading-relaxed mb-4">
               Una iglesia centrada en Jesús donde lo sobrenatural es natural. Ven y descubre una relación real con Dios.
             </p>
+            <div className="flex flex-wrap gap-4 text-sm">
+              <Link to="/calendario" className="text-background/50 hover:text-primary transition-colors">Calendario</Link>
+              <Link to="/cursos" className="text-background/50 hover:text-primary transition-colors">Cursos</Link>
+              <Link to="/pastores" className="text-background/50 hover:text-primary transition-colors">Pastores</Link>
+              <Link to="/colaboradores" className="text-background/50 hover:text-primary transition-colors">Equipo</Link>
+              <Link to="/ninos" className="text-background/50 hover:text-primary transition-colors">Niños</Link>
+            </div>
           </div>
 
           {/* Info */}
           <div>
             <h4 className="font-semibold mb-4">Encuéntranos</h4>
-            <div className="space-y-3">
-              <div className="flex items-start gap-3">
-                <MapPin className="w-5 h-5 text-primary shrink-0 mt-0.5" />
-                <p className="text-background/60 font-light">C/ Teresa de Cofrents 23, Barcelona, España</p>
+            <div className="space-y-4">
+              <div>
+                <p className="text-xs text-primary font-semibold tracking-widest uppercase mb-2">Sede Principal</p>
+                <div className="flex items-start gap-3 mb-2">
+                  <MapPin className="w-5 h-5 text-primary shrink-0 mt-0.5" />
+                  <p className="text-background/60 font-light">Medellín, Colombia</p>
+                </div>
               </div>
-              <div className="flex items-center gap-3">
-                <Clock className="w-5 h-5 text-primary shrink-0" />
-                <p className="text-background/60 font-light">Domingos a las 11:00h</p>
+              <div>
+                <p className="text-xs text-primary font-semibold tracking-widest uppercase mb-2">Sede Barcelona</p>
+                <div className="flex items-start gap-3 mb-2">
+                  <MapPin className="w-5 h-5 text-primary shrink-0 mt-0.5" />
+                  <p className="text-background/60 font-light">C/ Teresa de Cofrents 23, Barcelona, España</p>
+                </div>
+                <div className="flex items-center gap-3 mb-2">
+                  <Clock className="w-5 h-5 text-primary shrink-0" />
+                  <p className="text-background/60 font-light">Domingos a las 11:00h</p>
+                </div>
+                <div className="flex items-center gap-3">
+                  <Phone className="w-5 h-5 text-primary shrink-0" />
+                  <p className="text-background/60 font-light">+34 685 947 756</p>
+                </div>
               </div>
             </div>
           </div>

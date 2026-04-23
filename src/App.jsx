@@ -6,6 +6,11 @@ import PageNotFound from './lib/PageNotFound';
 import { AuthProvider, useAuth } from '@/lib/AuthContext';
 import UserNotRegisteredError from '@/components/UserNotRegisteredError';
 import Home from './pages/Home';
+import Calendario from './pages/Calendario';
+import Cursos from './pages/Cursos';
+import Pastores from './pages/Pastores';
+import Colaboradores from './pages/Colaboradores';
+import Ninos from './pages/Ninos';
 // Add page imports here
 
 const AuthenticatedApp = () => {
@@ -35,6 +40,11 @@ const AuthenticatedApp = () => {
   return (
     <Routes>
       <Route path="/" element={<Home />} />
+      <Route path="/calendario" element={<Calendario />} />
+      <Route path="/cursos" element={<Cursos />} />
+      <Route path="/pastores" element={<Pastores />} />
+      <Route path="/colaboradores" element={<Colaboradores />} />
+      <Route path="/ninos" element={<Ninos />} />
       <Route path="*" element={<PageNotFound />} />
     </Routes>
   );

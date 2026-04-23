@@ -1,6 +1,8 @@
 import React, { useState, useEffect } from 'react';
+import { Link } from 'react-router-dom';
 import { Menu, X, Instagram } from 'lucide-react';
 import { motion, AnimatePresence } from 'framer-motion';
+import SOSLogo from './SOSLogo';
 
 export default function Navbar() {
   const [scrolled, setScrolled] = useState(false);
@@ -14,8 +16,10 @@ export default function Navbar() {
 
   const links = [
     { label: 'Sobre Nosotros', href: '#sobre' },
-    { label: 'Experiencia', href: '#experiencia' },
-    { label: 'Historias', href: '#testimonios' },
+    { label: 'Calendario', href: '/calendario' },
+    { label: 'Cursos', href: '/cursos' },
+    { label: 'Pastores', href: '/pastores' },
+    { label: 'Niños', href: '/ninos' },
     { label: 'Contacto', href: '#contacto' },
   ];
 
@@ -25,30 +29,33 @@ export default function Navbar() {
     }`}>
       <div className="max-w-7xl mx-auto px-6 lg:px-8">
         <div className="flex items-center justify-between h-20">
-          <a href="#" className="flex items-center gap-2">
-            <span className={`text-xl font-bold tracking-wider transition-colors duration-500 ${
-              scrolled ? 'text-foreground' : 'text-white'
-            }`}>
-              S.O.S
-            </span>
-            <span className={`text-xs font-light tracking-widest uppercase transition-colors duration-500 ${
-              scrolled ? 'text-muted-foreground' : 'text-white/70'
-            }`}>
-              Barcelona
-            </span>
-          </a>
+          <Link to="/" className="flex items-center gap-2.5">
+            <SOSLogo size={40} />
+            <div>
+              <span className={`block text-sm font-bold tracking-widest transition-colors duration-500 leading-none ${scrolled ? 'text-foreground' : 'text-white'}`}>SOS</span>
+              <span className={`block text-xs font-light tracking-widest uppercase transition-colors duration-500 ${scrolled ? 'text-muted-foreground' : 'text-white/70'}`}>Barcelona</span>
+            </div>
+          </Link>
 
           <div className="hidden md:flex items-center gap-8">
             {links.map(link => (
-              <a
-                key={link.href}
-                href={link.href}
-                className={`text-sm font-medium tracking-wide transition-colors duration-300 hover:text-primary ${
-                  scrolled ? 'text-foreground/70' : 'text-white/80'
-                }`}
-              >
-                {link.label}
-              </a>
+              link.href.startsWith('#') ? (
+                <a
+                  key={link.href}
+                  href={link.href}
+                  className={`text-sm font-medium tracking-wide transition-colors duration-300 hover:text-primary ${scrolled ? 'text-foreground/70' : 'text-white/80'}`}
+                >
+                  {link.label}
+                </a>
+              ) : (
+                <Link
+                  key={link.href}
+                  to={link.href}
+                  className={`text-sm font-medium tracking-wide transition-colors duration-300 hover:text-primary ${scrolled ? 'text-foreground/70' : 'text-white/80'}`}
+                >
+                  {link.label}
+                </Link>
+              )
             ))}
             <a
               href="https://instagram.com/somos_sosbarcelona"
