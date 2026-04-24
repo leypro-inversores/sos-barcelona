@@ -16,12 +16,12 @@ const PASTORES = [
   },
   {
     id: 2,
-    name: "Pastora de Familia",
-    role: "Pastora — Familias y Matrimonios",
-    bio: "Apasionada por ver familias restauradas y matrimonios que reflejen el amor de Dios. Lidera el ministerio de familias y las escuelas de parejas de la iglesia.",
+    name: "Mónica Rendón",
+    role: "Pastora — SOS Barcelona",
+    bio: "Junto a Mauricio, Mónica Rendón es co-pastora de SOS Barcelona y una de las voces más poderosas del ministerio. Apasionada por ver familias restauradas y matrimonios que reflejen el amor de Dios, lidera con la Palabra en mano y el corazón abierto. Cree firmemente que el hogar es el primer lugar donde se manifiesta la gloria de Dios, y su ministerio está enfocado en sanar, fortalecer y transformar familias enteras desde adentro hacia afuera.",
     verse: '"El amor nunca deja de ser..." — 1 Corintios 13:8',
-    photo: "https://media.base44.com/images/public/69ea6ca06c4574e55a2de28d/c58f199e3_generated_e7d53658.png",
-    location: "Medellín, Colombia",
+    photo: "https://media.base44.com/images/public/69ea6ca06c4574e55a2de28d/decd3d7da_PASTORAMONICA.jpg",
+    location: "Barcelona, España",
   },
   {
     id: 3,
