@@ -7,12 +7,12 @@ import SOSLogo from '../components/landing/SOSLogo';
 const PASTORES = [
   {
     id: 1,
-    name: "Pastor Principal",
-    role: "Pastor General — SOS Medellín & Barcelona",
-    bio: "Con más de 15 años de ministerio, nuestro pastor ha visto a Dios transformar miles de vidas en Colombia y España. Su visión es simple: llevar a las personas a una relación real con Jesús que cambie todo.",
-    verse: '"Porque yo sé los planes que tengo para vosotros..." — Jeremías 29:11',
-    photo: "https://media.base44.com/images/public/69ea6ca06c4574e55a2de28d/20eb32156_generated_00136330.png",
-    location: "Medellín, Colombia",
+    name: "Mauricio Rodríguez",
+    role: "Pastor Principal — SOS Barcelona",
+    bio: "Mauricio Rodríguez es el pastor principal de SOS Barcelona. Su vida es en sí misma un testimonio del poder transformador de Dios: criado en un ambiente marcado por el dolor y la búsqueda de identidad, fue en un encuentro real con Jesús donde todo cambió. Desde ese momento, su vida tomó un rumbo radicalmente diferente — del vacío a la plenitud, de la confusión al propósito. Hoy lidera SOS Barcelona con la misma pasión que vivió esa transformación, convencido de que lo sobrenatural no es solo posible, sino normal cuando te acercas a Dios. Cada domingo, predica con autoridad y corazón abierto, invitando a cada persona a experimentar lo que él mismo vivió: un encuentro real con el Padre.",
+    verse: '"De modo que si alguno está en Cristo, nueva criatura es; las cosas viejas pasaron; he aquí todas son hechas nuevas." — 2 Corintios 5:17',
+    photo: "https://media.base44.com/images/public/69ea6ca06c4574e55a2de28d/896529113_PASTORMAURICIO6.jpg",
+    location: "Barcelona, España",
   },
   {
     id: 2,
