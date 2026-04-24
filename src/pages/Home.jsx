@@ -15,7 +15,7 @@ import Footer from '../components/landing/Footer';
 // Images
 const IMAGES = {
   hero: "https://media.base44.com/images/public/69ea6ca06c4574e55a2de28d/9c0679f6d_generated_571a12d3.png",
-  community: "https://media.base44.com/images/public/69ea6ca06c4574e55a2de28d/068d058a3_generated_c6db614e.png",
+  community: "https://media.base44.com/images/public/69ea6ca06c4574e55a2de28d/57e9f123a_PREDICAGENTE.jpg",
   unityHands: "https://media.base44.com/images/public/69ea6ca06c4574e55a2de28d/e9eeffbc0_generated_ddd6fbf8.png",
   worshipLeader: "https://media.base44.com/images/public/69ea6ca06c4574e55a2de28d/169bfcc55_generated_75067579.png",
   barcelona: "https://media.base44.com/images/public/69ea6ca06c4574e55a2de28d/7200835f6_generated_72d75865.png",
