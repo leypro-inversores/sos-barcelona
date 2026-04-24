@@ -26,7 +26,7 @@ const IMAGES = {
   testimonial3: "https://media.base44.com/images/public/69ea6ca06c4574e55a2de28d/8da471a00_generated_2e762c51.png",
   churchEvent: "https://media.base44.com/images/public/69ea6ca06c4574e55a2de28d/01a878e69_generated_0952ff08.png",
   friendsWalking: "https://media.base44.com/images/public/69ea6ca06c4574e55a2de28d/ec953c79c_generated_e81df812.png",
-  pastorSpeaking: "https://media.base44.com/images/public/69ea6ca06c4574e55a2de28d/20eb32156_generated_00136330.png",
+  pastorSpeaking: "https://media.base44.com/images/public/69ea6ca06c4574e55a2de28d/2af86ab37_PASTORMAURICIO5.jpg",
 };
 
 export default function Home() {
