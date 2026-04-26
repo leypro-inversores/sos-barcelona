@@ -17,6 +17,12 @@ const IMAGES = {
   hero: "https://media.base44.com/images/public/69ea6ca06c4574e55a2de28d/1e0143059_FINALPORTADA.png",
   community: "https://media.base44.com/images/public/69ea6ca06c4574e55a2de28d/981a8f84c_COMPARTIR.jpg",
   unityHands: "https://media.base44.com/images/public/69ea6ca06c4574e55a2de28d/e9eeffbc0_generated_ddd6fbf8.png",
+  alabar: "https://media.base44.com/images/public/69ea6ca06c4574e55a2de28d/1ccd327d8_ALABARADIOS.jpg",
+  cenaNavidad: "https://media.base44.com/images/public/69ea6ca06c4574e55a2de28d/a6a2e3ce9_CENANAVIDAD.jpg",
+  compromiso: "https://media.base44.com/images/public/69ea6ca06c4574e55a2de28d/6b4633ea8_COMPROMISO.jpg",
+  liberacion2: "https://media.base44.com/images/public/69ea6ca06c4574e55a2de28d/81b01163a_LIBERACIN2.jpg",
+  matrimonio2: "https://media.base44.com/images/public/69ea6ca06c4574e55a2de28d/b8501f5a9_MATRIMONIO2.jpg",
+  matrimonio: "https://media.base44.com/images/public/69ea6ca06c4574e55a2de28d/497f374a6_MATRIMONIO.jpg",
   worshipLeader: "https://media.base44.com/images/public/69ea6ca06c4574e55a2de28d/e42bd6466_ADORACIN.jpg",
   barcelona: "https://media.base44.com/images/public/69ea6ca06c4574e55a2de28d/7200835f6_generated_72d75865.png",
   worshipMoment: "https://media.base44.com/images/public/69ea6ca06c4574e55a2de28d/0d2cfd681_NICOLADORANDO.jpg",
@@ -51,11 +57,12 @@ export default function Home() {
       
       <InstagramSection 
         images={[
-          IMAGES.hero,
-          IMAGES.community,
-          IMAGES.unityHands,
-          IMAGES.churchEvent,
-          IMAGES.friendsWalking,
+          IMAGES.alabar,
+          IMAGES.cenaNavidad,
+          IMAGES.compromiso,
+          IMAGES.liberacion2,
+          IMAGES.matrimonio2,
+          IMAGES.matrimonio,
         ]}
       />
       
