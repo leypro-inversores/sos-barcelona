@@ -17,7 +17,7 @@ const IMAGES = {
   hero: "https://media.base44.com/images/public/69ea6ca06c4574e55a2de28d/1e0143059_FINALPORTADA.png",
   community: "https://media.base44.com/images/public/69ea6ca06c4574e55a2de28d/57e9f123a_PREDICAGENTE.jpg",
   unityHands: "https://media.base44.com/images/public/69ea6ca06c4574e55a2de28d/e9eeffbc0_generated_ddd6fbf8.png",
-  worshipLeader: "https://media.base44.com/images/public/69ea6ca06c4574e55a2de28d/169bfcc55_generated_75067579.png",
+  worshipLeader: "https://media.base44.com/images/public/69ea6ca06c4574e55a2de28d/e42bd6466_ADORACIN.jpg",
   barcelona: "https://media.base44.com/images/public/69ea6ca06c4574e55a2de28d/7200835f6_generated_72d75865.png",
   worshipMoment: "https://media.base44.com/images/public/69ea6ca06c4574e55a2de28d/331a56c01_NICOLADORANDO.jpg",
   liberacion: "https://media.base44.com/images/public/69ea6ca06c4574e55a2de28d/f506d1201_LIBERACIN.jpg",
