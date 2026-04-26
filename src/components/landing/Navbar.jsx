@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
-import { Menu, X, Instagram } from 'lucide-react';
+import { Menu, X } from 'lucide-react';
 import { motion, AnimatePresence } from 'framer-motion';
 import SOSLogo from './SOSLogo';
 
@@ -57,22 +57,7 @@ export default function Navbar() {
                 </Link>
               )
             ))}
-            <a
-              href="https://instagram.com/somos_sosbarcelona"
-              target="_blank"
-              rel="noopener noreferrer"
-              className={`transition-colors duration-300 hover:text-primary ${
-                scrolled ? 'text-foreground/70' : 'text-white/80'
-              }`}
-            >
-              <Instagram className="w-5 h-5" />
-            </a>
-            <a
-              href="#contacto"
-              className="bg-primary text-primary-foreground px-6 py-2.5 rounded-full text-sm font-semibold hover:bg-primary/90 transition-all duration-300"
-            >
-              Planear mi visita
-            </a>
+
           </div>
 
           <button
