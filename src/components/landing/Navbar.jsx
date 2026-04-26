@@ -16,7 +16,7 @@ export default function Navbar() {
 
   const links = [
     { label: 'Sobre Nosotros', href: '#sobre' },
-    { label: 'Calendario', href: '/calendario' },
+    { label: 'Actividades', href: '/calendario' },
     { label: 'Cursos', href: '/cursos' },
     { label: 'Pastores', href: '/pastores' },
     { label: 'Niños', href: '/ninos' },
@@ -30,7 +30,7 @@ export default function Navbar() {
       <div className="max-w-7xl mx-auto px-6 lg:px-8">
         <div className="flex items-center justify-between h-20">
           <Link to="/" className="flex items-center gap-2.5">
-            <SOSLogo size={40} />
+            {scrolled && <SOSLogo size={40} />}
             <div>
               <span className={`block text-sm font-bold tracking-widest transition-colors duration-500 leading-none ${scrolled ? 'text-foreground' : 'text-white'}`}>SOS</span>
               <span className={`block text-xs font-light tracking-widest uppercase transition-colors duration-500 ${scrolled ? 'text-muted-foreground' : 'text-white/70'}`}>Barcelona</span>
