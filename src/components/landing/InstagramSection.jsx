@@ -16,10 +16,10 @@ export default function InstagramSection({ images }) {
             transition={{ duration: 0.6 }}
             className="flex items-center justify-center gap-3 mb-6">
             
-            <Instagram className="lucide lucide-instagram w-5 h-5 text-primary hidden" />
-            <span className="text-primary text-sm tracking-[0.25em] uppercase font-semibold hidden">
-              @somos_sosbarcelona
-            </span>
+            
+            
+
+            
           </motion.div>
           <motion.h2
             initial={{ opacity: 0, y: 30 }}
