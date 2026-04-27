@@ -33,19 +33,31 @@ export default function AboutSection({ image }) {
               initial={{ opacity: 0, y: 20 }}
               animate={isInView ? { opacity: 1, y: 0 } : {}}
               transition={{ duration: 0.8, delay: 0.2 }}
-              className="text-muted-foreground text-lg font-light leading-relaxed mb-8"
+              className="text-muted-foreground text-lg font-light leading-relaxed mb-6"
             >
-              Somos una comunidad en Barcelona que cree en un Dios vivo, cercano y transformador. No buscamos religión, buscamos una relación real con Él que cambie nuestras vidas.
+              No somos solo un lugar al que vienes en Barcelona, somos una comunidad donde puedes encontrarte con Dios de verdad.
             </motion.p>
 
             <motion.p
               initial={{ opacity: 0, y: 20 }}
               animate={isInView ? { opacity: 1, y: 0 } : {}}
               transition={{ duration: 0.8, delay: 0.3 }}
-              className="text-muted-foreground text-lg font-light leading-relaxed mb-10"
+              className="text-muted-foreground text-lg font-light leading-relaxed mb-8"
             >
-              Nos reunimos cada domingo porque creemos que cuando personas se juntan con un mismo propósito — conocer a Dios — cosas extraordinarias suceden. Somos una iglesia donde lo sobrenatural es natural.
+              Creemos en un Dios cercano, que habla, restaura, transforma y cambia vidas. Y cuando nos reunimos, no es casualidad… algo sucede.
             </motion.p>
+
+            <motion.blockquote
+              initial={{ opacity: 0, y: 20 }}
+              animate={isInView ? { opacity: 1, y: 0 } : {}}
+              transition={{ duration: 0.8, delay: 0.35 }}
+              className="border-l-2 border-primary/30 pl-5 mb-10"
+            >
+              <p className="text-foreground/40 text-base font-light italic leading-relaxed">
+                "Porque donde dos o tres se reúnen en mi nombre, allí estoy yo en medio de ellos."
+              </p>
+              <cite className="text-foreground/30 text-sm not-italic tracking-wide mt-1 block">— Mateo 18:20</cite>
+            </motion.blockquote>
 
             <motion.div
               initial={{ opacity: 0, y: 20 }}
