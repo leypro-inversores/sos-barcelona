@@ -32,8 +32,8 @@ export default function Navbar() {
           <Link to="/" className="flex items-center gap-2.5">
             {scrolled && <SOSLogo size={40} />}
             <div>
-              <span className="block text-sm font-bold tracking-widest transition-colors duration-500 leading-none text-white hidden">SOS</span>
-              <span className="block text-xs font-light tracking-widest uppercase transition-colors duration-500 text-white/70 hidden">Barcelona</span>
+              
+              
             </div>
           </Link>
 

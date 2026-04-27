@@ -68,16 +68,16 @@ export default function InstagramSection({ images }) {
           transition={{ duration: 0.6, delay: 0.6 }}
           className="text-center">
           
-          <a
-            href="https://instagram.com/somos_sosbarcelona"
-            target="_blank"
-            rel="noopener noreferrer" className="inline-flex items-center gap-3 bg-primary text-primary-foreground px-8 py-4 rounded-full text-base font-semibold hover:bg-primary/90 transition-all duration-300 hover:scale-105 hidden">
+          
 
-            
-            <Instagram className="w-5 h-5" />
-            Síguenos en Instagram
-            <ExternalLink className="w-4 h-4" />
-          </a>
+
+
+
+
+
+
+
+          
         </motion.div>
       </div>
     </section>);
