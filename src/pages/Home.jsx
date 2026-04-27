@@ -55,16 +55,7 @@ export default function Home() {
         ]} 
       />
       
-      <InstagramSection 
-        images={[
-          IMAGES.alabar,
-          IMAGES.cenaNavidad,
-          IMAGES.compromiso,
-          IMAGES.liberacion2,
-          IMAGES.matrimonio2,
-          IMAGES.matrimonio,
-        ]}
-      />
+      <InstagramSection />
       
       <AboutSection image={IMAGES.community} />
       
