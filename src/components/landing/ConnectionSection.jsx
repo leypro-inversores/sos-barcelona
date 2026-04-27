@@ -3,11 +3,11 @@ import { motion, useInView } from 'framer-motion';
 import { Heart, Search, Compass, RefreshCw, Sunrise } from 'lucide-react';
 
 const items = [
-  { icon: Search, text: "Si estás buscando algo más" },
-  { icon: Heart, text: "Si necesitas paz" },
+  { icon: Search, text: "Si sientes que te falta algo" },
+  { icon: Heart, text: "Si estás buscando paz en medio de todo" },
   { icon: Compass, text: "Si quieres acercarte a Dios pero no sabes cómo" },
   { icon: RefreshCw, text: "Si estás cansado de lo superficial" },
-  { icon: Sunrise, text: "Si necesitas empezar de nuevo" },
+  { icon: Sunrise, text: "Si necesitas un nuevo comienzo" },
 ];
 
 export default function ConnectionSection({ image }) {
@@ -25,12 +25,13 @@ export default function ConnectionSection({ image }) {
             transition={{ duration: 0.8 }}
             className="relative"
           >
-            <div className="aspect-[4/5] rounded-2xl overflow-hidden">
+            <div className="aspect-[4/5] rounded-2xl overflow-hidden relative">
               <img
-                src={image}
-                alt="Momento de adoración en SOS Barcelona"
+                src="https://media.base44.com/images/public/69ea6ca06c4574e55a2de28d/4797824f0_WEB.jpg"
+                alt="Comunidad SOS Barcelona"
                 className="w-full h-full object-cover"
               />
+              <div className="absolute inset-0 bg-black/15 rounded-2xl" />
             </div>
             <div className="absolute -bottom-4 -right-4 w-32 h-32 bg-primary/10 rounded-2xl -z-10" />
           </motion.div>
