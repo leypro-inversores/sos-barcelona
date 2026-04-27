@@ -2,10 +2,10 @@ import React, { useRef } from 'react';
 import { motion, useInView } from 'framer-motion';
 
 const steps = [
-  { number: "01", title: "Vienes como eres", desc: "No hay código de vestimenta ni requisitos. Solo ven tal como eres." },
-  { number: "02", title: "Conectas con personas reales", desc: "Encontrarás personas genuinas que te recibirán como parte de la familia." },
-  { number: "03", title: "Escuchas un mensaje claro", desc: "Enseñanzas prácticas que puedes aplicar a tu vida desde el primer día." },
-  { number: "04", title: "Empiezas a conocer a Dios", desc: "Tu relación personal con Dios comienza aquí, a tu ritmo." },
+  { number: "01", title: "Un lugar para ti", desc: "Desde el primer momento, eres bienvenido con amor y como parte de una familia." },
+  { number: "02", title: "Conectas con personas reales", desc: "Personas genuinas que te reciben y caminan contigo." },
+  { number: "03", title: "Escuchas un mensaje claro", desc: "Palabras prácticas que puedes aplicar a tu vida desde el primer día." },
+  { number: "04", title: "Empiezas a conocer a Dios", desc: "A tu ritmo, de forma real y personal." },
 ];
 
 export default function StepsSection() {
