@@ -25,11 +25,11 @@ const PASTORES = [
   },
   {
     id: 3,
-    name: "Pastor de Jóvenes",
-    role: "Pastor — Ministerio Joven & Barcelona",
-    bio: "Lidera la sede de Barcelona con energía y propósito. Cree que esta generación está llamada a cambiar el mundo con el evangelio. Su pasión: despertar el potencial de los jóvenes.",
-    verse: '"No dejes que nadie te menosprecie por ser joven..." — 1 Timoteo 4:12',
-    photo: "https://media.base44.com/images/public/69ea6ca06c4574e55a2de28d/fca46ef15_generated_ade8d6a9.png",
+    name: "Líder de Jóvenes",
+    role: "Liderando la nueva generación en Barcelona",
+    bio: "Acompaña a jóvenes a descubrir su propósito, acercarse a Dios y vivir una fe real en medio de su día a día. Cree en una generación que no solo escucha, sino que vive lo que cree.",
+    verse: '"Que nadie te subestime por ser joven…" — 1 Timoteo 4:12',
+    photo: "https://media.base44.com/images/public/69ea6ca06c4574e55a2de28d/bfe4dd776_NICOL.jpg",
     location: "Barcelona, España",
   },
 ];
