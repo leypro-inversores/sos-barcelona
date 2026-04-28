@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom';
 import { motion } from 'framer-motion';
 import { ChevronLeft, Star, BookOpen, Smile, Shield, Music, Heart } from 'lucide-react';
 import SOSLogo from '../components/landing/SOSLogo';
+import KidsGallery from '../components/landing/KidsGallery';
 
 const FEATURES = [
   { icon: Shield, title: "Espacio Seguro", desc: "Ambientes seguros y supervisados por adultos capacitados y con vocación por los niños." },
@@ -51,6 +52,13 @@ export default function Ninos() {
             </p>
           </motion.div>
         </div>
+      </div>
+
+      {/* Gallery */}
+      <div className="max-w-6xl mx-auto px-6 pt-12 pb-4">
+        <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.2 }}>
+          <KidsGallery />
+        </motion.div>
       </div>
 
       <div className="max-w-6xl mx-auto px-6 py-16">
