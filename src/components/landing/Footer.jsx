@@ -13,8 +13,8 @@ export default function Footer() {
             <Link to="/" className="flex items-center gap-3 mb-5">
               <SOSLogo size={48} />
               <div>
-                <span className="block text-xl font-bold tracking-wider">SOS</span>
-                <span className="block text-xs font-light tracking-widest uppercase text-background/60">Barcelona</span>
+                <span className="block text-xl font-bold tracking-wider hidden">SOS</span>
+                <span className="block text-xs font-light tracking-widest uppercase text-background/60 hidden">Barcelona</span>
               </div>
             </Link>
             <p className="text-background/60 font-light leading-relaxed mb-4">
@@ -66,16 +66,16 @@ export default function Footer() {
                 href="https://instagram.com/somos_sosbarcelona"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="w-12 h-12 rounded-full bg-background/10 flex items-center justify-center hover:bg-primary hover:text-primary-foreground transition-all duration-300"
-              >
+                className="w-12 h-12 rounded-full bg-background/10 flex items-center justify-center hover:bg-primary hover:text-primary-foreground transition-all duration-300">
+                
                 <Instagram className="w-5 h-5" />
               </a>
               <a
                 href="https://www.youtube.com/@somoss.o.sbarcelona8475"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="w-12 h-12 rounded-full bg-background/10 flex items-center justify-center hover:bg-primary hover:text-primary-foreground transition-all duration-300"
-              >
+                className="w-12 h-12 rounded-full bg-background/10 flex items-center justify-center hover:bg-primary hover:text-primary-foreground transition-all duration-300">
+                
                 <Youtube className="w-5 h-5" />
               </a>
             </div>
@@ -88,6 +88,6 @@ export default function Footer() {
           </p>
         </div>
       </div>
-    </footer>
-  );
+    </footer>);
+
 }
