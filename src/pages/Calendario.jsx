@@ -38,7 +38,8 @@ const ACTIVITIES = [
     title: "Reunión de Jóvenes",
     desc: "Una generación que no solo escucha, sino que vive lo que cree.",
     time: "Mensual · Por confirmar",
-    image: "https://media.base44.com/images/public/69ea6ca06c4574e55a2de28d/b9e8ddff4_JOVENES.jpg",
+    image: "https://media.base44.com/images/public/69ea6ca06c4574e55a2de28d/ab8b3c041_JOVENES2.jpg",
+    aspectRatio: "aspect-[3/4]",
   },
   {
     id: 6,
@@ -119,11 +120,11 @@ export default function Calendario() {
                 className="group bg-card rounded-2xl border border-border/50 overflow-hidden hover:shadow-lg hover:-translate-y-1 transition-all duration-300"
               >
                 {/* Image */}
-                <div className="aspect-[4/3] overflow-hidden">
+                <div className={`${act.aspectRatio || 'aspect-[4/3]'} overflow-hidden`}>
                   <img
                     src={act.image}
                     alt={act.title}
-                    className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                    className="w-full h-full object-contain bg-black group-hover:scale-105 transition-transform duration-500"
                   />
                 </div>
                 {/* Content */}
