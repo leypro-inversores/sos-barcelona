@@ -13,8 +13,8 @@ export default function Footer() {
             <Link to="/" className="flex items-center gap-3 mb-5">
               <SOSLogo size={48} />
               <div>
-                <span className="block text-xl font-bold tracking-wider hidden">SOS</span>
-                <span className="block text-xs font-light tracking-widest uppercase text-background/60 hidden">Barcelona</span>
+                
+                
               </div>
             </Link>
             <p className="text-background/60 font-light leading-relaxed mb-4">
