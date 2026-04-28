@@ -38,14 +38,14 @@ const ACTIVITIES = [
     title: "Reunión de Jóvenes",
     desc: "Una generación que no solo escucha, sino que vive lo que cree.",
     time: "Mensual · Por confirmar",
-    image: "https://media.base44.com/images/public/69ea6ca06c4574e55a2de28d/a387bc8de_JOVENES.jpg",
+    image: "https://media.base44.com/images/public/69ea6ca06c4574e55a2de28d/b9e8ddff4_JOVENES.jpg",
   },
   {
     id: 6,
     title: "Área Financiera",
     desc: "Enseñanzas prácticas sobre finanzas desde una perspectiva bíblica y real.",
     time: "Ocasional · Por confirmar",
-    image: "https://media.base44.com/images/public/69ea6ca06c4574e55a2de28d/dd2875175_REUNINPAREJAS.jpg",
+    image: "https://media.base44.com/images/public/69ea6ca06c4574e55a2de28d/3fc1280e6_WhatsAppImage2026-04-24at2013028.jpg",
   },
   {
     id: 7,
