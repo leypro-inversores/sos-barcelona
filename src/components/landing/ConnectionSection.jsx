@@ -4,7 +4,7 @@ import { Heart, Search, Compass, RefreshCw, Sunrise } from 'lucide-react';
 
 const items = [
 { icon: Search, text: "Si sientes que te falta algo" },
-{ icon: Heart, text: "Si estás buscando paz en medio de todo" },
+{ icon: Heart, text: "Si est\xE1s buscando paz en medio del caos" },
 { icon: Compass, text: "Si quieres acercarte a Dios pero no sabes cómo" },
 { icon: RefreshCw, text: "Si estás cansado de lo superficial" },
 { icon: Sunrise, text: "Si necesitas un nuevo comienzo" }];
