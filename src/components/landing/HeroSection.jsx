@@ -44,10 +44,10 @@ export default function HeroSection({ heroImage }) {
 
         </a>
         <a
-          href="#contacto"
-          className="border-2 border-primary text-primary px-10 py-4 rounded-full text-base font-semibold hover:bg-primary hover:text-primary-foreground transition-all duration-300 text-center">
-          
-          Planear mi visita
+          href="#contacto" className="border-2 border-primary text-primary px-10 py-4 rounded-full text-base font-semibold hover:bg-primary hover:text-primary-foreground transition-all duration-300 text-center">Quiero visitar la iglesia
+
+
+
         </a>
       </motion.div>
     </section>);
