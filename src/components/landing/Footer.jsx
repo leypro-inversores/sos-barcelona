@@ -34,7 +34,7 @@ export default function Footer() {
             <h4 className="font-semibold mb-4">Encuéntranos</h4>
             <div className="space-y-4">
               <div>
-                <p className="text-xs text-primary font-semibold tracking-widest uppercase mb-2">Sede Principal</p>
+                <p className="text-xs text-primary font-semibold tracking-widest uppercase mb-2">SEDE BARCELONA</p>
                 <div className="flex items-start gap-3 mb-2">
                   <MapPin className="w-5 h-5 text-primary shrink-0 mt-0.5" />
                   <p className="text-background/60 font-light">Medellín, Colombia</p>
