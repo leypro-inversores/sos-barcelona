@@ -12,8 +12,8 @@ export default function FinalCTASection({ image }) {
         <img
           src={image}
           alt="Barcelona al atardecer"
-          className="w-full h-full object-cover"
-        />
+          className="w-full h-full object-cover" />
+        
         <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/50 to-black/60" />
       </div>
 
@@ -22,8 +22,8 @@ export default function FinalCTASection({ image }) {
           initial={{ opacity: 0, y: 30 }}
           animate={isInView ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 0.8 }}
-          className="font-display text-4xl md:text-5xl lg:text-6xl font-medium text-white mb-8 leading-tight"
-        >
+          className="font-display text-4xl md:text-5xl lg:text-6xl font-medium text-white mb-8 leading-tight">
+          
           No estás aquí por casualidad
         </motion.h2>
 
@@ -31,8 +31,8 @@ export default function FinalCTASection({ image }) {
           initial={{ opacity: 0, y: 20 }}
           animate={isInView ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 0.8, delay: 0.2 }}
-          className="text-white/75 text-xl md:text-2xl font-light leading-relaxed max-w-2xl mx-auto mb-12"
-        >
+          className="text-white/75 text-xl md:text-2xl font-light leading-relaxed max-w-2xl mx-auto mb-12">
+          
           Dios sigue llamando a las personas… y puede estar llamándote a ti.
         </motion.p>
 
@@ -40,22 +40,22 @@ export default function FinalCTASection({ image }) {
           initial={{ opacity: 0, y: 20 }}
           animate={isInView ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 0.8, delay: 0.4 }}
-          className="flex flex-col sm:flex-row gap-4 justify-center"
-        >
+          className="flex flex-col sm:flex-row gap-4 justify-center">
+          
           <a
-            href="#contacto"
-            className="bg-primary text-primary-foreground px-10 py-4 rounded-full text-base font-semibold hover:bg-primary/90 transition-all duration-300 hover:scale-105"
-          >
-            Quiero acercarme a Dios
+            href="#contacto" className="bg-primary text-primary-foreground px-10 py-4 rounded-full text-base font-semibold hover:bg-primary/90 transition-all duration-300 hover:scale-105">Quiero que me contacten
+
+
+
           </a>
           <a
             href="#contacto"
-            className="border-2 border-white/30 text-white px-10 py-4 rounded-full text-base font-semibold hover:bg-white/10 transition-all duration-300"
-          >
+            className="border-2 border-white/30 text-white px-10 py-4 rounded-full text-base font-semibold hover:bg-white/10 transition-all duration-300">
+            
             Planear mi visita
           </a>
         </motion.div>
       </div>
-    </section>
-  );
+    </section>);
+
 }
