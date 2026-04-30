@@ -95,8 +95,8 @@ export default function Calendario() {
       <div className="max-w-6xl mx-auto px-6 py-16">
         {/* Title */}
         <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.6 }} className="text-center mb-16">
-          <span className="text-primary text-sm tracking-[0.25em] uppercase font-semibold block mb-4">Agenda</span>
-          <h1 className="font-display text-4xl md:text-5xl font-medium text-foreground mb-4">Calendario de Actividades</h1>
+          <span className="text-primary text-sm tracking-[0.25em] uppercase font-semibold block mb-4 hidden">Agenda</span>
+          <h1 className="font-display text-4xl md:text-5xl font-medium text-foreground mb-4">Nuestras Actividades</h1>
           <p className="text-muted-foreground font-light text-lg">Todos los eventos y reuniones de SOS Barcelona</p>
         </motion.div>
 
