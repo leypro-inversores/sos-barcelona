@@ -105,8 +105,8 @@ export default function Calendario() {
           <motion.h2
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.5 }}
-            className="font-display text-2xl md:text-3xl font-medium text-foreground mb-8">
+            transition={{ duration: 0.5 }} className="font-display text-2xl md:text-3xl font-medium text-foreground mb-8 hidden">
+            
             
             Nuestras Reuniones
           </motion.h2>
