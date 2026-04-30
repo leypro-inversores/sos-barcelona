@@ -95,21 +95,21 @@ export default function Calendario() {
       <div className="max-w-6xl mx-auto px-6 py-16">
         {/* Title */}
         <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.6 }} className="text-center mb-16">
-          <span className="text-primary text-sm tracking-[0.25em] uppercase font-semibold block mb-4 hidden">Agenda</span>
+          
           <h1 className="font-display text-4xl md:text-5xl font-medium text-foreground mb-4">Nuestras Actividades</h1>
           <p className="text-muted-foreground font-light text-lg">Todos los eventos y reuniones de SOS Barcelona</p>
         </motion.div>
 
         {/* Activity Cards */}
         <div className="mb-20">
-          <motion.h2
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.5 }} className="font-display text-2xl md:text-3xl font-medium text-foreground mb-8 hidden">
-            
-            
-            Nuestras Reuniones
-          </motion.h2>
+          
+
+
+
+
+
+
+          
           <div className="grid sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
             {ACTIVITIES.map((act, i) =>
             <motion.div
@@ -142,14 +142,14 @@ export default function Calendario() {
 
         {/* Upcoming Events */}
         <div>
-          <motion.h2
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.5, delay: 0.3 }} className="font-display text-2xl md:text-3xl font-medium text-foreground mb-8 hidden">
-            
-            
-            Próximos Eventos
-          </motion.h2>
+          
+
+
+
+
+
+
+          
 
           {/* Filter */}
           <div className="flex flex-wrap gap-3 mb-8">
