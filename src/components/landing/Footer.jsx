@@ -21,7 +21,7 @@ export default function Footer() {
               Una iglesia centrada en Jesús donde lo sobrenatural es natural. Ven y descubre una relación real con Dios.
             </p>
             <div className="flex flex-wrap gap-4 text-sm">
-              <Link to="/calendario" className="text-background/50 hover:text-primary transition-colors">Calendario</Link>
+              <Link to="/calendario" className="text-background/50 hover:text-primary transition-colors">Sobre Nosotros</Link>
               <Link to="/cursos" className="text-background/50 hover:text-primary transition-colors">Cursos</Link>
               <Link to="/pastores" className="text-background/50 hover:text-primary transition-colors">Pastores</Link>
               <Link to="/colaboradores" className="text-background/50 hover:text-primary transition-colors">Equipo</Link>
