@@ -22,9 +22,9 @@ export default function Footer() {
             </p>
             <div className="flex flex-wrap gap-4 text-sm">
               <Link to="/calendario" className="text-background/50 hover:text-primary transition-colors">Sobre Nosotros</Link>
-              <Link to="/cursos" className="text-background/50 hover:text-primary transition-colors">Cursos</Link>
-              <Link to="/pastores" className="text-background/50 hover:text-primary transition-colors">Pastores</Link>
-              <Link to="/colaboradores" className="text-background/50 hover:text-primary transition-colors">Equipo</Link>
+              <Link to="/cursos" className="text-background/50 hover:text-primary transition-colors">Actividades</Link>
+              <Link to="/pastores" className="text-background/50 hover:text-primary transition-colors">Cursos</Link>
+              <Link to="/colaboradores" className="text-background/50 hover:text-primary transition-colors">P</Link>
               <Link to="/ninos" className="text-background/50 hover:text-primary transition-colors">Niños</Link>
             </div>
           </div>
