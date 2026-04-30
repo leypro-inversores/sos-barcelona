@@ -37,11 +37,11 @@ export default function Footer() {
                 <p className="text-xs text-primary font-semibold tracking-widest uppercase mb-2">SEDE BARCELONA</p>
                 <div className="flex items-start gap-3 mb-2">
                   <MapPin className="w-5 h-5 text-primary shrink-0 mt-0.5" />
-                  <p className="text-background/60 font-light">C/ Teresa de Cofrents 23, B</p>
+                  <p className="text-background/60 font-light">C/ Teresa de Cofrents 23, Barcelona, España</p>
                 </div>
               </div>
               <div>
-                <p className="text-xs text-primary font-semibold tracking-widest uppercase mb-2">Sede Barcelona</p>
+                <p className="text-xs text-primary font-semibold tracking-widest uppercase mb-2">SEDE </p>
                 <div className="flex items-start gap-3 mb-2">
                   <MapPin className="w-5 h-5 text-primary shrink-0 mt-0.5" />
                   <p className="text-background/60 font-light">C/ Teresa de Cofrents 23, Barcelona, España</p>
