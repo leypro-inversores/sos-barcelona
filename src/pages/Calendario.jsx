@@ -153,18 +153,18 @@ export default function Calendario() {
 
           {/* Filter */}
           <div className="flex flex-wrap gap-3 mb-8">
-            {categories.map((cat) =>
-            <button
-              key={cat}
-              onClick={() => setFilter(cat)} className="px-5 py-2 rounded-full text-sm font-medium transition-all duration-200 bg-primary text-primary-foreground hidden">
+            {categories.map((cat) => null
 
 
 
 
-              
-              
-                {cat}
-              </button>
+
+
+
+
+
+
+
             )}
           </div>
 
