@@ -5,74 +5,74 @@ import { Clock, MapPin, ChevronLeft } from 'lucide-react';
 import SOSLogo from '../components/landing/SOSLogo';
 
 const ACTIVITIES = [
-  {
-    id: 1,
-    title: "Reunión Dominical",
-    desc: "Todos los domingos a las 11h. Un encuentro lleno de adoración, palabra y comunidad.",
-    time: "Domingos · 11:00h",
-    image: "https://media.base44.com/images/public/69ea6ca06c4574e55a2de28d/1dd8a621f_PREDICA.jpg",
-  },
-  {
-    id: 2,
-    title: "Reunión de Mujeres",
-    desc: "Un espacio de encuentro, oración y comunidad para las mujeres de SOS Barcelona.",
-    time: "Mensual · Por confirmar",
-    image: "https://media.base44.com/images/public/69ea6ca06c4574e55a2de28d/c038d2c24_REUNINMUJERES.jpg",
-  },
-  {
-    id: 3,
-    title: "Reunión de Hombres",
-    desc: "Un espacio real para hombres que quieren crecer, conectar y ser mejores.",
-    time: "Mensual · Por confirmar",
-    image: "https://media.base44.com/images/public/69ea6ca06c4574e55a2de28d/f9b036bd0_REUNINHOMBRES.jpg",
-  },
-  {
-    id: 4,
-    title: "Reunión de Parejas",
-    desc: "Fortalecemos los matrimonios y familias desde la fe y el amor.",
-    time: "Mensual · Por confirmar",
-    image: "https://media.base44.com/images/public/69ea6ca06c4574e55a2de28d/dd2875175_REUNINPAREJAS.jpg",
-  },
-  {
-    id: 5,
-    title: "Reunión de Jóvenes",
-    desc: "Una generación que no solo escucha, sino que vive lo que cree.",
-    time: "Mensual · Por confirmar",
-    image: "https://media.base44.com/images/public/69ea6ca06c4574e55a2de28d/ab8b3c041_JOVENES2.jpg",
-    aspectRatio: "aspect-[3/4]",
-  },
-  {
-    id: 6,
-    title: "Área Financiera",
-    desc: "Enseñanzas prácticas sobre finanzas desde una perspectiva bíblica y real.",
-    time: "Ocasional · Por confirmar",
-    image: "https://media.base44.com/images/public/69ea6ca06c4574e55a2de28d/3fc1280e6_WhatsAppImage2026-04-24at2013028.jpg",
-  },
-  {
-    id: 7,
-    title: "Reunión de Liderazgo",
-    desc: "Formando líderes con carácter, visión y corazón de servicio.",
-    time: "Mensual · Por confirmar",
-    image: "https://media.base44.com/images/public/69ea6ca06c4574e55a2de28d/694483fa7_REUNINLIDERAZGO.jpg",
-  },
-];
+{
+  id: 1,
+  title: "Reunión Dominical",
+  desc: "Todos los domingos a las 11h. Un encuentro lleno de adoración, palabra y comunidad.",
+  time: "Domingos · 11:00h",
+  image: "https://media.base44.com/images/public/69ea6ca06c4574e55a2de28d/1dd8a621f_PREDICA.jpg"
+},
+{
+  id: 2,
+  title: "Reunión de Mujeres",
+  desc: "Un espacio de encuentro, oración y comunidad para las mujeres de SOS Barcelona.",
+  time: "Mensual · Por confirmar",
+  image: "https://media.base44.com/images/public/69ea6ca06c4574e55a2de28d/c038d2c24_REUNINMUJERES.jpg"
+},
+{
+  id: 3,
+  title: "Reunión de Hombres",
+  desc: "Un espacio real para hombres que quieren crecer, conectar y ser mejores.",
+  time: "Mensual · Por confirmar",
+  image: "https://media.base44.com/images/public/69ea6ca06c4574e55a2de28d/f9b036bd0_REUNINHOMBRES.jpg"
+},
+{
+  id: 4,
+  title: "Reunión de Parejas",
+  desc: "Fortalecemos los matrimonios y familias desde la fe y el amor.",
+  time: "Mensual · Por confirmar",
+  image: "https://media.base44.com/images/public/69ea6ca06c4574e55a2de28d/dd2875175_REUNINPAREJAS.jpg"
+},
+{
+  id: 5,
+  title: "Reunión de Jóvenes",
+  desc: "Una generación que no solo escucha, sino que vive lo que cree.",
+  time: "Mensual · Por confirmar",
+  image: "https://media.base44.com/images/public/69ea6ca06c4574e55a2de28d/ab8b3c041_JOVENES2.jpg",
+  aspectRatio: "aspect-[3/4]"
+},
+{
+  id: 6,
+  title: "Área Financiera",
+  desc: "Enseñanzas prácticas sobre finanzas desde una perspectiva bíblica y real.",
+  time: "Ocasional · Por confirmar",
+  image: "https://media.base44.com/images/public/69ea6ca06c4574e55a2de28d/3fc1280e6_WhatsAppImage2026-04-24at2013028.jpg"
+},
+{
+  id: 7,
+  title: "Reunión de Liderazgo",
+  desc: "Formando líderes con carácter, visión y corazón de servicio.",
+  time: "Mensual · Por confirmar",
+  image: "https://media.base44.com/images/public/69ea6ca06c4574e55a2de28d/694483fa7_REUNINLIDERAZGO.jpg"
+}];
+
 
 const EVENTS = [
-  { id: 1, date: "2026-05-04", day: "4", month: "MAY", title: "Reunión Dominical", time: "11:00h", location: "Calle Teresa de Cofrents 23, Barcelona", category: "Reunión", color: "bg-primary/10 text-primary border-primary/20" },
-  { id: 2, date: "2026-05-10", day: "10", month: "MAY", title: "Noche de Adoración", time: "19:00h", location: "Calle Teresa de Cofrents 23, Barcelona", category: "Adoración", color: "bg-purple-100 text-purple-700 border-purple-200" },
-  { id: 3, date: "2026-05-11", day: "11", month: "MAY", title: "Reunión Dominical", time: "11:00h", location: "Calle Teresa de Cofrents 23, Barcelona", category: "Reunión", color: "bg-primary/10 text-primary border-primary/20" },
-  { id: 4, date: "2026-05-17", day: "17", month: "MAY", title: "Encuentro de Jóvenes", time: "17:00h", location: "Calle Teresa de Cofrents 23, Barcelona", category: "Jóvenes", color: "bg-green-100 text-green-700 border-green-200" },
-  { id: 5, date: "2026-05-18", day: "18", month: "MAY", title: "Reunión Dominical", time: "11:00h", location: "Calle Teresa de Cofrents 23, Barcelona", category: "Reunión", color: "bg-primary/10 text-primary border-primary/20" },
-  { id: 6, date: "2026-05-23", day: "23", month: "MAY", title: "Cumpleaños de la Iglesia", time: "18:00h", location: "Calle Teresa de Cofrents 23, Barcelona", category: "Especial", color: "bg-orange-100 text-orange-700 border-orange-200" },
-  { id: 7, date: "2026-05-25", day: "25", month: "MAY", title: "Reunión Dominical", time: "11:00h", location: "Calle Teresa de Cofrents 23, Barcelona", category: "Reunión", color: "bg-primary/10 text-primary border-primary/20" },
-  { id: 8, date: "2026-06-06", day: "6", month: "JUN", title: "Retiro de Parejas", time: "Todo el día", location: "Por confirmar", category: "Parejas", color: "bg-pink-100 text-pink-700 border-pink-200" },
-  { id: 9, date: "2026-06-14", day: "14", month: "JUN", title: "Noche de Milagros", time: "19:00h", location: "Calle Teresa de Cofrents 23, Barcelona", category: "Especial", color: "bg-orange-100 text-orange-700 border-orange-200" },
-];
+{ id: 1, date: "2026-05-04", day: "4", month: "MAY", title: "Reunión Dominical", time: "11:00h", location: "Calle Teresa de Cofrents 23, Barcelona", category: "Reunión", color: "bg-primary/10 text-primary border-primary/20" },
+{ id: 2, date: "2026-05-10", day: "10", month: "MAY", title: "Noche de Adoración", time: "19:00h", location: "Calle Teresa de Cofrents 23, Barcelona", category: "Adoración", color: "bg-purple-100 text-purple-700 border-purple-200" },
+{ id: 3, date: "2026-05-11", day: "11", month: "MAY", title: "Reunión Dominical", time: "11:00h", location: "Calle Teresa de Cofrents 23, Barcelona", category: "Reunión", color: "bg-primary/10 text-primary border-primary/20" },
+{ id: 4, date: "2026-05-17", day: "17", month: "MAY", title: "Encuentro de Jóvenes", time: "17:00h", location: "Calle Teresa de Cofrents 23, Barcelona", category: "Jóvenes", color: "bg-green-100 text-green-700 border-green-200" },
+{ id: 5, date: "2026-05-18", day: "18", month: "MAY", title: "Reunión Dominical", time: "11:00h", location: "Calle Teresa de Cofrents 23, Barcelona", category: "Reunión", color: "bg-primary/10 text-primary border-primary/20" },
+{ id: 6, date: "2026-05-23", day: "23", month: "MAY", title: "Cumpleaños de la Iglesia", time: "18:00h", location: "Calle Teresa de Cofrents 23, Barcelona", category: "Especial", color: "bg-orange-100 text-orange-700 border-orange-200" },
+{ id: 7, date: "2026-05-25", day: "25", month: "MAY", title: "Reunión Dominical", time: "11:00h", location: "Calle Teresa de Cofrents 23, Barcelona", category: "Reunión", color: "bg-primary/10 text-primary border-primary/20" },
+{ id: 8, date: "2026-06-06", day: "6", month: "JUN", title: "Retiro de Parejas", time: "Todo el día", location: "Por confirmar", category: "Parejas", color: "bg-pink-100 text-pink-700 border-pink-200" },
+{ id: 9, date: "2026-06-14", day: "14", month: "JUN", title: "Noche de Milagros", time: "19:00h", location: "Calle Teresa de Cofrents 23, Barcelona", category: "Especial", color: "bg-orange-100 text-orange-700 border-orange-200" }];
+
 
 export default function Calendario() {
   const [filter, setFilter] = useState('Todos');
   const categories = ['Todos', 'Reunión', 'Adoración', 'Jóvenes', 'Especial', 'Parejas'];
-  const filtered = filter === 'Todos' ? EVENTS : EVENTS.filter(e => e.category === filter);
+  const filtered = filter === 'Todos' ? EVENTS : EVENTS.filter((e) => e.category === filter);
 
   return (
     <div className="min-h-screen bg-background">
@@ -106,26 +106,26 @@ export default function Calendario() {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5 }}
-            className="font-display text-2xl md:text-3xl font-medium text-foreground mb-8"
-          >
+            className="font-display text-2xl md:text-3xl font-medium text-foreground mb-8">
+            
             Nuestras Reuniones
           </motion.h2>
           <div className="grid sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
-            {ACTIVITIES.map((act, i) => (
-              <motion.div
-                key={act.id}
-                initial={{ opacity: 0, y: 30 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.5, delay: i * 0.07 }}
-                className="group bg-card rounded-2xl border border-border/50 overflow-hidden hover:shadow-lg hover:-translate-y-1 transition-all duration-300"
-              >
+            {ACTIVITIES.map((act, i) =>
+            <motion.div
+              key={act.id}
+              initial={{ opacity: 0, y: 30 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.5, delay: i * 0.07 }}
+              className="group bg-card rounded-2xl border border-border/50 overflow-hidden hover:shadow-lg hover:-translate-y-1 transition-all duration-300">
+              
                 {/* Image */}
                 <div className={`${act.aspectRatio || 'aspect-[4/3]'} overflow-hidden`}>
                   <img
-                    src={act.image}
-                    alt={act.title}
-                    className="w-full h-full object-contain bg-black group-hover:scale-105 transition-transform duration-500"
-                  />
+                  src={act.image}
+                  alt={act.title}
+                  className="w-full h-full object-contain bg-black group-hover:scale-105 transition-transform duration-500" />
+                
                 </div>
                 {/* Content */}
                 <div className="p-5">
@@ -136,7 +136,7 @@ export default function Calendario() {
                   </span>
                 </div>
               </motion.div>
-            ))}
+            )}
           </div>
         </div>
 
@@ -145,38 +145,38 @@ export default function Calendario() {
           <motion.h2
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.5, delay: 0.3 }}
-            className="font-display text-2xl md:text-3xl font-medium text-foreground mb-8"
-          >
+            transition={{ duration: 0.5, delay: 0.3 }} className="font-display text-2xl md:text-3xl font-medium text-foreground mb-8 hidden">
+            
+            
             Próximos Eventos
           </motion.h2>
 
           {/* Filter */}
           <div className="flex flex-wrap gap-3 mb-8">
-            {categories.map(cat => (
-              <button
-                key={cat}
-                onClick={() => setFilter(cat)}
-                className={`px-5 py-2 rounded-full text-sm font-medium transition-all duration-200 ${
-                  filter === cat
-                    ? 'bg-primary text-primary-foreground'
-                    : 'bg-secondary text-secondary-foreground hover:bg-primary/10'
-                }`}
-              >
+            {categories.map((cat) =>
+            <button
+              key={cat}
+              onClick={() => setFilter(cat)}
+              className={`px-5 py-2 rounded-full text-sm font-medium transition-all duration-200 ${
+              filter === cat ?
+              'bg-primary text-primary-foreground' :
+              'bg-secondary text-secondary-foreground hover:bg-primary/10'}`
+              }>
+              
                 {cat}
               </button>
-            ))}
+            )}
           </div>
 
           <div className="space-y-4">
-            {filtered.map((event, i) => (
-              <motion.div
-                key={event.id}
-                initial={{ opacity: 0, y: 20 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.4, delay: i * 0.08 }}
-                className="bg-card rounded-2xl border border-border/50 p-6 flex items-start gap-6 hover:shadow-md transition-all duration-300"
-              >
+            {filtered.map((event, i) =>
+            <motion.div
+              key={event.id}
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.4, delay: i * 0.08 }} className="bg-card rounded-2xl border border-border/50 p-6 flex items-start gap-6 hover:shadow-md transition-all duration-300 hidden">
+
+              
                 <div className="text-center min-w-[60px]">
                   <p className="text-3xl font-bold text-primary leading-none">{event.day}</p>
                   <p className="text-xs font-semibold text-muted-foreground tracking-widest mt-1">{event.month}</p>
@@ -195,10 +195,10 @@ export default function Calendario() {
                   </div>
                 </div>
               </motion.div>
-            ))}
+            )}
           </div>
         </div>
       </div>
-    </div>
-  );
+    </div>);
+
 }
