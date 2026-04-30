@@ -38,14 +38,14 @@ export default function ConnectionSection({ image }) {
 
           {/* Content */}
           <div>
-            <motion.span
-              initial={{ opacity: 0, y: 20 }}
-              animate={isInView ? { opacity: 1, y: 0 } : {}}
-              transition={{ duration: 0.6 }} className="inline-block text-primary text-sm tracking-[0.25em] uppercase font-semibold mb-6 hidden">
+            
 
-              
-              Identificación
-            </motion.span>
+
+
+
+
+
+            
 
             <motion.h2
               initial={{ opacity: 0, y: 30 }}

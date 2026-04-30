@@ -48,12 +48,12 @@ export default function FinalCTASection({ image }) {
 
 
           </a>
-          <a
-            href="#contacto" className="border-2 border-white/30 text-white px-10 py-4 rounded-full text-base font-semibold hover:bg-white/10 transition-all duration-300 hidden">
-            
-            
-            Planear mi visita
-          </a>
+          
+
+
+
+
+          
         </motion.div>
       </div>
     </section>);
