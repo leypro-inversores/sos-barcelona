@@ -5,34 +5,34 @@ import { ChevronLeft, Instagram, Youtube, Heart } from 'lucide-react';
 import SOSLogo from '../components/landing/SOSLogo';
 
 const PASTORES = [
-  {
-    id: 1,
-    name: "Mauricio Rodríguez",
-    role: "Pastor Principal — SOS Barcelona",
-    bio: "Mauricio Rodríguez es el pastor principal de SOS Barcelona. Su vida es en sí misma un testimonio del poder transformador de Dios: criado en un ambiente marcado por el dolor y la búsqueda de identidad, fue en un encuentro real con Jesús donde todo cambió. Desde ese momento, su vida tomó un rumbo radicalmente diferente — del vacío a la plenitud, de la confusión al propósito. Hoy lidera SOS Barcelona con la misma pasión que vivió esa transformación, convencido de que lo sobrenatural no es solo posible, sino normal cuando te acercas a Dios. Cada domingo, predica con autoridad y corazón abierto, invitando a cada persona a experimentar lo que él mismo vivió: un encuentro real con el Padre.",
-    verse: '"De modo que si alguno está en Cristo, nueva criatura es; las cosas viejas pasaron; he aquí todas son hechas nuevas." — 2 Corintios 5:17',
-    photo: "https://media.base44.com/images/public/69ea6ca06c4574e55a2de28d/896529113_PASTORMAURICIO6.jpg",
-    location: "Barcelona, España",
-  },
-  {
-    id: 2,
-    name: "Mónica Rendón",
-    role: "Pastora — SOS Barcelona",
-    bio: "Junto a Mauricio, Mónica Rendón es co-pastora de SOS Barcelona y una de las voces más poderosas del ministerio. Apasionada por ver familias restauradas y matrimonios que reflejen el amor de Dios, lidera con la Palabra en mano y el corazón abierto. Cree firmemente que el hogar es el primer lugar donde se manifiesta la gloria de Dios, y su ministerio está enfocado en sanar, fortalecer y transformar familias enteras para el Reino de Dios.",
-    verse: '"El amor nunca deja de ser..." — 1 Corintios 13:8',
-    photo: "https://media.base44.com/images/public/69ea6ca06c4574e55a2de28d/34fd18254_PASTORAWEB.jpg",
-    location: "Barcelona, España",
-  },
-  {
-    id: 3,
-    name: "Líder de Jóvenes",
-    role: "Liderando la nueva generación en Barcelona",
-    bio: "Acompaña a jóvenes a descubrir su propósito, acercarse a Dios y vivir una fe real en medio de su día a día. Cree en una generación que no solo escucha, sino que vive lo que cree.",
-    verse: '"Que nadie te subestime por ser joven…" — 1 Timoteo 4:12',
-    photo: "https://media.base44.com/images/public/69ea6ca06c4574e55a2de28d/bfe4dd776_NICOL.jpg",
-    location: "Barcelona, España",
-  },
-];
+{
+  id: 1,
+  name: "Mauricio Rodríguez",
+  role: "Pastor Principal — SOS Barcelona",
+  bio: "Mauricio Rodríguez es el pastor principal de SOS Barcelona. Su vida es en sí misma un testimonio del poder transformador de Dios: criado en un ambiente marcado por el dolor y la búsqueda de identidad, fue en un encuentro real con Jesús donde todo cambió. Desde ese momento, su vida tomó un rumbo radicalmente diferente — del vacío a la plenitud, de la confusión al propósito. Hoy lidera SOS Barcelona con la misma pasión que vivió esa transformación, convencido de que lo sobrenatural no es solo posible, sino normal cuando te acercas a Dios. Cada domingo, predica con autoridad y corazón abierto, invitando a cada persona a experimentar lo que él mismo vivió: un encuentro real con el Padre.",
+  verse: '"De modo que si alguno está en Cristo, nueva criatura es; las cosas viejas pasaron; he aquí todas son hechas nuevas." — 2 Corintios 5:17',
+  photo: "https://media.base44.com/images/public/69ea6ca06c4574e55a2de28d/896529113_PASTORMAURICIO6.jpg",
+  location: "Barcelona, España"
+},
+{
+  id: 2,
+  name: "Mónica Rendón",
+  role: "Pastora — SOS Barcelona",
+  bio: "Junto a Mauricio, Mónica Rendón es co-pastora de SOS Barcelona y una de las voces más poderosas del ministerio. Apasionada por ver familias restauradas y matrimonios que reflejen el amor de Dios, lidera con la Palabra en mano y el corazón abierto. Cree firmemente que el hogar es el primer lugar donde se manifiesta la gloria de Dios, y su ministerio está enfocado en sanar, fortalecer y transformar familias enteras para el Reino de Dios.",
+  verse: '"El amor nunca deja de ser..." — 1 Corintios 13:8',
+  photo: "https://media.base44.com/images/public/69ea6ca06c4574e55a2de28d/decd3d7da_PASTORAMONICA.jpg",
+  location: "Barcelona, España"
+},
+{
+  id: 3,
+  name: "N",
+  role: "Liderando la nueva generación en Barcelona",
+  bio: "Acompaña a jóvenes a descubrir su propósito, acercarse a Dios y vivir una fe real en medio de su día a día. Cree en una generación que no solo escucha, sino que vive lo que cree.",
+  verse: '"Que nadie te subestime por ser joven…" — 1 Timoteo 4:12',
+  photo: "https://media.base44.com/images/public/69ea6ca06c4574e55a2de28d/bfe4dd776_NICOL.jpg",
+  location: "Barcelona, España"
+}];
+
 
 export default function Pastores() {
   return (
@@ -61,14 +61,14 @@ export default function Pastores() {
         </motion.div>
 
         <div className="space-y-16">
-          {PASTORES.map((pastor, i) => (
-            <motion.div
-              key={pastor.id}
-              initial={{ opacity: 0, y: 40 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6, delay: i * 0.15 }}
-              className={`grid md:grid-cols-2 gap-12 items-center ${i % 2 === 1 ? 'md:grid-flow-dense' : ''}`}
-            >
+          {PASTORES.map((pastor, i) =>
+          <motion.div
+            key={pastor.id}
+            initial={{ opacity: 0, y: 40 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6, delay: i * 0.15 }}
+            className={`grid md:grid-cols-2 gap-12 items-center ${i % 2 === 1 ? 'md:grid-flow-dense' : ''}`}>
+            
               {/* Photo */}
               <div className={`${i % 2 === 1 ? 'md:col-start-2' : ''}`}>
                 <div className="aspect-[4/5] rounded-2xl overflow-hidden">
@@ -86,9 +86,9 @@ export default function Pastores() {
                 </div>
               </div>
             </motion.div>
-          ))}
+          )}
         </div>
       </div>
-    </div>
-  );
+    </div>);
+
 }
