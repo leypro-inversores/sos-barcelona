@@ -25,7 +25,7 @@ const PASTORES = [
 },
 {
   id: 3,
-  name: "Nicole Rodr\xEDguez \n",
+  name: "lNicole Rodr\xEDguez \nLider De Jov",
   role: "Liderando la nueva generación en Barcelona",
   bio: "Acompaña a jóvenes a descubrir su propósito, acercarse a Dios y vivir una fe real en medio de su día a día. Cree en una generación que no solo escucha, sino que vive lo que cree.",
   verse: '"Que nadie te subestime por ser joven…" — 1 Timoteo 4:12',
