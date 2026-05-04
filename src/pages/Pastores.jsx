@@ -79,7 +79,7 @@ export default function Pastores() {
               <div className={`${i % 2 === 1 ? 'md:col-start-1 md:row-start-1' : ''}`}>
                 <span className="text-xs font-semibold text-primary tracking-widest uppercase block mb-4">{pastor.location}</span>
                 <h2 className="font-display text-3xl md:text-4xl font-medium text-foreground mb-2">{pastor.name}</h2>
-                <p className="text-primary font-semibold mb-6 hidden">{pastor.role}</p>
+                
                 <p className="text-muted-foreground font-light leading-relaxed text-lg mb-8">{pastor.bio}</p>
                 <div className="border-l-4 border-primary pl-5">
                   <p className="text-foreground/70 font-light italic text-base leading-relaxed">{pastor.verse}</p>
