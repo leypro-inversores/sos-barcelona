@@ -72,7 +72,7 @@ export default function Pastores() {
               {/* Photo */}
               <div className={`${i % 2 === 1 ? 'md:col-start-2' : ''}`}>
                 <div className="aspect-[4/5] rounded-2xl overflow-hidden">
-                  <img src={pastor.photo} alt={pastor.name} className="w-full h-full object-cover" />
+                  <img src="https://media.base44.com/images/public/69ea6ca06c4574e55a2de28d/34fd18254_PASTORAWEB.jpg" alt={pastor.name} className="w-full h-full object-cover" />
                 </div>
               </div>
               {/* Info */}
