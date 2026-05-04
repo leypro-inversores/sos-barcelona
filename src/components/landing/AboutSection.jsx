@@ -84,11 +84,11 @@ export default function AboutSection({ image }) {
             transition={{ duration: 0.8, delay: 0.2 }}
             className="relative"
           >
-            <div className="aspect-[4/5] rounded-2xl overflow-hidden">
+            <div className="rounded-2xl overflow-hidden">
               <img
                 src={image}
                 alt="Comunidad SOS Barcelona"
-                className="w-full h-full object-cover"
+                className="w-full h-auto object-contain block"
               />
             </div>
             <div className="absolute -top-4 -left-4 w-32 h-32 bg-primary/10 rounded-2xl -z-10" />

@@ -5,10 +5,10 @@ const VIDEO_URL = "https://media.base44.com/videos/public/69ea6ca06c4574e55a2de2
 
 export default function HeroSection({ heroImage }) {
   return (
-    <section className="relative w-full h-screen min-h-[600px] flex items-center justify-center overflow-hidden">
+    <section className="relative w-full min-h-screen flex items-center justify-center overflow-hidden bg-black">
       {/* Video background */}
       <video
-        className="absolute inset-0 w-full h-full object-cover"
+        className="absolute inset-0 w-full h-full object-contain"
         src={VIDEO_URL}
         autoPlay
         muted

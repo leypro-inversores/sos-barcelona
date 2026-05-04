@@ -25,11 +25,11 @@ export default function ConnectionSection({ image }) {
             transition={{ duration: 0.8 }}
             className="relative">
             
-            <div className="aspect-[4/5] rounded-2xl overflow-hidden relative">
+            <div className="rounded-2xl overflow-hidden relative">
               <img
                 src="https://media.base44.com/images/public/69ea6ca06c4574e55a2de28d/4797824f0_WEB.jpg"
                 alt="Comunidad SOS Barcelona"
-                className="w-full h-full object-cover" />
+                className="w-full h-auto object-contain block" />
               
               <div className="absolute inset-0 bg-black/15 rounded-2xl" />
             </div>
