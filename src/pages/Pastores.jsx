@@ -7,7 +7,7 @@ import SOSLogo from '../components/landing/SOSLogo';
 const PASTORES = [
 {
   id: 1,
-  name: "Mauricio Rodríguez",
+  name: "Mauricio Rodr\xEDguez\nPastor Principal ",
   role: "Pastor Principal — SOS Barcelona",
   bio: "Mauricio Rodríguez es el pastor principal de SOS Barcelona. Su vida es en sí misma un testimonio del poder transformador de Dios: criado en un ambiente marcado por el dolor y la búsqueda de identidad, fue en un encuentro real con Jesús donde todo cambió. Desde ese momento, su vida tomó un rumbo radicalmente diferente — del vacío a la plenitud, de la confusión al propósito. Hoy lidera SOS Barcelona con la misma pasión que vivió esa transformación, convencido de que lo sobrenatural no es solo posible, sino normal cuando te acercas a Dios. Cada domingo, predica con autoridad y corazón abierto, invitando a cada persona a experimentar lo que él mismo vivió: un encuentro real con el Padre.",
   verse: '"De modo que si alguno está en Cristo, nueva criatura es; las cosas viejas pasaron; he aquí todas son hechas nuevas." — 2 Corintios 5:17',
@@ -79,7 +79,7 @@ export default function Pastores() {
               <div className={`${i % 2 === 1 ? 'md:col-start-1 md:row-start-1' : ''}`}>
                 <span className="text-xs font-semibold text-primary tracking-widest uppercase block mb-4">{pastor.location}</span>
                 <h2 className="font-display text-3xl md:text-4xl font-medium text-foreground mb-2">{pastor.name}</h2>
-                <p className="text-primary font-semibold mb-6">{pastor.role}</p>
+                <p className="text-primary font-semibold mb-6 hidden">{pastor.role}</p>
                 <p className="text-muted-foreground font-light leading-relaxed text-lg mb-8">{pastor.bio}</p>
                 <div className="border-l-4 border-primary pl-5">
                   <p className="text-foreground/70 font-light italic text-base leading-relaxed">{pastor.verse}</p>
