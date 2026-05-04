@@ -10,7 +10,6 @@ export default function MessageSection() {
     <section className="py-28 md:py-44 px-6" id="mensaje">
       <div ref={ref} className="max-w-3xl mx-auto text-center">
 
-        {/* Título principal */}
         <motion.h2
           initial={{ opacity: 0, y: 30 }}
           animate={isInView ? { opacity: 1, y: 0 } : {}}
@@ -20,7 +19,6 @@ export default function MessageSection() {
           Una vida con Dios<br />lo cambia todo
         </motion.h2>
 
-        {/* Divisor */}
         <motion.div
           initial={{ opacity: 0, scaleX: 0 }}
           animate={isInView ? { opacity: 1, scaleX: 1 } : {}}
@@ -28,7 +26,6 @@ export default function MessageSection() {
           className="w-12 h-0.5 bg-primary mx-auto mb-10 origin-center"
         />
 
-        {/* Subtexto */}
         <motion.p
           initial={{ opacity: 0, y: 20 }}
           animate={isInView ? { opacity: 1, y: 0 } : {}}
@@ -38,7 +35,6 @@ export default function MessageSection() {
           Conocerlo, caminar con Él y vivir una transformación real<br className="hidden md:block" /> desde adentro hacia afuera.
         </motion.p>
 
-        {/* Versículo */}
         <motion.div
           initial={{ opacity: 0, y: 10 }}
           animate={isInView ? { opacity: 1, y: 0 } : {}}

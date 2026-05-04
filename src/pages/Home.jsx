@@ -1,10 +1,15 @@
 import React from 'react';
 import Navbar from '../components/landing/Navbar';
 import HeroSection from '../components/landing/HeroSection';
+import WelcomeSection from '../components/landing/WelcomeSection';
 import MessageSection from '../components/landing/MessageSection';
 import ConnectionSection from '../components/landing/ConnectionSection';
+import MeetingsSection from '../components/landing/MeetingsSection';
 import ExperienceSection from '../components/landing/ExperienceSection';
 import InstagramSection from '../components/landing/InstagramSection';
+import PurposeSection from '../components/landing/PurposeSection';
+import PastoresHistorySection from '../components/landing/PastoresHistorySection';
+import CultureSection from '../components/landing/CultureSection';
 import AboutSection from '../components/landing/AboutSection';
 import StepsSection from '../components/landing/StepsSection';
 import TestimonialsSection from '../components/landing/TestimonialsSection';
@@ -40,40 +45,65 @@ export default function Home() {
   return (
     <div className="min-h-screen bg-background">
       <Navbar />
-      
+
+      {/* 1. HERO — video fullscreen */}
       <HeroSection heroImage={IMAGES.hero} />
-      
-      <MessageSection />
-      
+
+      {/* 2. BIENVENIDA */}
+      <WelcomeSection />
+
+      {/* 3. IDENTIFICACIÓN — "Tal vez esto es para ti" */}
       <ConnectionSection image={IMAGES.liberacion} />
-      
-      <ExperienceSection 
+
+      {/* 4. TRANSFORMACIÓN — "Una vida con Dios lo cambia todo" */}
+      <MessageSection />
+
+      {/* 5. REUNIONES — "Este Domingo" */}
+      <MeetingsSection />
+
+      {/* 6. EXPERIENCIA — "Esto es lo que vivirás" */}
+      <ExperienceSection
         images={[
           IMAGES.worshipLeader,
           IMAGES.pastorSpeaking,
           IMAGES.worshipMoment,
           IMAGES.community,
-        ]} 
+        ]}
       />
-      
-      <InstagramSection />
-      
+
+      {/* 7. PROPÓSITO — Ganar, Consolidar, Discipular, Enviar */}
+      <PurposeSection />
+
+      {/* 8. HISTORIA — Pastores Mauricio y Mónica */}
+      <PastoresHistorySection />
+
+      {/* 9. CULTURA SOS — Valores */}
+      <CultureSection />
+
+      {/* 10. SOBRE NOSOTROS — identidad de la iglesia */}
       <AboutSection image={IMAGES.jesus} />
-      
+
+      {/* 11. PASOS — Tu primer paso */}
       <StepsSection />
-      
-      <TestimonialsSection 
+
+      {/* 12. INSTAGRAM */}
+      <InstagramSection />
+
+      {/* 13. TESTIMONIOS */}
+      <TestimonialsSection
         images={[
           IMAGES.testimonial1,
           IMAGES.testimonial2,
           IMAGES.testimonial3,
-        ]} 
+        ]}
       />
-      
+
+      {/* 14. CIERRE FINAL */}
       <FinalCTASection image={IMAGES.barcelona} />
-      
+
+      {/* 15. CONTACTO */}
       <ContactForm />
-      
+
       <Footer />
     </div>
   );

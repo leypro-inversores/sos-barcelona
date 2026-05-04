@@ -1,55 +1,64 @@
-import React, { useState, useEffect } from 'react';
+import React from 'react';
 import { motion } from 'framer-motion';
-import { ChevronDown } from 'lucide-react';
 
-const headlines = [
-"Conocer a Dios puede cambiarlo todo",
-"Barcelona necesita esperanza. Empieza contigo.",
-"No es religión. Es una relación con Dios.",
-"Dios sigue transformando vidas hoy"];
-
+const VIDEO_URL = "https://media.base44.com/videos/public/69ea6ca06c4574e55a2de28d/a578f25b2_SOSBARCELONA.mp4";
 
 export default function HeroSection({ heroImage }) {
-  const [currentHeadline, setCurrentHeadline] = useState(0);
-
-  useEffect(() => {
-    const interval = setInterval(() => {
-      setCurrentHeadline((prev) => (prev + 1) % headlines.length);
-    }, 5000);
-    return () => clearInterval(interval);
-  }, []);
-
   return (
-    <section className="relative w-full flex flex-col items-center">
-      {/* Full image, no crop */}
-      <div className="w-full relative">
-        <img
-          src={heroImage}
-          alt="SOS Barcelona"
-          className="w-full h-auto block" />
-        
+    <section className="relative w-full h-screen min-h-[600px] flex items-center justify-center overflow-hidden">
+      {/* Video background */}
+      <video
+        className="absolute inset-0 w-full h-full object-cover"
+        src={VIDEO_URL}
+        autoPlay
+        muted
+        loop
+        playsInline
+      />
+
+      {/* Dark overlay */}
+      <div className="absolute inset-0 bg-black/55" />
+
+      {/* Content */}
+      <div className="relative z-10 text-center px-6 max-w-4xl mx-auto">
+        <motion.h1
+          initial={{ opacity: 0, y: 40 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 1.2, delay: 0.3, ease: 'easeOut' }}
+          className="font-display text-5xl md:text-6xl lg:text-7xl font-semibold text-white leading-tight mb-6"
+        >
+          No estás aquí por casualidad
+        </motion.h1>
+
+        <motion.p
+          initial={{ opacity: 0, y: 30 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 1.2, delay: 0.7, ease: 'easeOut' }}
+          className="text-white/80 text-xl md:text-2xl font-light leading-relaxed max-w-2xl mx-auto mb-12"
+        >
+          Dios sigue llamando a las personas… y puede estar llamándote a ti.
+        </motion.p>
+
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 1, delay: 1.1 }}
+          className="flex flex-col sm:flex-row gap-4 justify-center"
+        >
+          <a
+            href="#contacto"
+            className="bg-primary text-primary-foreground px-10 py-4 rounded-full text-base font-semibold hover:bg-primary/90 transition-all duration-300 hover:scale-105 text-center"
+          >
+            Quiero acercarme a Dios
+          </a>
+          <a
+            href="#contacto"
+            className="border-2 border-white/60 text-white px-10 py-4 rounded-full text-base font-semibold hover:bg-white/10 transition-all duration-300 text-center"
+          >
+            Planear mi visita
+          </a>
+        </motion.div>
       </div>
-
-      {/* Buttons below the image */}
-      <motion.div
-        initial={{ opacity: 0, y: 20 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.8, delay: 0.3 }}
-        className="flex flex-col sm:flex-row gap-4 justify-center py-10 px-6 bg-background w-full">
-        
-        <a
-          href="#sobre" className="bg-primary text-primary-foreground px-10 py-4 rounded-full text-base font-semibold hover:bg-primary/90 transition-all duration-300 hover:scale-105 text-center">Quiero que me contacten
-
-
-
-        </a>
-        <a
-          href="#contacto" className="border-2 border-primary text-primary px-10 py-4 rounded-full text-base font-semibold hover:bg-primary hover:text-primary-foreground transition-all duration-300 text-center">Quiero visitar la iglesia
-
-
-
-        </a>
-      </motion.div>
-    </section>);
-
+    </section>
+  );
 }
