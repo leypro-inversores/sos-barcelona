@@ -65,22 +65,46 @@ export default function Footer() {
           {/* Social */}
           <div>
             <h4 className="font-semibold mb-4">Síguenos</h4>
-            <div className="flex flex-wrap gap-4">
+            <div className="flex flex-col gap-3">
+              <a href="https://www.youtube.com/@somoss.o.sbarcelona8475" target="_blank" rel="noopener noreferrer"
+                className="flex items-center gap-3 bg-background/10 hover:bg-background/20 transition-all duration-300 rounded-xl px-4 py-3">
+                <div className="w-9 h-9 rounded-lg bg-red-600 flex items-center justify-center shrink-0">
+                  <Youtube className="w-4 h-4 text-white" />
+                </div>
+                <div>
+                  <p className="text-background text-sm font-semibold leading-none mb-0.5">YouTube</p>
+                  <p className="text-background/50 text-xs">@somoss.o.sbarcelona8475</p>
+                </div>
+              </a>
+              <a href="https://www.tiktok.com/@sos.barcelona" target="_blank" rel="noopener noreferrer"
+                className="flex items-center gap-3 bg-background/10 hover:bg-background/20 transition-all duration-300 rounded-xl px-4 py-3">
+                <div className="w-9 h-9 rounded-lg bg-black flex items-center justify-center shrink-0">
+                  <svg className="w-4 h-4 text-white" fill="currentColor" viewBox="0 0 24 24"><path d="M19.59 6.69a4.83 4.83 0 0 1-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 0 1-2.88 2.5 2.89 2.89 0 0 1-2.89-2.89 2.89 2.89 0 0 1 2.89-2.89c.28 0 .54.04.79.1V9.01a6.33 6.33 0 0 0-.79-.05 6.34 6.34 0 0 0-6.34 6.34 6.34 6.34 0 0 0 6.34 6.34 6.34 6.34 0 0 0 6.33-6.34V8.69a8.18 8.18 0 0 0 4.78 1.52V6.75a4.85 4.85 0 0 1-1.01-.06z"/></svg>
+                </div>
+                <div>
+                  <p className="text-background text-sm font-semibold leading-none mb-0.5">TikTok</p>
+                  <p className="text-background/50 text-xs">@sos.barcelona</p>
+                </div>
+              </a>
               <a href="https://instagram.com/somos_sosbarcelona" target="_blank" rel="noopener noreferrer"
-              className="w-12 h-12 rounded-full bg-background/10 flex items-center justify-center hover:bg-primary hover:text-primary-foreground transition-all duration-300">
-                <Instagram className="w-5 h-5" />
+                className="flex items-center gap-3 bg-background/10 hover:bg-background/20 transition-all duration-300 rounded-xl px-4 py-3">
+                <div className="w-9 h-9 rounded-lg flex items-center justify-center shrink-0" style={{background: 'radial-gradient(circle at 30% 107%, #fdf497 0%, #fdf497 5%, #fd5949 45%, #d6249f 60%, #285AEB 90%)'}}>
+                  <Instagram className="w-4 h-4 text-white" />
+                </div>
+                <div>
+                  <p className="text-background text-sm font-semibold leading-none mb-0.5">Instagram</p>
+                  <p className="text-background/50 text-xs">@somos_sosbarcelona</p>
+                </div>
               </a>
               <a href="https://www.facebook.com/sosbarcelona" target="_blank" rel="noopener noreferrer"
-              className="w-12 h-12 rounded-full bg-background/10 flex items-center justify-center hover:bg-primary hover:text-primary-foreground transition-all duration-300">
-                <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 24 24"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z" /></svg>
-              </a>
-              <a href="https://www.tiktok.com/@sosbarcelona" target="_blank" rel="noopener noreferrer"
-              className="w-12 h-12 rounded-full bg-background/10 flex items-center justify-center hover:bg-primary hover:text-primary-foreground transition-all duration-300">
-                <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 24 24"><path d="M19.59 6.69a4.83 4.83 0 0 1-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 0 1-2.88 2.5 2.89 2.89 0 0 1-2.89-2.89 2.89 2.89 0 0 1 2.89-2.89c.28 0 .54.04.79.1V9.01a6.33 6.33 0 0 0-.79-.05 6.34 6.34 0 0 0-6.34 6.34 6.34 6.34 0 0 0 6.34 6.34 6.34 6.34 0 0 0 6.33-6.34V8.69a8.18 8.18 0 0 0 4.78 1.52V6.75a4.85 4.85 0 0 1-1.01-.06z" /></svg>
-              </a>
-              <a href="https://www.youtube.com/@somoss.o.sbarcelona8475" target="_blank" rel="noopener noreferrer"
-              className="w-12 h-12 rounded-full bg-background/10 flex items-center justify-center hover:bg-primary hover:text-primary-foreground transition-all duration-300">
-                <Youtube className="w-5 h-5" />
+                className="flex items-center gap-3 bg-background/10 hover:bg-background/20 transition-all duration-300 rounded-xl px-4 py-3">
+                <div className="w-9 h-9 rounded-lg bg-blue-600 flex items-center justify-center shrink-0">
+                  <svg className="w-4 h-4 text-white" fill="currentColor" viewBox="0 0 24 24"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg>
+                </div>
+                <div>
+                  <p className="text-background text-sm font-semibold leading-none mb-0.5">Facebook</p>
+                  <p className="text-background/50 text-xs">Sos Barcelona</p>
+                </div>
               </a>
             </div>
           </div>
