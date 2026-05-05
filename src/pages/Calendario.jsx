@@ -96,7 +96,7 @@ export default function Calendario() {
         {/* Title */}
         <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.6 }} className="text-center mb-16">
           
-          <h1 className="font-display text-4xl md:text-5xl font-medium text-foreground mb-4">Nuestras Actividades</h1>
+          <h1 className="font-display text-4xl md:text-5xl font-medium text-foreground mb-4">Esto es lo que vivirás </h1>
           <p className="text-muted-foreground font-light text-lg">En SOS para tu vida, encontraras un hogar donde la vida y el propósito se encuentran. Somos una familia activa, donde cada generación encuentra compañía para crecer y el impulso para transformar su realidad a travé</p>
         </motion.div>
 
