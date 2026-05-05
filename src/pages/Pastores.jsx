@@ -20,7 +20,7 @@ const PASTORES = [
   role: "Pastora — SOS Barcelona",
   bio: "Junto a Mauricio, Mónica Rendón es co-pastora de SOS Barcelona y una de las voces más poderosas del ministerio. Apasionada por ver familias restauradas y matrimonios que reflejen el amor de Dios, lidera con la Palabra en mano y el corazón abierto. Cree firmemente que el hogar es el primer lugar donde se manifiesta la gloria de Dios, y su ministerio está enfocado en sanar, fortalecer y transformar familias enteras para el Reino de Dios.",
   verse: '"El amor nunca deja de ser..." — 1 Corintios 13:8',
-  photo: "https://media.base44.com/images/public/69ea6ca06c4574e55a2de28d/decd3d7da_PASTORAMONICA.jpg",
+  photo: "https://media.base44.com/images/public/69ea6ca06c4574e55a2de28d/7d6326a3f_PASTORAWEB.jpg",
   location: "Barcelona, España"
 },
 {
@@ -29,7 +29,7 @@ const PASTORES = [
   role: "Liderando la nueva generación en Barcelona",
   bio: "Acompaña a jóvenes a descubrir su propósito, acercarse a Dios y vivir una fe real en medio de su día a día. Cree en una generación que no solo escucha, sino que vive lo que cree.",
   verse: '"Que nadie te subestime por ser joven…" — 1 Timoteo 4:12',
-  photo: "https://media.base44.com/images/public/69ea6ca06c4574e55a2de28d/bfe4dd776_NICOL.jpg",
+  photo: "https://media.base44.com/images/public/69ea6ca06c4574e55a2de28d/6a22c2536_NICOL.jpg",
   location: "Barcelona, España"
 }];
 
@@ -72,7 +72,7 @@ export default function Pastores() {
               {/* Photo */}
               <div className={`${i % 2 === 1 ? 'md:col-start-2' : ''}`}>
                 <div className="aspect-[4/5] rounded-2xl overflow-hidden">
-                  <img src="https://media.base44.com/images/public/69ea6ca06c4574e55a2de28d/896529113_PASTORMAURICIO6.jpg" alt={pastor.name} className="w-full h-full object-cover" />
+                  <img src={pastor.photo} alt={pastor.name} className="w-full h-full object-cover" />
                 </div>
               </div>
               {/* Info */}
