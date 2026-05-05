@@ -27,7 +27,7 @@ export default function HeroSection({ heroImage }) {
           transition={{ duration: 1.2, delay: 0.3, ease: 'easeOut' }}
           className="font-display text-5xl md:text-6xl lg:text-7xl font-semibold text-white leading-tight mb-6"
         >
-          No estás aquí por casualidad
+          Aquí hay un hogar para ti y los tuyos
         </motion.h1>
 
         <motion.p
@@ -36,7 +36,7 @@ export default function HeroSection({ heroImage }) {
           transition={{ duration: 1.2, delay: 0.7, ease: 'easeOut' }}
           className="text-white/80 text-xl md:text-2xl font-light leading-relaxed max-w-2xl mx-auto mb-12"
         >
-          Dios sigue llamando a las personas… y puede estar llamándote a ti.
+          SOS para tu vida es la familia que te acompaña y te impulsa a vivir el propósito de Dios para ti.
         </motion.p>
 
         <motion.div
