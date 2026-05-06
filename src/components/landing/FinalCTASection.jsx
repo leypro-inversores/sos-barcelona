@@ -17,20 +17,31 @@ export default function FinalCTASection({ image }) {
       </div>
 
       <div ref={ref} className="relative z-10 max-w-4xl mx-auto text-center">
+        <motion.span
+          initial={{ opacity: 0, y: 20 }}
+          animate={isInView ? { opacity: 1, y: 0 } : {}}
+          transition={{ duration: 0.6 }}
+          className="inline-flex items-center gap-3 text-white/60 text-xs tracking-[0.3em] uppercase font-light mb-8"
+        >
+          <span className="w-8 h-px bg-white/40" />
+          Bienvenido a SOS para tu vida
+          <span className="w-8 h-px bg-white/40" />
+        </motion.span>
+
         <motion.h2
           initial={{ opacity: 0, y: 30 }}
           animate={isInView ? { opacity: 1, y: 0 } : {}}
-          transition={{ duration: 0.8 }}
-          className="font-display text-4xl md:text-5xl lg:text-6xl font-medium text-white mb-8 leading-tight">
-          No estás aquí por casualidad
+          transition={{ duration: 0.8, delay: 0.1 }}
+          className="font-display text-5xl md:text-6xl lg:text-7xl font-semibold text-white mb-8 leading-tight">
+          Un lugar donde <em className="text-primary not-italic">lo sobrenatural es natural.</em>
         </motion.h2>
 
         <motion.p
           initial={{ opacity: 0, y: 20 }}
           animate={isInView ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 0.8, delay: 0.2 }}
-          className="text-white/75 text-xl md:text-2xl font-light leading-relaxed max-w-2xl mx-auto mb-12">
-          Dios sigue llamando a las personas… y puede estar llamándote a ti.
+          className="text-white/75 text-lg md:text-xl font-light tracking-[0.2em] uppercase mb-12">
+          Ganar · Consolidar · Discipular · Enviar
         </motion.p>
 
         <motion.div
