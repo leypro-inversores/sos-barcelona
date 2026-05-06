@@ -1,22 +1,27 @@
 import React, { useRef } from 'react';
 import { motion, useInView } from 'framer-motion';
-import { Crown, HandHeart, Flame } from 'lucide-react';
+import { Crown, Heart, HandHeart, Home } from 'lucide-react';
 
 const values = [
   {
     icon: Crown,
-    title: "Jesús primero",
-    desc: "Todo lo que hacemos parte de Él y regresa a Él. Es el centro de nuestra fe, nuestra vida y nuestra comunidad.",
+    title: "Jesús",
+    desc: "Es el centro de todo lo que hacemos. Su amor y su verdad son el fundamento de nuestra Fe.",
   },
   {
     icon: HandHeart,
-    title: "Misericordia y amor",
+    title: "Misericordia",
     desc: "Recibimos a cada persona con gracia, sin juzgar, reconociendo que todos somos obra en proceso.",
   },
   {
-    icon: Flame,
-    title: "Servicio",
-    desc: "Vivimos para dar, no para recibir. El servicio no es un deber sino una expresión genuina del amor de Dios en nosotros.",
+    icon: Heart,
+    title: "Amor",
+    desc: "El amor de Dios es lo que nos mueve, nos une y nos transforma como comunidad.",
+  },
+  {
+    icon: Home,
+    title: "Servicio genuino que transforme familias",
+    desc: "Vivimos para dar, no para recibir. El servicio es una expresión genuina del amor de Dios que restaura hogares.",
   },
 ];
 
@@ -46,7 +51,7 @@ export default function CultureSection() {
           </motion.h2>
         </div>
 
-        <div className="grid md:grid-cols-3 gap-8">
+        <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-8">
           {values.map((v, i) => (
             <motion.div
               key={i}
