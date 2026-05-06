@@ -23,7 +23,7 @@ export default function WelcomeSection() {
           transition={{ duration: 0.9, delay: 0.1 }}
           className="font-display text-4xl md:text-5xl lg:text-6xl font-semibold text-foreground leading-tight mb-8"
         >
-          Aquí hay un hogar para ti y los tuyos
+          ¡Queremos conocerte! En SOS tenemos un lugar para ti
         </motion.h2>
 
         <motion.div
