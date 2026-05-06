@@ -2,10 +2,9 @@ import React, { useRef } from 'react';
 import { motion, useInView } from 'framer-motion';
 
 const values = [
-  { label: "Obediencia", desc: "Responder al llamado de Dios sin importar el costo." },
-  { label: "Perseverancia", desc: "Mantenerse firmes en medio de los desafíos." },
-  { label: "Fe", desc: "Creer en lo que aún no se ve pero Dios ha prometido." },
-  { label: "Restauración", desc: "Confiar en que Dios sana y transforma toda historia." },
+  { label: "Obediencia, perseverancia y fe", desc: "Los pilares que sostienen cada paso de su ministerio." },
+  { label: "Testimonios reales", desc: "Historias de sanidad y restauración que dan vida a la visión." },
+  { label: "Una visión que nació de la prueba", desc: "Y que sigue creciendo de la mano de Dios." },
 ];
 
 export default function PastoresHistorySection() {
@@ -57,21 +56,12 @@ export default function PastoresHistorySection() {
               initial={{ opacity: 0, y: 20 }}
               animate={isInView ? { opacity: 1, y: 0 } : {}}
               transition={{ duration: 0.8, delay: 0.2 }}
-              className="text-muted-foreground text-lg font-light leading-relaxed mb-4"
-            >
-              Fundada por una familia con un corazón para Barcelona, SOS nació de la obediencia a un llamado claro de Dios.
-            </motion.p>
-
-            <motion.p
-              initial={{ opacity: 0, y: 20 }}
-              animate={isInView ? { opacity: 1, y: 0 } : {}}
-              transition={{ duration: 0.8, delay: 0.3 }}
               className="text-muted-foreground text-lg font-light leading-relaxed mb-10"
             >
-              Somos una iglesia con un espíritu joven, dinámica y llena del fuego de Dios, comprometida con ver vidas transformadas en esta ciudad.
+              Un solo instante en un encuentro personal con Dios fue suficiente para que los hoy pastores Mauricio y Mónica Rodríguez comprendieran el propósito divino para sus vidas. Desde aquel momento, el fuego de su llamado arde en sus corazones, impulsándolos a superar cualquier obstáculo hasta ver la gloria de Dios manifiesta. Sus vidas, aunque marcadas por un pasado tormentoso, han sido plenamente restauradas a través de la obediencia, la perseverancia y, sobre todo, la inmerecida gracia de Dios.
             </motion.p>
 
-            <div className="grid sm:grid-cols-2 gap-4">
+            <div className="grid gap-4">
               {values.map((v, i) => (
                 <motion.div
                   key={i}
