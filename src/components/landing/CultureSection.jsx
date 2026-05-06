@@ -11,7 +11,7 @@ const values = [
   {
     icon: HandHeart,
     title: "Misericordia",
-    desc: "Recibimos a cada persona con gracia, sin juzgar, reconociendo que todos somos obra en proceso.",
+    desc: "La misericordia de Dios nos alcanza cada día. Su gracia nos sostiene y nos recuerda que somos obra en proceso.",
   },
   {
     icon: Heart,
