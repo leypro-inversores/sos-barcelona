@@ -8,7 +8,8 @@ export default function HeroSection({ heroImage }) {
     <section className="relative w-full min-h-screen flex items-center justify-center overflow-hidden bg-black">
       {/* Video background */}
       <video
-        className="absolute top-0 left-1/2 -translate-x-1/2 h-full w-auto max-w-none"
+        className="absolute inset-0 w-full h-full object-cover object-center"
+        style={{ filter: 'brightness(1.4) saturate(1.1)' }}
         src={VIDEO_URL}
         autoPlay
         muted
@@ -17,7 +18,7 @@ export default function HeroSection({ heroImage }) {
       />
 
       {/* Dark overlay */}
-      <div className="absolute inset-0 bg-black/35" />
+      <div className="absolute inset-0 bg-black/25" />
 
       {/* Content */}
       <div className="relative z-10 text-center px-6 max-w-4xl mx-auto">
