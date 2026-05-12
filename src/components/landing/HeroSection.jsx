@@ -38,25 +38,34 @@ export default function HeroSection({ heroImage }) {
           <span className="w-10 h-px bg-white/40" />
         </motion.div>
 
-        <motion.h1
-          initial={{ opacity: 0, y: 50 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 1.3, delay: 0.3, ease: [0.22, 1, 0.36, 1] }}
-          className="font-display text-5xl md:text-7xl lg:text-8xl font-semibold text-white leading-[1.05] tracking-tight mb-8"
-          style={{ textShadow: '0 2px 40px rgba(0,0,0,0.4)' }}
+        <div
+          className="inline-block rounded-[32px] px-6 py-7 md:px-10 md:py-9 mb-12"
+          style={{
+            background: 'rgba(0,0,0,0.68)',
+            backdropFilter: 'blur(8px)',
+            boxShadow: '0 20px 70px rgba(0,0,0,0.35)',
+          }}
         >
-          Aquí hay un hogar<br />
-          <em className="not-italic" style={{ color: 'hsl(var(--primary))' }}>para ti y los tuyos</em>
-        </motion.h1>
+          <motion.h1
+            initial={{ opacity: 0, y: 50 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 1.3, delay: 0.3, ease: [0.22, 1, 0.36, 1] }}
+            className="font-display text-5xl md:text-7xl lg:text-8xl font-semibold text-white leading-[1.05] tracking-tight mb-6"
+            style={{ textShadow: '0 2px 40px rgba(0,0,0,0.6)' }}
+          >
+            Aquí hay un hogar<br />
+            <em className="not-italic" style={{ color: 'hsl(var(--primary))' }}>para ti y los tuyos</em>
+          </motion.h1>
 
-        <motion.p
-          initial={{ opacity: 0, y: 30 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 1.2, delay: 0.75, ease: 'easeOut' }}
-          className="text-white/75 text-xl md:text-2xl font-light leading-relaxed max-w-2xl mx-auto mb-14 tracking-wide"
-        >
-          SOS para tu vida es la familia que te acompaña y te impulsa a vivir el propósito de Dios para ti.
-        </motion.p>
+          <motion.p
+            initial={{ opacity: 0, y: 30 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 1.2, delay: 0.75, ease: 'easeOut' }}
+            className="text-white/85 text-xl md:text-2xl font-light leading-relaxed max-w-2xl mx-auto tracking-wide"
+          >
+            SOS para tu vida es la familia que te acompaña y te impulsa a vivir el propósito de Dios para ti.
+          </motion.p>
+        </div>
 
         <motion.div
           initial={{ opacity: 0, y: 20 }}
