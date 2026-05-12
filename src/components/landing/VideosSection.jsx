@@ -1,23 +1,33 @@
 import React, { useRef, useState, useEffect } from 'react';
 import { motion, useInView } from 'framer-motion';
 import { Play, ExternalLink, Loader2, AlertCircle } from 'lucide-react';
+import { base44 } from '@/api/base44Client';
 
-const API_KEY = import.meta.env.VITE_YOUTUBE_API_KEY;
 const CHANNEL_ID = 'UC6SIn_v-N6P0I_9f7f9S6XQ';
+const API_KEY = 'AIzaSyD7BqqPqyBMbYoKsS_d8_UhuPib2jbYJNw';
 
 async function fetchLatestVideos() {
-  // 1. Get uploads playlist ID from channel
+  // Step 1: get uploads playlist ID
   const channelRes = await fetch(
     `https://www.googleapis.com/youtube/v3/channels?part=contentDetails&id=${CHANNEL_ID}&key=${API_KEY}`
   );
   const channelData = await channelRes.json();
+
+  if (!channelData.items || channelData.items.length === 0) {
+    throw new Error(channelData.error?.message || 'Canal no encontrado');
+  }
+
   const uploadsPlaylistId = channelData.items[0].contentDetails.relatedPlaylists.uploads;
 
-  // 2. Get latest videos from uploads playlist
+  // Step 2: get latest 6 videos
   const playlistRes = await fetch(
     `https://www.googleapis.com/youtube/v3/playlistItems?part=snippet&maxResults=6&playlistId=${uploadsPlaylistId}&key=${API_KEY}`
   );
   const playlistData = await playlistRes.json();
+
+  if (!playlistData.items) {
+    throw new Error(playlistData.error?.message || 'No se encontraron videos');
+  }
 
   return playlistData.items.map((item) => ({
     id: item.snippet.resourceId.videoId,
@@ -26,7 +36,6 @@ async function fetchLatestVideos() {
       item.snippet.thumbnails?.maxres?.url ||
       item.snippet.thumbnails?.high?.url ||
       item.snippet.thumbnails?.medium?.url,
-    publishedAt: item.snippet.publishedAt,
   }));
 }
 
@@ -62,14 +71,12 @@ function VideoCard({ video, index, isInView }) {
           />
           <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent" />
 
-          {/* Play button */}
           <div className="absolute inset-0 flex items-center justify-center">
             <div className="w-16 h-16 rounded-full bg-white/20 backdrop-blur-sm border border-white/30 flex items-center justify-center group-hover:bg-primary/80 group-hover:border-primary transition-all duration-300 group-hover:scale-110">
               <Play className="w-6 h-6 text-white fill-white ml-1" />
             </div>
           </div>
 
-          {/* Title overlay */}
           <div className="absolute bottom-0 left-0 right-0 p-4">
             <p className="text-white font-semibold text-sm leading-snug line-clamp-2 drop-shadow-md">
               {video.title}
@@ -98,7 +105,10 @@ export default function VideosSection() {
   useEffect(() => {
     fetchLatestVideos()
       .then(setVideos)
-      .catch(() => setError('No se pudieron cargar los videos. Intenta más tarde.'))
+      .catch((err) => {
+        console.error('YouTube API error:', err);
+        setError(err.message || 'No se pudieron cargar los videos.');
+      })
       .finally(() => setLoading(false));
   }, []);
 
@@ -139,7 +149,6 @@ export default function VideosSection() {
           </motion.a>
         </div>
 
-        {/* States */}
         {loading && (
           <div className="flex justify-center items-center py-24">
             <Loader2 className="w-8 h-8 text-primary animate-spin" />
@@ -149,37 +158,38 @@ export default function VideosSection() {
         {error && (
           <div className="flex flex-col items-center gap-3 py-16 text-muted-foreground">
             <AlertCircle className="w-8 h-8" />
-            <p className="text-sm">{error}</p>
+            <p className="text-sm text-center max-w-sm">{error}</p>
+            <p className="text-xs text-center text-muted-foreground/60 max-w-sm">
+              Puede que la API Key necesite tener habilitadas las restricciones de referrer o que la cuota diaria esté agotada.
+            </p>
           </div>
         )}
 
-        {/* Grid */}
-        {!loading && !error && (
-          <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
-            {videos.map((video, i) => (
-              <VideoCard key={video.id} video={video} index={i} isInView={isInView} />
-            ))}
-          </div>
-        )}
+        {!loading && !error && videos.length > 0 && (
+          <>
+            <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
+              {videos.map((video, i) => (
+                <VideoCard key={video.id} video={video} index={i} isInView={isInView} />
+              ))}
+            </div>
 
-        {/* CTA */}
-        {!loading && !error && (
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            animate={isInView ? { opacity: 1, y: 0 } : {}}
-            transition={{ duration: 0.6, delay: 0.8 }}
-            className="text-center mt-14"
-          >
-            <a
-              href="https://www.youtube.com/@somoss.o.sbarcelona8475"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="inline-flex items-center gap-3 border-2 border-primary/30 text-foreground px-8 py-4 rounded-full font-semibold hover:border-primary hover:text-primary transition-all duration-300"
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              animate={isInView ? { opacity: 1, y: 0 } : {}}
+              transition={{ duration: 0.6, delay: 0.8 }}
+              className="text-center mt-14"
             >
-              <Play className="w-4 h-4 fill-current" />
-              Suscríbete al canal de YouTube
-            </a>
-          </motion.div>
+              <a
+                href="https://www.youtube.com/@somoss.o.sbarcelona8475"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center gap-3 border-2 border-primary/30 text-foreground px-8 py-4 rounded-full font-semibold hover:border-primary hover:text-primary transition-all duration-300"
+              >
+                <Play className="w-4 h-4 fill-current" />
+                Suscríbete al canal de YouTube
+              </a>
+            </motion.div>
+          </>
         )}
       </div>
     </section>
