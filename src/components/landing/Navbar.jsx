@@ -24,12 +24,12 @@ export default function Navbar() {
 
 
   return (
-    <nav className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${
+    <nav className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 backdrop-blur-2xl ${
       scrolled
-        ? 'backdrop-blur-2xl shadow-lg border-b border-white/10'
-        : 'bg-transparent'
+        ? 'shadow-lg border-b border-white/20'
+        : 'border-b border-white/10'
     }`}
-    style={scrolled ? { background: 'rgba(255,255,255,0.7)', backdropFilter: 'blur(24px) saturate(180%)' } : {}}
+    style={scrolled ? { background: 'rgba(255,255,255,0.72)', backdropFilter: 'blur(24px) saturate(180%)' } : { background: 'rgba(0,0,0,0.12)', backdropFilter: 'blur(18px) saturate(140%)' }}
     >
       <div className="max-w-7xl mx-auto px-6 lg:px-8">
         <div className="flex items-center justify-between h-20">

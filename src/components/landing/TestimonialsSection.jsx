@@ -22,13 +22,15 @@ export default function TestimonialsSection({ images }) {
   const isInView = useInView(ref, { once: true, margin: "-100px" });
 
   return (
-    <section id="testimonios" className="py-20 md:py-32 px-6 bg-secondary/50">
+    <section id="testimonios" className="py-24 md:py-36 px-6 relative overflow-hidden"
+      style={{ background: 'linear-gradient(180deg, hsl(var(--background)) 0%, hsl(200 25% 96%) 100%)' }}
+    >
       <div ref={ref} className="max-w-7xl mx-auto">
         <div className="text-center mb-20">
           <motion.span
             initial={{ opacity: 0, y: 20 }}
             animate={isInView ? { opacity: 1, y: 0 } : {}}
-            transition={{ duration: 0.6 }} className="inline-block text-primary text-sm tracking-[0.25em] uppercase font-semibold mb-6 hidden">
+            transition={{ duration: 0.6 }} className="inline-block text-primary text-sm tracking-[0.25em] uppercase font-semibold mb-6">
             
             
             Testimonios
@@ -36,7 +38,7 @@ export default function TestimonialsSection({ images }) {
           <motion.h2
             initial={{ opacity: 0, y: 30 }}
             animate={isInView ? { opacity: 1, y: 0 } : {}}
-            transition={{ duration: 0.8, delay: 0.1 }} className="font-display text-4xl md:text-5xl font-medium text-foreground leading-tight hidden">
+            transition={{ duration: 0.8, delay: 0.1 }} className="font-display text-5xl md:text-6xl lg:text-7xl font-semibold text-foreground leading-[1.12] tracking-tight">
             
             
             Historias reales
@@ -49,7 +51,14 @@ export default function TestimonialsSection({ images }) {
             key={i}
             initial={{ opacity: 0, y: 30 }}
             animate={isInView ? { opacity: 1, y: 0 } : {}}
-            transition={{ duration: 0.6, delay: 0.2 + i * 0.15 }} className="bg-card rounded-2xl p-8 border border-border/50 hover:shadow-lg transition-all duration-500 hidden">
+            transition={{ duration: 0.7, delay: 0.2 + i * 0.15, ease: [0.22, 1, 0.36, 1] }}
+            className="rounded-[24px] p-8 md:p-10 transition-all duration-500 hover:-translate-y-1"
+            style={{
+              background: 'rgba(255,255,255,0.66)',
+              backdropFilter: 'blur(18px)',
+              border: '1px solid rgba(255,255,255,0.8)',
+              boxShadow: '0 10px 30px rgba(0,0,0,0.08)',
+            }}>
 
             
               <Quote className="w-8 h-8 text-primary/30 mb-6" />

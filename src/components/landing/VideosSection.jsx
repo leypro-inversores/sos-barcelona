@@ -40,15 +40,15 @@ function VideoCard({ video, index, isInView }) {
       initial={{ opacity: 0, y: 50 }}
       animate={isInView ? { opacity: 1, y: 0 } : {}}
       transition={{ duration: 0.7, delay: 0.05 + index * 0.1, ease: [0.22, 1, 0.36, 1] }}
-      className="group relative overflow-hidden bg-black cursor-pointer"
+      className="group relative overflow-hidden bg-white/85 backdrop-blur-xl cursor-pointer"
       style={{
-        borderRadius: '12px',
-        boxShadow: '0 8px 32px rgba(0,0,0,0.22), 0 2px 8px rgba(0,0,0,0.12)',
-        transform: 'translateY(0)',
+        borderRadius: '16px',
+        boxShadow: '0 10px 30px rgba(0,0,0,0.08)',
+        transform: 'translateY(0) scale(1)',
         transition: 'transform 0.35s ease-in-out, box-shadow 0.35s ease-in-out',
       }}
-      onMouseEnter={e => { e.currentTarget.style.transform = 'scale(1.05)'; e.currentTarget.style.boxShadow = '0 20px 60px rgba(0,0,0,0.28), 0 4px 16px rgba(0,0,0,0.16)'; }}
-      onMouseLeave={e => { e.currentTarget.style.transform = 'scale(1)'; e.currentTarget.style.boxShadow = '0 8px 32px rgba(0,0,0,0.22), 0 2px 8px rgba(0,0,0,0.12)'; }}
+      onMouseEnter={e => { e.currentTarget.style.transform = 'translateY(-4px) scale(1.03)'; e.currentTarget.style.boxShadow = '0 18px 45px rgba(0,0,0,0.14)'; }}
+      onMouseLeave={e => { e.currentTarget.style.transform = 'translateY(0) scale(1)'; e.currentTarget.style.boxShadow = '0 10px 30px rgba(0,0,0,0.08)'; }}
     >
       {playing ? (
         <div className="aspect-video w-full">
@@ -63,7 +63,7 @@ function VideoCard({ video, index, isInView }) {
       ) : (
         <div
           className="aspect-video relative overflow-hidden"
-          style={{ borderRadius: '12px' }}
+          style={{ borderRadius: '16px' }}
           onClick={() => setPlaying(true)}
         >
           {/* Skeleton loader */}
@@ -72,8 +72,8 @@ function VideoCard({ video, index, isInView }) {
             src={video.thumbnail}
             alt={video.title}
             onLoad={() => setImgLoaded(true)}
-            className={`w-full h-full object-cover ${imgLoaded ? 'opacity-100' : 'opacity-0'}`}
-          style={{ transition: 'opacity 0.5s ease' }}
+            className={`w-full h-full object-cover group-hover:scale-105 ${imgLoaded ? 'opacity-100' : 'opacity-0'}`}
+            style={{ transition: 'opacity 0.5s ease, transform 0.5s ease-in-out' }}
           />
           {/* Multi-layer gradient */}
           <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/30 to-transparent" />
@@ -147,7 +147,14 @@ export default function VideosSection() {
 
       <div className="max-w-6xl mx-auto relative">
         {/* Header */}
-        <div className="flex flex-col md:flex-row md:items-end md:justify-between gap-6 mb-16">
+        <div className="flex flex-col md:flex-row md:items-end md:justify-between gap-6 mb-20 rounded-[28px] p-8 md:p-10"
+          style={{
+            background: 'rgba(255,255,255,0.55)',
+            backdropFilter: 'blur(22px)',
+            border: '1px solid rgba(255,255,255,0.75)',
+            boxShadow: '0 12px 40px rgba(0,0,0,0.06)',
+          }}
+        >
           <div>
             <motion.div
               initial={{ opacity: 0, y: 20 }}
@@ -165,9 +172,11 @@ export default function VideosSection() {
               initial={{ opacity: 0, y: 30 }}
               animate={isInView ? { opacity: 1, y: 0 } : {}}
               transition={{ duration: 0.8, delay: 0.1 }}
-              className="font-display text-4xl md:text-5xl lg:text-6xl font-semibold text-foreground leading-tight tracking-tight"
+              className="font-display text-5xl md:text-6xl lg:text-7xl font-semibold leading-[1.12] tracking-tight"
             >
-              Mensajes que <em className="text-primary not-italic">transforman</em>
+              <span style={{ background: 'linear-gradient(135deg, hsl(var(--foreground)) 0%, hsl(var(--primary)) 55%, hsl(var(--accent)) 100%)', WebkitBackgroundClip: 'text', WebkitTextFillColor: 'transparent' }}>
+                Mensajes que transforman
+              </span>
             </motion.h2>
           </div>
           <motion.a

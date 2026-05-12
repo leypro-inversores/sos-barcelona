@@ -13,7 +13,9 @@ export default function MeetingsSection() {
   const isInView = useInView(ref, { once: true, margin: "-80px" });
 
   return (
-    <section className="py-20 md:py-32 px-6 bg-secondary/40" ref={ref}>
+    <section className="py-24 md:py-36 px-6 relative overflow-hidden" ref={ref}
+      style={{ background: 'linear-gradient(180deg, hsl(200 25% 96%) 0%, hsl(var(--background)) 100%)' }}
+    >
       <div className="max-w-5xl mx-auto">
         <div className="text-center mb-16">
           <motion.span
@@ -28,7 +30,7 @@ export default function MeetingsSection() {
             initial={{ opacity: 0, y: 30 }}
             animate={isInView ? { opacity: 1, y: 0 } : {}}
             transition={{ duration: 0.8, delay: 0.1 }}
-            className="font-display text-4xl md:text-5xl font-medium text-foreground mb-6 leading-tight"
+            className="font-display text-5xl md:text-6xl lg:text-7xl font-semibold text-foreground mb-8 leading-[1.12] tracking-tight"
           >
             Súmate a una experiencia auténtica
           </motion.h2>
@@ -48,13 +50,13 @@ export default function MeetingsSection() {
               key={i}
               initial={{ opacity: 0, y: 30 }}
               animate={isInView ? { opacity: 1, y: 0 } : {}}
-              transition={{ duration: 0.6, delay: 0.2 + i * 0.15 }}
+              transition={{ duration: 0.7, delay: 0.2 + i * 0.15, ease: [0.22, 1, 0.36, 1] }}
               className="rounded-2xl p-8 text-center transition-all duration-300 hover:-translate-y-1"
               style={{
                 background: 'rgba(255,255,255,0.65)',
                 backdropFilter: 'blur(16px)',
                 border: '1px solid rgba(255,255,255,0.8)',
-                boxShadow: '0 4px 24px rgba(0,0,0,0.07)',
+                boxShadow: '0 10px 30px rgba(0,0,0,0.08)',
               }}
             >
               <div className="w-14 h-14 rounded-2xl bg-primary/10 flex items-center justify-center mx-auto mb-5">
