@@ -8,8 +8,8 @@ export default function HeroSection({ heroImage }) {
     <section className="relative w-full min-h-screen flex items-center justify-center overflow-hidden bg-black">
       {/* Video background */}
       <video
-        className="absolute inset-0 w-full h-full object-cover object-center"
-        style={{ filter: 'brightness(1.4) saturate(1.1)' }}
+        className="absolute inset-0 w-full h-full object-cover"
+        style={{ filter: 'brightness(1.4) saturate(1.1)', objectPosition: 'center 10%', transform: 'scale(1.08)' }}
         src={VIDEO_URL}
         autoPlay
         muted
