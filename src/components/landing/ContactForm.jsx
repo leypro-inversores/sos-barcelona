@@ -1,6 +1,5 @@
 import React, { useRef, useState } from 'react';
 import { motion, useInView } from 'framer-motion';
-import { base44 } from '@/api/base44Client';
 import { Input } from '@/components/ui/input';
 import { Button } from '@/components/ui/button';
 import { Send, CheckCircle2, Loader2 } from 'lucide-react';
@@ -9,9 +8,9 @@ export default function ContactForm() {
   const ref = useRef(null);
   const isInView = useInView(ref, { once: true, margin: "-100px" });
   const [form, setForm] = useState({ name: '', email: '', phone: '' });
-  const [status, setStatus] = useState('idle'); // idle | loading | success | error
+  const [status, setStatus] = useState('idle'); // idle | loading | success
 
-  const handleSubmit = async (e) => {
+  const handleSubmit = (e) => {
     e.preventDefault();
 
     if (!form.name.trim() || !form.email.trim()) {
@@ -24,21 +23,17 @@ export default function ContactForm() {
       name: form.name.trim(),
       email: form.email.trim(),
       phone: form.phone.trim(),
-      source: 'landing_footer',
     };
 
-    try {
-      await base44.entities.Contact.create(contactData);
-      await base44.integrations.Core.SendEmail({
-        to: 'sos.barcelonaa@gmail.com',
-        subject: `Nuevo contacto desde la web: ${contactData.name}`,
-        body: `Has recibido un nuevo mensaje desde el formulario de contacto de la web:\n\nNombre: ${contactData.name}\nEmail: ${contactData.email}\nTeléfono: ${contactData.phone || 'No proporcionado'}\n\nPuedes responderle directamente a: ${contactData.email}`,
-      });
+    const subject = 'Nuevo contacto desde la web';
+    const body = `Has recibido un nuevo contacto desde la web de SOS Barcelona:\n\nNombre: ${contactData.name}\nEmail: ${contactData.email}\nTeléfono: ${contactData.phone || 'No proporcionado'}\n\nPuedes responderle directamente a: ${contactData.email}`;
+    const mailtoUrl = `mailto:sos.barcelonaa@gmail.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+
+    window.setTimeout(() => {
+      window.location.href = mailtoUrl;
       setForm({ name: '', email: '', phone: '' });
       setStatus('success');
-    } catch (error) {
-      setStatus('error');
-    }
+    }, 300);
   };
 
   return (
@@ -132,11 +127,6 @@ export default function ContactForm() {
                   className="h-12 bg-background border-border/50 rounded-xl"
                 />
               </div>
-              {status === 'error' && (
-                <p className="text-sm text-destructive text-center">
-                  No se pudo enviar. Por favor, inténtalo de nuevo.
-                </p>
-              )}
               <Button
                 type="submit"
                 disabled={status === 'loading'}
