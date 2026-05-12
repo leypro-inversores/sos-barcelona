@@ -64,11 +64,18 @@ export default function ContactForm() {
           transition={{ duration: 0.8, delay: 0.3 }}
         >
           {status === 'success' ? (
-            <div className="text-center py-16 bg-card rounded-2xl border border-border/50">
+            <div className="text-center py-16 px-8 rounded-[28px]"
+              style={{
+                background: 'rgba(255,255,255,0.72)',
+                backdropFilter: 'blur(24px)',
+                border: '1px solid rgba(255,255,255,0.85)',
+                boxShadow: '0 12px 40px rgba(0,0,0,0.08)',
+              }}
+            >
               <CheckCircle2 className="w-16 h-16 text-primary mx-auto mb-6" />
               <h3 className="text-2xl font-semibold text-foreground mb-3">¡Gracias!</h3>
               <p className="text-muted-foreground font-light">
-                Hemos recibido tu información. Nos pondremos en contacto contigo pronto.
+                Hemos recibido tu información correctamente. Nos pondremos en contacto contigo pronto.
               </p>
             </div>
           ) : (
