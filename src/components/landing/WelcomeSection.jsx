@@ -21,7 +21,7 @@ export default function WelcomeSection() {
           initial={{ opacity: 0, y: 30 }}
           animate={isInView ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 0.9, delay: 0.1 }}
-          className="font-display text-4xl md:text-5xl lg:text-6xl font-semibold text-foreground leading-tight mb-8">
+          className="font-display md:text-5xl lg:text-6xl font-semibold text-foreground leading-tight mb-8 normal-case text-3xl">
           
           ¡Queremos conocerte! En SOS tenemos un lugar para ti
         </motion.h2>
