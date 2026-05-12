@@ -40,8 +40,15 @@ function VideoCard({ video, index, isInView }) {
       initial={{ opacity: 0, y: 50 }}
       animate={isInView ? { opacity: 1, y: 0 } : {}}
       transition={{ duration: 0.7, delay: 0.05 + index * 0.1, ease: [0.22, 1, 0.36, 1] }}
-      className="group relative rounded-2xl overflow-hidden bg-black"
-      style={{ boxShadow: '0 8px 40px rgba(0,0,0,0.18), 0 2px 8px rgba(0,0,0,0.10)' }}
+      className="group relative overflow-hidden bg-black cursor-pointer"
+      style={{
+        borderRadius: '12px',
+        boxShadow: '0 8px 32px rgba(0,0,0,0.22), 0 2px 8px rgba(0,0,0,0.12)',
+        transform: 'translateY(0)',
+        transition: 'transform 0.35s ease-in-out, box-shadow 0.35s ease-in-out',
+      }}
+      onMouseEnter={e => { e.currentTarget.style.transform = 'scale(1.05)'; e.currentTarget.style.boxShadow = '0 20px 60px rgba(0,0,0,0.28), 0 4px 16px rgba(0,0,0,0.16)'; }}
+      onMouseLeave={e => { e.currentTarget.style.transform = 'scale(1)'; e.currentTarget.style.boxShadow = '0 8px 32px rgba(0,0,0,0.22), 0 2px 8px rgba(0,0,0,0.12)'; }}
     >
       {playing ? (
         <div className="aspect-video w-full">
@@ -55,7 +62,8 @@ function VideoCard({ video, index, isInView }) {
         </div>
       ) : (
         <div
-          className="aspect-video relative cursor-pointer overflow-hidden"
+          className="aspect-video relative overflow-hidden"
+          style={{ borderRadius: '12px' }}
           onClick={() => setPlaying(true)}
         >
           {/* Skeleton loader */}
@@ -64,7 +72,8 @@ function VideoCard({ video, index, isInView }) {
             src={video.thumbnail}
             alt={video.title}
             onLoad={() => setImgLoaded(true)}
-            className={`w-full h-full object-cover transition-all duration-700 group-hover:scale-[1.07] ${imgLoaded ? 'opacity-100' : 'opacity-0'}`}
+            className={`w-full h-full object-cover ${imgLoaded ? 'opacity-100' : 'opacity-0'}`}
+          style={{ transition: 'opacity 0.5s ease' }}
           />
           {/* Multi-layer gradient */}
           <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/30 to-transparent" />
