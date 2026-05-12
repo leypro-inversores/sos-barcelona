@@ -39,11 +39,11 @@ export default function HeroSection({ heroImage }) {
         </motion.div>
 
         <div
-          className="inline-block rounded-[32px] px-6 py-7 md:px-10 md:py-9 mb-12"
+          className="inline-block rounded-[30px] px-6 py-7 md:px-10 md:py-9 mb-12"
           style={{
-            background: 'rgba(0,0,0,0.68)',
-            backdropFilter: 'blur(8px)',
-            boxShadow: '0 20px 70px rgba(0,0,0,0.35)',
+            background: 'rgba(35,35,35,0.64)',
+            backdropFilter: 'blur(6px)',
+            boxShadow: '0 18px 60px rgba(0,0,0,0.28)',
           }}
         >
           <motion.h1
@@ -51,7 +51,7 @@ export default function HeroSection({ heroImage }) {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 1.3, delay: 0.3, ease: [0.22, 1, 0.36, 1] }}
             className="font-display text-5xl md:text-7xl lg:text-8xl font-semibold text-white leading-[1.05] tracking-tight mb-6"
-            style={{ textShadow: '0 2px 40px rgba(0,0,0,0.6)' }}
+            style={{ textShadow: '0 2px 4px rgba(0,0,0,0.95), 0 0 2px rgba(0,0,0,1)' }}
           >
             Aquí hay un hogar<br />
             <em className="not-italic" style={{ color: 'hsl(var(--primary))' }}>para ti y los tuyos</em>
@@ -61,7 +61,8 @@ export default function HeroSection({ heroImage }) {
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 1.2, delay: 0.75, ease: 'easeOut' }}
-            className="text-white/85 text-xl md:text-2xl font-light leading-relaxed max-w-2xl mx-auto tracking-wide"
+            className="text-white/90 text-xl md:text-2xl font-light leading-relaxed max-w-2xl mx-auto tracking-wide"
+            style={{ textShadow: '0 2px 4px rgba(0,0,0,0.95), 0 0 2px rgba(0,0,0,1)' }}
           >
             SOS para tu vida es la familia que te acompaña y te impulsa a vivir el propósito de Dios para ti.
           </motion.p>
