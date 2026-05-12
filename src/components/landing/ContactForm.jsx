@@ -18,6 +18,11 @@ export default function ContactForm() {
       ...form,
       source: 'landing_footer',
     });
+    await base44.integrations.Core.SendEmail({
+      to: 'sos.barcelonaa@gmail.com',
+      subject: `Nuevo contacto desde la web: ${form.name}`,
+      body: `Has recibido un nuevo mensaje desde el formulario de contacto de la web:\n\nNombre: ${form.name}\nEmail: ${form.email}\nTeléfono: ${form.phone || 'No proporcionado'}\n\nPuedes responderle directamente a: ${form.email}`,
+    });
     setStatus('success');
   };
 

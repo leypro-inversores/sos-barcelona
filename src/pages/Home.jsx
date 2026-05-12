@@ -15,6 +15,7 @@ import StepsSection from '../components/landing/StepsSection';
 import TestimonialsSection from '../components/landing/TestimonialsSection';
 import FinalCTASection from '../components/landing/FinalCTASection';
 import ContactForm from '../components/landing/ContactForm';
+import VideosSection from '../components/landing/VideosSection';
 import Footer from '../components/landing/Footer';
 
 // Images
@@ -101,7 +102,10 @@ export default function Home() {
       {/* 14. CIERRE FINAL */}
       <FinalCTASection image={IMAGES.barcelona} />
 
-      {/* 15. CONTACTO */}
+      {/* 15. VIDEOS — Prédicas */}
+      <VideosSection />
+
+      {/* 16. CONTACTO */}
       <ContactForm />
 
       <Footer />
