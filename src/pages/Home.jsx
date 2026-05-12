@@ -12,7 +12,6 @@ import PastoresHistorySection from '../components/landing/PastoresHistorySection
 import CultureSection from '../components/landing/CultureSection';
 import AboutSection from '../components/landing/AboutSection';
 import StepsSection from '../components/landing/StepsSection';
-import TestimonialsSection from '../components/landing/TestimonialsSection';
 import FinalCTASection from '../components/landing/FinalCTASection';
 import ContactForm from '../components/landing/ContactForm';
 import VideosSection from '../components/landing/VideosSection';
@@ -90,16 +89,7 @@ export default function Home() {
       {/* 12. INSTAGRAM */}
       <InstagramSection />
 
-      {/* 13. TESTIMONIOS */}
-      <TestimonialsSection
-        images={[
-          IMAGES.testimonial1,
-          IMAGES.testimonial2,
-          IMAGES.testimonial3,
-        ]}
-      />
-
-      {/* 14. CIERRE FINAL */}
+      {/* 13. CIERRE FINAL */}
       <FinalCTASection image={IMAGES.barcelona} />
 
       {/* 15. VIDEOS — Prédicas */}
