@@ -9,21 +9,36 @@ export default function ContactForm() {
   const ref = useRef(null);
   const isInView = useInView(ref, { once: true, margin: "-100px" });
   const [form, setForm] = useState({ name: '', email: '', phone: '' });
-  const [status, setStatus] = useState('idle'); // idle | loading | success
+  const [status, setStatus] = useState('idle'); // idle | loading | success | error
 
   const handleSubmit = async (e) => {
     e.preventDefault();
+
+    if (!form.name.trim() || !form.email.trim()) {
+      return;
+    }
+
     setStatus('loading');
-    await base44.entities.Contact.create({
-      ...form,
+
+    const contactData = {
+      name: form.name.trim(),
+      email: form.email.trim(),
+      phone: form.phone.trim(),
       source: 'landing_footer',
-    });
-    await base44.integrations.Core.SendEmail({
-      to: 'sos.barcelonaa@gmail.com',
-      subject: `Nuevo contacto desde la web: ${form.name}`,
-      body: `Has recibido un nuevo mensaje desde el formulario de contacto de la web:\n\nNombre: ${form.name}\nEmail: ${form.email}\nTeléfono: ${form.phone || 'No proporcionado'}\n\nPuedes responderle directamente a: ${form.email}`,
-    });
-    setStatus('success');
+    };
+
+    try {
+      await base44.entities.Contact.create(contactData);
+      await base44.integrations.Core.SendEmail({
+        to: 'sos.barcelonaa@gmail.com',
+        subject: `Nuevo contacto desde la web: ${contactData.name}`,
+        body: `Has recibido un nuevo mensaje desde el formulario de contacto de la web:\n\nNombre: ${contactData.name}\nEmail: ${contactData.email}\nTeléfono: ${contactData.phone || 'No proporcionado'}\n\nPuedes responderle directamente a: ${contactData.email}`,
+      });
+      setForm({ name: '', email: '', phone: '' });
+      setStatus('success');
+    } catch (error) {
+      setStatus('error');
+    }
   };
 
   return (
@@ -73,7 +88,7 @@ export default function ContactForm() {
               }}
             >
               <CheckCircle2 className="w-16 h-16 text-primary mx-auto mb-6" />
-              <h3 className="text-2xl font-semibold text-foreground mb-3">¡Gracias!</h3>
+              <h3 className="text-2xl font-semibold text-foreground mb-3">¡Enviado! Nos vemos pronto</h3>
               <p className="text-muted-foreground font-light">
                 Hemos recibido tu información correctamente. Nos pondremos en contacto contigo pronto.
               </p>
@@ -117,6 +132,11 @@ export default function ContactForm() {
                   className="h-12 bg-background border-border/50 rounded-xl"
                 />
               </div>
+              {status === 'error' && (
+                <p className="text-sm text-destructive text-center">
+                  No se pudo enviar. Por favor, inténtalo de nuevo.
+                </p>
+              )}
               <Button
                 type="submit"
                 disabled={status === 'loading'}
@@ -124,7 +144,10 @@ export default function ContactForm() {
                 style={{ background: 'linear-gradient(135deg, hsl(var(--primary)), hsl(var(--accent)))', boxShadow: '0 4px 24px hsla(var(--primary)/0.35)' }}
               >
                 {status === 'loading' ? (
-                  <Loader2 className="w-5 h-5 animate-spin" />
+                  <>
+                    <Loader2 className="w-5 h-5 animate-spin mr-2" />
+                    Enviando...
+                  </>
                 ) : (
                   <>
                     Quiero más información
