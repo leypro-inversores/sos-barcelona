@@ -14,7 +14,9 @@ export default function PurposeSection() {
   const isInView = useInView(ref, { once: true, margin: "-80px" });
 
   return (
-    <section className="py-20 md:py-32 px-6" ref={ref}>
+    <section className="py-24 md:py-36 px-6 relative overflow-hidden" ref={ref}
+      style={{ background: 'linear-gradient(180deg, hsl(var(--background)) 0%, hsl(200 25% 96%) 100%)' }}
+    >
       <div className="max-w-5xl mx-auto">
         <div className="text-center mb-16">
           <motion.span
@@ -47,15 +49,22 @@ export default function PurposeSection() {
           {pillars.map((p, i) => (
             <motion.div
               key={i}
-              initial={{ opacity: 0, y: 30 }}
+              initial={{ opacity: 0, y: 40 }}
               animate={isInView ? { opacity: 1, y: 0 } : {}}
-              transition={{ duration: 0.6, delay: 0.2 + i * 0.12 }}
-              className="bg-card border border-border/50 rounded-2xl p-8 text-center hover:border-primary/30 hover:shadow-lg transition-all duration-300"
+              transition={{ duration: 0.7, delay: 0.15 + i * 0.13, ease: [0.22, 1, 0.36, 1] }}
+              className="group relative rounded-2xl p-8 text-center transition-all duration-300 hover:-translate-y-1"
+              style={{
+                background: 'rgba(255,255,255,0.6)',
+                backdropFilter: 'blur(16px)',
+                border: '1px solid rgba(255,255,255,0.75)',
+                boxShadow: '0 4px 24px rgba(0,0,0,0.06)',
+              }}
             >
-              <div className="w-14 h-14 rounded-2xl bg-primary/10 flex items-center justify-center mx-auto mb-5">
+              <div className="w-14 h-14 rounded-2xl flex items-center justify-center mx-auto mb-5"
+                style={{ background: 'linear-gradient(135deg, hsla(var(--primary)/0.15), hsla(var(--accent)/0.1))' }}>
                 <p.icon className="w-6 h-6 text-primary" />
               </div>
-              <h3 className="font-display text-2xl font-semibold text-foreground mb-3">{p.word}</h3>
+              <h3 className="font-display text-2xl font-bold text-foreground mb-3 tracking-tight">{p.word}</h3>
               <p className="text-muted-foreground font-light text-sm leading-relaxed">{p.desc}</p>
             </motion.div>
           ))}

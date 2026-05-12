@@ -5,7 +5,7 @@ import SOSLogo from './SOSLogo';
 
 export default function Footer() {
   return (
-    <footer className="bg-foreground text-background py-16 px-6">
+    <footer className="text-background py-16 px-6" style={{ background: 'linear-gradient(160deg, hsl(220 20% 10%) 0%, hsl(220 25% 7%) 100%)' }}>
       <div className="max-w-7xl mx-auto">
         <div className="grid md:grid-cols-3 gap-12 mb-12">
           {/* Brand */}

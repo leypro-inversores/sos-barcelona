@@ -49,7 +49,13 @@ export default function MeetingsSection() {
               initial={{ opacity: 0, y: 30 }}
               animate={isInView ? { opacity: 1, y: 0 } : {}}
               transition={{ duration: 0.6, delay: 0.2 + i * 0.15 }}
-              className="bg-card border border-border/50 rounded-2xl p-8 text-center hover:shadow-lg transition-all duration-300"
+              className="rounded-2xl p-8 text-center transition-all duration-300 hover:-translate-y-1"
+              style={{
+                background: 'rgba(255,255,255,0.65)',
+                backdropFilter: 'blur(16px)',
+                border: '1px solid rgba(255,255,255,0.8)',
+                boxShadow: '0 4px 24px rgba(0,0,0,0.07)',
+              }}
             >
               <div className="w-14 h-14 rounded-2xl bg-primary/10 flex items-center justify-center mx-auto mb-5">
                 <s.icon className="w-6 h-6 text-primary" />

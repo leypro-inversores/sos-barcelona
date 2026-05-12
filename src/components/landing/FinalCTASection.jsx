@@ -51,12 +51,14 @@ export default function FinalCTASection({ image }) {
           className="flex flex-col sm:flex-row gap-4 justify-center">
           <a
             href="#contacto"
-            className="bg-primary text-primary-foreground px-10 py-4 rounded-full text-base font-semibold hover:bg-primary/90 transition-all duration-300 hover:scale-105 text-center">
+            className="text-white px-10 py-4 rounded-full text-base font-semibold transition-all duration-300 hover:scale-105 text-center"
+            style={{ background: 'linear-gradient(135deg, hsl(var(--primary)), hsl(var(--accent)))', boxShadow: '0 4px 32px hsla(var(--primary)/0.5)' }}>
             Quiero acercarme a Dios
           </a>
           <a
             href="#contacto"
-            className="border-2 border-white/60 text-white px-10 py-4 rounded-full text-base font-semibold hover:bg-white/10 transition-all duration-300 text-center">
+            className="text-white px-10 py-4 rounded-full text-base font-semibold transition-all duration-300 hover:bg-white/15 text-center"
+            style={{ border: '1.5px solid rgba(255,255,255,0.4)', backdropFilter: 'blur(8px)', background: 'rgba(255,255,255,0.08)' }}>
             Planear mi visita
           </a>
         </motion.div>

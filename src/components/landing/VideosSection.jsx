@@ -1,33 +1,25 @@
 import React, { useRef, useState, useEffect } from 'react';
 import { motion, useInView } from 'framer-motion';
-import { Play, ExternalLink, Loader2, AlertCircle } from 'lucide-react';
-import { base44 } from '@/api/base44Client';
+import { Play, ExternalLink, Loader2, AlertCircle, Youtube } from 'lucide-react';
 
-const CHANNEL_ID = 'UC6SIn_v-N6P0I_9f7f9S6XQ';
+const CHANNEL_ID = 'UCHPgrvFRfAD9U7Bb6NWkvGQ';
 const API_KEY = 'AIzaSyD7BqqPqyBMbYoKsS_d8_UhuPib2jbYJNw';
 
 async function fetchLatestVideos() {
-  // Step 1: get uploads playlist ID
   const channelRes = await fetch(
     `https://www.googleapis.com/youtube/v3/channels?part=contentDetails&id=${CHANNEL_ID}&key=${API_KEY}`
   );
   const channelData = await channelRes.json();
-
-  if (!channelData.items || channelData.items.length === 0) {
+  if (!channelData.items?.length) {
     throw new Error(channelData.error?.message || 'Canal no encontrado');
   }
+  const uploadsId = channelData.items[0].contentDetails.relatedPlaylists.uploads;
 
-  const uploadsPlaylistId = channelData.items[0].contentDetails.relatedPlaylists.uploads;
-
-  // Step 2: get latest 6 videos
   const playlistRes = await fetch(
-    `https://www.googleapis.com/youtube/v3/playlistItems?part=snippet&maxResults=6&playlistId=${uploadsPlaylistId}&key=${API_KEY}`
+    `https://www.googleapis.com/youtube/v3/playlistItems?part=snippet&maxResults=6&playlistId=${uploadsId}&key=${API_KEY}`
   );
   const playlistData = await playlistRes.json();
-
-  if (!playlistData.items) {
-    throw new Error(playlistData.error?.message || 'No se encontraron videos');
-  }
+  if (!playlistData.items) throw new Error(playlistData.error?.message || 'Sin videos');
 
   return playlistData.items.map((item) => ({
     id: item.snippet.resourceId.videoId,
@@ -41,13 +33,15 @@ async function fetchLatestVideos() {
 
 function VideoCard({ video, index, isInView }) {
   const [playing, setPlaying] = useState(false);
+  const [imgLoaded, setImgLoaded] = useState(false);
 
   return (
     <motion.div
-      initial={{ opacity: 0, y: 40 }}
+      initial={{ opacity: 0, y: 50 }}
       animate={isInView ? { opacity: 1, y: 0 } : {}}
-      transition={{ duration: 0.6, delay: 0.1 + index * 0.1 }}
-      className="group relative rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-500 bg-black"
+      transition={{ duration: 0.7, delay: 0.05 + index * 0.1, ease: [0.22, 1, 0.36, 1] }}
+      className="group relative rounded-2xl overflow-hidden bg-black"
+      style={{ boxShadow: '0 8px 40px rgba(0,0,0,0.18), 0 2px 8px rgba(0,0,0,0.10)' }}
     >
       {playing ? (
         <div className="aspect-video w-full">
@@ -64,21 +58,44 @@ function VideoCard({ video, index, isInView }) {
           className="aspect-video relative cursor-pointer overflow-hidden"
           onClick={() => setPlaying(true)}
         >
+          {/* Skeleton loader */}
+          {!imgLoaded && <div className="absolute inset-0 bg-foreground/10 animate-pulse" />}
           <img
             src={video.thumbnail}
             alt={video.title}
-            className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
+            onLoad={() => setImgLoaded(true)}
+            className={`w-full h-full object-cover transition-all duration-700 group-hover:scale-[1.07] ${imgLoaded ? 'opacity-100' : 'opacity-0'}`}
           />
-          <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent" />
+          {/* Multi-layer gradient */}
+          <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/30 to-transparent" />
+          <div className="absolute inset-0 bg-gradient-to-b from-black/20 to-transparent" />
 
+          {/* Play button with glow */}
           <div className="absolute inset-0 flex items-center justify-center">
-            <div className="w-16 h-16 rounded-full bg-white/20 backdrop-blur-sm border border-white/30 flex items-center justify-center group-hover:bg-primary/80 group-hover:border-primary transition-all duration-300 group-hover:scale-110">
-              <Play className="w-6 h-6 text-white fill-white ml-1" />
+            <div
+              className="w-18 h-18 w-[72px] h-[72px] rounded-full flex items-center justify-center transition-all duration-300 group-hover:scale-110"
+              style={{
+                background: 'rgba(255,255,255,0.15)',
+                backdropFilter: 'blur(12px)',
+                border: '1.5px solid rgba(255,255,255,0.35)',
+                boxShadow: '0 0 0 0 rgba(255,255,255,0)',
+              }}
+            >
+              <div
+                className="w-14 h-14 rounded-full flex items-center justify-center group-hover:opacity-100 transition-all duration-300"
+                style={{
+                  background: 'linear-gradient(135deg, hsl(var(--primary)), hsl(var(--accent)))',
+                  boxShadow: '0 0 32px 4px hsla(var(--primary)/0.5)',
+                }}
+              >
+                <Play className="w-5 h-5 text-white fill-white ml-0.5" />
+              </div>
             </div>
           </div>
 
-          <div className="absolute bottom-0 left-0 right-0 p-4">
-            <p className="text-white font-semibold text-sm leading-snug line-clamp-2 drop-shadow-md">
+          {/* Bottom title */}
+          <div className="absolute bottom-0 left-0 right-0 p-5">
+            <p className="text-white font-semibold text-sm leading-snug line-clamp-2 drop-shadow-lg tracking-wide">
               {video.title}
             </p>
           </div>
@@ -86,9 +103,9 @@ function VideoCard({ video, index, isInView }) {
       )}
 
       {!playing && (
-        <div className="p-4 bg-card border-t border-border/40">
-          <p className="text-foreground font-semibold text-sm leading-snug line-clamp-1">{video.title}</p>
-          <p className="text-muted-foreground text-xs mt-1 font-light">SOS Barcelona</p>
+        <div className="p-4 bg-card/90 border-t border-white/5">
+          <p className="text-foreground font-semibold text-sm leading-snug line-clamp-1 tracking-tight">{video.title}</p>
+          <p className="text-muted-foreground text-xs mt-1">SOS Barcelona</p>
         </div>
       )}
     </motion.div>
@@ -105,34 +122,43 @@ export default function VideosSection() {
   useEffect(() => {
     fetchLatestVideos()
       .then(setVideos)
-      .catch((err) => {
-        console.error('YouTube API error:', err);
-        setError(err.message || 'No se pudieron cargar los videos.');
-      })
+      .catch((err) => setError(err.message || 'No se pudieron cargar los videos.'))
       .finally(() => setLoading(false));
   }, []);
 
   return (
-    <section className="py-20 md:py-32 px-6 bg-foreground/[0.02]" ref={ref}>
-      <div className="max-w-6xl mx-auto">
+    <section
+      className="py-24 md:py-36 px-6 relative overflow-hidden"
+      style={{ background: 'linear-gradient(160deg, hsl(var(--background)) 0%, hsl(200 20% 96%) 50%, hsl(var(--background)) 100%)' }}
+      ref={ref}
+    >
+      {/* Subtle radial glow top-left */}
+      <div className="absolute -top-32 -left-32 w-96 h-96 rounded-full pointer-events-none"
+        style={{ background: 'radial-gradient(circle, hsla(var(--primary)/0.07) 0%, transparent 70%)' }} />
+
+      <div className="max-w-6xl mx-auto relative">
         {/* Header */}
-        <div className="flex flex-col md:flex-row md:items-end md:justify-between gap-6 mb-14">
+        <div className="flex flex-col md:flex-row md:items-end md:justify-between gap-6 mb-16">
           <div>
-            <motion.span
+            <motion.div
               initial={{ opacity: 0, y: 20 }}
               animate={isInView ? { opacity: 1, y: 0 } : {}}
               transition={{ duration: 0.6 }}
-              className="inline-block text-primary text-sm tracking-[0.25em] uppercase font-semibold mb-4"
+              className="flex items-center gap-3 mb-5"
             >
-              Prédicas
-            </motion.span>
+              <div className="w-8 h-8 rounded-lg flex items-center justify-center"
+                style={{ background: 'linear-gradient(135deg, hsl(var(--primary)), hsl(var(--accent)))' }}>
+                <Youtube className="w-4 h-4 text-white" />
+              </div>
+              <span className="text-primary text-sm tracking-[0.25em] uppercase font-semibold">Prédicas</span>
+            </motion.div>
             <motion.h2
               initial={{ opacity: 0, y: 30 }}
               animate={isInView ? { opacity: 1, y: 0 } : {}}
               transition={{ duration: 0.8, delay: 0.1 }}
-              className="font-display text-4xl md:text-5xl font-medium text-foreground leading-tight"
+              className="font-display text-4xl md:text-5xl lg:text-6xl font-semibold text-foreground leading-tight tracking-tight"
             >
-              Mensajes que transforman
+              Mensajes que <em className="text-primary not-italic">transforman</em>
             </motion.h2>
           </div>
           <motion.a
@@ -142,7 +168,7 @@ export default function VideosSection() {
             href="https://www.youtube.com/@somoss.o.sbarcelona8475/videos"
             target="_blank"
             rel="noopener noreferrer"
-            className="flex items-center gap-2 text-primary font-semibold text-sm hover:opacity-80 transition-opacity shrink-0 group"
+            className="group flex items-center gap-2 text-sm font-semibold text-primary hover:opacity-70 transition-all duration-300 shrink-0"
           >
             Ver todos los mensajes
             <ExternalLink className="w-4 h-4 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform" />
@@ -150,24 +176,21 @@ export default function VideosSection() {
         </div>
 
         {loading && (
-          <div className="flex justify-center items-center py-24">
+          <div className="flex justify-center items-center py-28">
             <Loader2 className="w-8 h-8 text-primary animate-spin" />
           </div>
         )}
 
         {error && (
-          <div className="flex flex-col items-center gap-3 py-16 text-muted-foreground">
+          <div className="flex flex-col items-center gap-3 py-20 text-muted-foreground">
             <AlertCircle className="w-8 h-8" />
-            <p className="text-sm text-center max-w-sm">{error}</p>
-            <p className="text-xs text-center text-muted-foreground/60 max-w-sm">
-              Puede que la API Key necesite tener habilitadas las restricciones de referrer o que la cuota diaria esté agotada.
-            </p>
+            <p className="text-sm text-center max-w-xs">{error}</p>
           </div>
         )}
 
         {!loading && !error && videos.length > 0 && (
           <>
-            <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
+            <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-7">
               {videos.map((video, i) => (
                 <VideoCard key={video.id} video={video} index={i} isInView={isInView} />
               ))}
@@ -176,17 +199,25 @@ export default function VideosSection() {
             <motion.div
               initial={{ opacity: 0, y: 20 }}
               animate={isInView ? { opacity: 1, y: 0 } : {}}
-              transition={{ duration: 0.6, delay: 0.8 }}
-              className="text-center mt-14"
+              transition={{ duration: 0.6, delay: 0.9 }}
+              className="text-center mt-16"
             >
               <a
                 href="https://www.youtube.com/@somoss.o.sbarcelona8475"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-flex items-center gap-3 border-2 border-primary/30 text-foreground px-8 py-4 rounded-full font-semibold hover:border-primary hover:text-primary transition-all duration-300"
+                className="group inline-flex items-center gap-3 px-9 py-4 rounded-full font-semibold text-sm transition-all duration-300 relative overflow-hidden"
+                style={{
+                  border: '1.5px solid hsla(var(--primary)/0.4)',
+                  color: 'hsl(var(--foreground))',
+                }}
+                onMouseEnter={e => e.currentTarget.style.borderColor = 'hsl(var(--primary))'}
+                onMouseLeave={e => e.currentTarget.style.borderColor = 'hsla(var(--primary)/0.4)'}
               >
-                <Play className="w-4 h-4 fill-current" />
-                Suscríbete al canal de YouTube
+                <Youtube className="w-4 h-4 text-primary" />
+                Suscríbete al canal
+                <span className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none"
+                  style={{ background: 'linear-gradient(135deg, hsla(var(--primary)/0.06), hsla(var(--accent)/0.06))' }} />
               </a>
             </motion.div>
           </>

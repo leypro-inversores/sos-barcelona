@@ -51,20 +51,31 @@ export default function CultureSection() {
           </motion.h2>
         </div>
 
-        <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-8">
+        <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
           {values.map((v, i) => (
             <motion.div
               key={i}
-              initial={{ opacity: 0, y: 30 }}
+              initial={{ opacity: 0, y: 40 }}
               animate={isInView ? { opacity: 1, y: 0 } : {}}
-              transition={{ duration: 0.6, delay: 0.2 + i * 0.15 }}
-              className="bg-card border border-border/50 rounded-2xl p-8 hover:border-primary/30 hover:shadow-lg transition-all duration-300"
+              transition={{ duration: 0.7, delay: 0.15 + i * 0.13, ease: [0.22, 1, 0.36, 1] }}
+              className="group relative rounded-2xl p-7 transition-all duration-300 hover:-translate-y-1"
+              style={{
+                background: 'rgba(255,255,255,0.65)',
+                backdropFilter: 'blur(18px)',
+                border: '1px solid rgba(255,255,255,0.8)',
+                boxShadow: '0 4px 24px rgba(0,0,0,0.07), 0 1px 4px rgba(0,0,0,0.04)',
+              }}
             >
-              <div className="w-14 h-14 rounded-2xl bg-primary/10 flex items-center justify-center mb-6">
-                <v.icon className="w-6 h-6 text-primary" />
+              {/* Top gradient line */}
+              <div className="absolute top-0 left-6 right-6 h-px rounded-full"
+                style={{ background: 'linear-gradient(90deg, transparent, hsl(var(--primary)), transparent)', opacity: 0.4 }} />
+
+              <div className="w-12 h-12 rounded-xl flex items-center justify-center mb-5"
+                style={{ background: 'linear-gradient(135deg, hsla(var(--primary)/0.15), hsla(var(--accent)/0.12))' }}>
+                <v.icon className="w-5 h-5 text-primary" />
               </div>
-              <h3 className="font-semibold text-xl text-foreground mb-3">{v.title}</h3>
-              <p className="text-muted-foreground font-light leading-relaxed">{v.desc}</p>
+              <h3 className="font-bold text-lg text-foreground mb-3 tracking-tight leading-snug">{v.title}</h3>
+              <p className="text-muted-foreground font-light leading-relaxed text-sm">{v.desc}</p>
             </motion.div>
           ))}
         </div>

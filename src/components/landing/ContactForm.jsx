@@ -27,7 +27,9 @@ export default function ContactForm() {
   };
 
   return (
-    <section id="contacto" className="py-20 md:py-32 px-6">
+    <section id="contacto" className="py-24 md:py-36 px-6 relative overflow-hidden"
+      style={{ background: 'linear-gradient(160deg, hsl(200 30% 97%) 0%, hsl(var(--background)) 60%)' }}
+    >
       <div ref={ref} className="max-w-2xl mx-auto">
         <div className="text-center mb-12">
           <motion.span
@@ -70,7 +72,14 @@ export default function ContactForm() {
               </p>
             </div>
           ) : (
-            <form onSubmit={handleSubmit} className="bg-card rounded-2xl border border-border/50 p-8 md:p-12 space-y-6">
+            <form onSubmit={handleSubmit} className="rounded-2xl p-8 md:p-12 space-y-6"
+              style={{
+                background: 'rgba(255,255,255,0.7)',
+                backdropFilter: 'blur(24px)',
+                border: '1px solid rgba(255,255,255,0.85)',
+                boxShadow: '0 8px 40px rgba(0,0,0,0.08), 0 2px 8px rgba(0,0,0,0.04)',
+              }}
+            >
               <div>
                 <label className="block text-sm font-medium text-foreground mb-2">Nombre</label>
                 <Input
@@ -104,7 +113,8 @@ export default function ContactForm() {
               <Button
                 type="submit"
                 disabled={status === 'loading'}
-                className="w-full h-14 rounded-full bg-primary text-primary-foreground text-base font-semibold hover:bg-primary/90 transition-all duration-300"
+                className="w-full h-14 rounded-full text-white text-base font-semibold transition-all duration-300 hover:scale-[1.02]"
+                style={{ background: 'linear-gradient(135deg, hsl(var(--primary)), hsl(var(--accent)))', boxShadow: '0 4px 24px hsla(var(--primary)/0.35)' }}
               >
                 {status === 'loading' ? (
                   <Loader2 className="w-5 h-5 animate-spin" />
