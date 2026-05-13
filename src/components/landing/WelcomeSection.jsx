@@ -26,11 +26,11 @@ export default function WelcomeSection() {
           ¡Queremos conocerte! En SOS tenemos un lugar para ti
         </motion.h2>
 
-        <motion.div
-          initial={{ opacity: 0, scaleX: 0 }}
-          animate={isInView ? { opacity: 1, scaleX: 1 } : {}}
-          transition={{ duration: 0.7, delay: 0.3 }}
-          className="w-12 h-0.5 bg-primary mx-auto mb-10 origin-center hidden" />
+        
+
+
+
+        
         
 
         
