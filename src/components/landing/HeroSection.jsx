@@ -1,7 +1,7 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 
-const VIDEO_URL = "https://media.base44.com/videos/public/69ea6ca06c4574e55a2de28d/a578f25b2_SOSBARCELONA.mp4";
+const VIDEO_URL = "https://media.base44.com/videos/public/69ea6ca06c4574e55a2de28d/28f92cbb4_Video.mp4";
 
 export default function HeroSection({ heroImage }) {
   return (
@@ -17,13 +17,6 @@ export default function HeroSection({ heroImage }) {
         playsInline
       />
 
-      {/* Multi-layer overlay for depth */}
-      <div className="absolute inset-0 bg-gradient-to-b from-black/50 via-black/20 to-black/60" />
-      <div className="absolute inset-0 bg-gradient-to-r from-black/30 via-transparent to-black/30" />
-
-      {/* Subtle vignette */}
-      <div className="absolute inset-0" style={{ background: 'radial-gradient(ellipse at center, transparent 40%, rgba(0,0,0,0.5) 100%)' }} />
-
       {/* Content */}
       <div className="relative z-10 text-center px-6 max-w-5xl mx-auto">
         {/* Eyebrow */}
@@ -38,18 +31,13 @@ export default function HeroSection({ heroImage }) {
           <span className="w-10 h-px bg-white/40" />
         </motion.div>
 
-        <div
-          className="inline-block rounded-[30px] px-5 py-6 md:px-8 md:py-7 mb-12"
-          style={{
-            background: 'radial-gradient(ellipse at center, rgba(0,0,0,0.50) 0%, rgba(0,0,0,0.28) 45%, rgba(0,0,0,0) 78%)',
-          }}
-        >
+        <div className="inline-block mb-12">
           <motion.h1
             initial={{ opacity: 0, y: 50 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 1.3, delay: 0.3, ease: [0.22, 1, 0.36, 1] }}
             className="font-display text-5xl md:text-7xl lg:text-8xl font-semibold text-white leading-[1.05] tracking-tight mb-6"
-            style={{ textShadow: '0 4px 18px rgba(0,0,0,0.95), 0 2px 6px rgba(0,0,0,0.9)' }}
+            style={{ textShadow: '0 2px 10px rgba(0,0,0,0.55)' }}
           >
             Aquí hay un hogar<br />
             <em className="not-italic" style={{ color: 'hsl(var(--primary))' }}>para ti y los tuyos</em>
@@ -60,7 +48,7 @@ export default function HeroSection({ heroImage }) {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 1.2, delay: 0.75, ease: 'easeOut' }}
             className="text-white/90 text-xl md:text-2xl font-light leading-relaxed max-w-2xl mx-auto tracking-wide"
-            style={{ textShadow: '0 4px 16px rgba(0,0,0,0.95), 0 2px 5px rgba(0,0,0,0.9)' }}
+            style={{ textShadow: '0 2px 8px rgba(0,0,0,0.5)' }}
           >
             SOS para tu vida es la familia que te acompaña y te impulsa a vivir el propósito de Dios para ti.
           </motion.p>
