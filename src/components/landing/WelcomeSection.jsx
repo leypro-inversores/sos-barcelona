@@ -49,7 +49,7 @@ export default function WelcomeSection() {
           className="w-full max-w-2xl mx-auto">
           
           <img
-            src="https://media.base44.com/images/public/69ea6ca06c4574e55a2de28d/1a972d5ac_FINALPORTADA.png"
+            src="https://media.base44.com/images/public/69ea6ca06c4574e55a2de28d/aa000acaf_PORTADAFINAL13-05.png"
             alt="Familia SOS Barcelona"
             className="w-full h-auto object-contain rounded-2xl" />
           
