@@ -6,28 +6,19 @@ const CHANNEL_ID = 'UCHPgrvFRfAD9U7Bb6NWkvGQ';
 const API_KEY = 'AIzaSyD7BqqPqyBMbYoKsS_d8_UhuPib2jbYJNw';
 
 async function fetchLatestVideos() {
-  const channelRes = await fetch(
-    `https://www.googleapis.com/youtube/v3/channels?part=contentDetails&id=${CHANNEL_ID}&key=${API_KEY}`
-  );
-  const channelData = await channelRes.json();
-  if (!channelData.items?.length) {
-    throw new Error(channelData.error?.message || 'Canal no encontrado');
-  }
-  const uploadsId = channelData.items[0].contentDetails.relatedPlaylists.uploads;
-
   const uniqueVideos = [];
   const seenVideoIds = new Set();
   let pageToken = '';
 
   while (uniqueVideos.length < 6) {
-    const playlistRes = await fetch(
-      `https://www.googleapis.com/youtube/v3/playlistItems?part=snippet&maxResults=25&playlistId=${uploadsId}&key=${API_KEY}${pageToken ? `&pageToken=${pageToken}` : ''}`
+    const streamsRes = await fetch(
+      `https://www.googleapis.com/youtube/v3/search?part=snippet&channelId=${CHANNEL_ID}&eventType=completed&type=video&order=date&maxResults=25&key=${API_KEY}${pageToken ? `&pageToken=${pageToken}` : ''}`
     );
-    const playlistData = await playlistRes.json();
-    if (!playlistData.items) throw new Error(playlistData.error?.message || 'Sin videos');
+    const streamsData = await streamsRes.json();
+    if (!streamsData.items) throw new Error(streamsData.error?.message || 'Sin videos');
 
-    playlistData.items.forEach((item) => {
-      const videoId = item.snippet?.resourceId?.videoId;
+    streamsData.items.forEach((item) => {
+      const videoId = item.id?.videoId;
       if (!videoId || seenVideoIds.has(videoId) || uniqueVideos.length >= 6) return;
 
       seenVideoIds.add(videoId);
@@ -36,19 +27,17 @@ async function fetchLatestVideos() {
         title: item.snippet.title,
         publishedAt: item.snippet.publishedAt,
         thumbnail:
-          item.snippet.thumbnails?.maxres?.url ||
           item.snippet.thumbnails?.high?.url ||
-          item.snippet.thumbnails?.medium?.url,
+          item.snippet.thumbnails?.medium?.url ||
+          item.snippet.thumbnails?.default?.url,
       });
     });
 
-    if (!playlistData.nextPageToken) break;
-    pageToken = playlistData.nextPageToken;
+    if (!streamsData.nextPageToken) break;
+    pageToken = streamsData.nextPageToken;
   }
 
-  return uniqueVideos
-    .sort((a, b) => new Date(b.publishedAt) - new Date(a.publishedAt))
-    .slice(0, 6);
+  return uniqueVideos.slice(0, 6);
 }
 
 function VideoCard({ video, index, isInView }) {
@@ -229,8 +218,8 @@ export default function VideosSection() {
         {!loading && !error && videos.length > 0 && (
           <>
             <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-7">
-              {videos.map((video, i) => (
-                <VideoCard key={video.id} video={video} index={i} isInView={isInView} />
+              {videos.slice(0, 6).map((video, i) => (
+                <VideoCard key={`${video.id}-${i}`} video={video} index={i} isInView={isInView} />
               ))}
             </div>
 
