@@ -1,6 +1,6 @@
 import React, { useRef } from 'react';
 import { motion, useInView } from 'framer-motion';
-import { Crown, Heart, HandHeart, Home } from 'lucide-react';
+import { Crown, Heart, HandHeart, Home, Zap } from 'lucide-react';
 
 const values = [
   {
@@ -22,6 +22,11 @@ const values = [
     icon: Home,
     title: "Servicio genuino que transforme familias",
     desc: "Vivimos para dar, no para recibir. El servicio es una expresión genuina del amor de Dios que restaura hogares.",
+  },
+  {
+    icon: Zap,
+    title: "Poder",
+    desc: "No vivimos de teorías, sino de Su presencia real y poderosa, que se mueve y actúa en comunión con la fe de Sus hijos.",
   },
 ];
 
@@ -51,7 +56,7 @@ export default function CultureSection() {
           </motion.h2>
         </div>
 
-        <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
+        <div className="grid sm:grid-cols-2 lg:grid-cols-5 gap-6">
           {values.map((v, i) => (
             <motion.div
               key={i}
