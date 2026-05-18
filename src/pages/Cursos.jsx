@@ -3,17 +3,30 @@ import { Link } from 'react-router-dom';
 import { motion } from 'framer-motion';
 import { ChevronLeft } from 'lucide-react';
 import SOSLogo from '../components/landing/SOSLogo';
-import CourseCard from '../components/courses/CourseCard';
+import CoursesImageCarousel from '../components/courses/CoursesImageCarousel';
+import CourseAccordionItem from '../components/courses/CourseAccordionItem';
+
+const COURSE_IMAGES = [
+  "https://media.base44.com/images/public/69ea6ca06c4574e55a2de28d/39d2d4895_WhatsAppImage2026-05-13at2152321.jpg",
+  "https://media.base44.com/images/public/69ea6ca06c4574e55a2de28d/70143da25_WhatsAppImage2026-05-13at2152332.jpg",
+  "https://media.base44.com/images/public/69ea6ca06c4574e55a2de28d/a708484f2_WhatsAppImage2026-05-13at2152334.jpg",
+  "https://media.base44.com/images/public/69ea6ca06c4574e55a2de28d/a59463399_WhatsAppImage2026-05-13at2152336.jpg",
+  "https://media.base44.com/images/public/69ea6ca06c4574e55a2de28d/6a8f9402d_WhatsAppImage2026-05-13at215336.jpg",
+  "https://media.base44.com/images/public/69ea6ca06c4574e55a2de28d/3231f48f9_WhatsAppImage2026-05-13at2213151.jpg",
+  "https://media.base44.com/images/public/69ea6ca06c4574e55a2de28d/e414f7109_WhatsAppImage2026-05-13at2213153.jpg",
+  "https://media.base44.com/images/public/69ea6ca06c4574e55a2de28d/711837ffc_WhatsAppImage2026-05-13at221315.jpg",
+  "https://media.base44.com/images/public/69ea6ca06c4574e55a2de28d/a1cf7862a_CursoReiniciandonuestroamor.jpg",
+];
 
 const COURSES = [
   {
     id: 1,
-    title: "Curso Prematrimonial — Construyendo un Matrimonio de Élite",
-    image: "https://media.base44.com/images/public/69ea6ca06c4574e55a2de28d/e9cefa338_WhatsAppImage2026-05-13at2152321.jpg",
-    price: "400€",
-    duration: "4 semanas",
-    intro: "En SOS Barcelona creemos que el matrimonio no solo es una decisión emocional, sino un pacto diseñado por Dios para construir una familia sana, fuerte y llena de propósito.",
+    label: "Curso 1",
+    title: "Prematrimonial — Construyendo un Matrimonio de Élite",
+    summary: "Principios bíblicos, comunicación, sexualidad y finanzas para construir una familia sana, fuerte y llena de propósito.",
+    meta: ["400€", "4 semanas", "Acompañamiento durante todo el proceso"],
     details: [
+      "En SOS Barcelona creemos que el matrimonio no solo es una decisión emocional, sino un pacto diseñado por Dios para construir una familia sana, fuerte y llena de propósito.",
       "Nuestro Curso Prematrimonial ha sido creado para ayudar a las parejas a prepararse de manera práctica, emocional y espiritual antes de dar uno de los pasos más importantes de sus vidas. A través de principios bíblicos y herramientas científicas prácticas reales, aprenderán a fortalecer áreas fundamentales como:",
       [
         "Comunicación y resolución de conflictos",
@@ -28,29 +41,27 @@ const COURSES = [
   },
   {
     id: 2,
+    label: "Curso 2",
     title: "Reiniciando nuestro amor",
-    image: "https://media.base44.com/images/public/69ea6ca06c4574e55a2de28d/11fccbe3a_CursoReiniciandonuestroamor.jpg",
-    price: "290€",
-    duration: "12 sábados",
-    intro: "Reiniciar el amor es dar al pasado el valor correcto, es no permitir que este arruine nuestro destino...",
+    summary: "Sanidad de heridas, reconstrucción de confianza y restauración familiar para volver a mirar la familia con propósito.",
+    meta: ["290€", "12 sábados", "Taller privado: consultar precio"],
     details: [
+      "Reiniciar el amor es dar al pasado el valor correcto, es no permitir que este arruine nuestro destino...",
       "...es permitir que Dios transforme el corazón para construir un hogar más experimentado, más fuerte, más sano y más lleno de propósito. En SOS creemos que ningún matrimonio está demasiado roto, ninguna familia está perdida y ningún corazón está lejos de la restauración. Cada crisis puede convertirse en un nuevo comienzo cuando el amor deja de ser solo emoción y se convierte en decisión, entrega y fe.",
       "Reiniciando Nuestro Amor no es solo un taller… es una oportunidad para sanar heridas, recuperar la intimidad, reconstruir la confianza y volver a mirar a tu familia como el proyecto más importante de tu vida y lograrlo acompañados de mentores experimentados. Porque cuando una pareja sana, una familia se transforma. Y cuando una familia se transforma, generaciones enteras cambian.",
     ],
   },
   {
     id: 3,
+    label: "Curso 3",
     title: "Escuela de Liderazgo — Cimientos 2026",
-    image: "https://media.base44.com/images/public/69ea6ca06c4574e55a2de28d/9bf83bee7_image.png",
-    price: "Inversión: $40.000",
-    duration: "Ciclo #4",
-    intro: "Inscripciones abiertas hasta el 20 de Mayo. Inicio de clases el 25 de Mayo.",
+    summary: "Carácter y habilidades de Reino para edificar tu vida sobre cimientos firmes. Modalidad virtual disponible.",
+    meta: ["Inversión: $40.000 pesos colombianos", "Ciclo #4", "Modalidad: Virtual"],
     details: [
-      "Formación integral para el desarrollo del carácter y habilidades de liderazgo bajo principios del Reino. Modalidades disponibles para adaptarse a tu ritmo:",
+      "Inscripciones abiertas hasta el 20 de Mayo. Inicio de clases el 25 de Mayo.",
+      "Formación integral para el desarrollo del carácter y habilidades de liderazgo bajo principios del Reino. Modalidad disponible para adaptarse a tu ritmo:",
       [
-        "Presencial: Vivencia y comunidad en nuestro campus.",
         "Virtual: Clases en vivo con interacción directa.",
-        "Asincrónica: Estudia a tu propio ritmo con material pregrabado de alta calidad.",
       ],
       "No dejes pasar la oportunidad de capacitarte y edificar tu vida sobre cimientos firmes.",
     ],
@@ -76,24 +87,35 @@ export default function Cursos() {
         </div>
       </div>
 
-      <div className="max-w-6xl mx-auto px-6 py-16">
-        <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} className="text-center mb-16">
-          <span className="text-primary text-sm tracking-[0.25em] uppercase font-semibold block mb-4">Formación</span>
-          <h1 className="font-display text-4xl md:text-5xl font-medium text-foreground mb-4">Cursos, Talleres y Eventos</h1>
-          <p className="text-muted-foreground font-light text-lg max-w-xl mx-auto">Crece en fe, carácter y propósito con nuestros programas de formación y eventos especiales.</p>
-        </motion.div>
+      <div className="px-6 py-16 md:py-20" style={{ background: 'linear-gradient(135deg, hsl(40 35% 97%) 0%, hsl(38 45% 93%) 100%)' }}>
+        <div className="max-w-7xl mx-auto">
+          <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} className="text-center mb-14">
+            <span className="text-primary text-sm tracking-[0.25em] uppercase font-semibold block mb-4">Formación</span>
+            <h1 className="font-display text-4xl md:text-6xl font-medium text-foreground mb-4">Cursos, Talleres y Eventos</h1>
+            <p className="text-muted-foreground font-light text-lg max-w-2xl mx-auto">Crece en fe, carácter y propósito con procesos diseñados para matrimonios, familias y líderes.</p>
+          </motion.div>
 
-        <div className="grid gap-8 lg:grid-cols-3">
-          {COURSES.map((course, i) => (
-            <CourseCard key={course.id} course={course} index={i} />
-          ))}
+          <div className="grid gap-10 lg:grid-cols-2 lg:items-start">
+            <CoursesImageCarousel images={COURSE_IMAGES} />
+
+            <motion.div
+              initial={{ opacity: 0, x: 30 }}
+              animate={{ opacity: 1, x: 0 }}
+              transition={{ duration: 0.7, delay: 0.15 }}
+              className="space-y-5"
+            >
+              {COURSES.map((course) => (
+                <CourseAccordionItem key={course.id} course={course} />
+              ))}
+            </motion.div>
+          </div>
         </div>
 
-        <div className="mt-12 text-center">
-          <p className="text-muted-foreground font-light">¿Tienes preguntas sobre algún curso?</p>
-          <Link to="/#contacto" className="text-primary font-semibold hover:underline">Contáctanos aquí</Link>
+          <div className="mt-12 text-center">
+            <p className="text-muted-foreground font-light">¿Tienes preguntas sobre algún curso?</p>
+            <Link to="/#contacto" className="text-primary font-semibold hover:underline">Contáctanos aquí</Link>
+          </div>
         </div>
-      </div>
     </div>
   );
 }
