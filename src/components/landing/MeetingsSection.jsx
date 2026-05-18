@@ -105,7 +105,7 @@ export default function MeetingsSection() {
                 transition={{ duration: 0.35 }}
                 className="max-w-2xl rounded-2xl border border-primary/15 bg-white/75 px-5 py-4 text-center text-sm leading-relaxed text-muted-foreground shadow-lg shadow-black/5 backdrop-blur-xl"
               >
-                <span className="font-semibold text-foreground">Estación más cercana:</span> Metro L4 (Vía Júlia) a pocos minutos caminando.{' '}
+                <span className="font-semibold text-foreground">Estaciones más cercanas:</span> Metro L4 (Vía Júlia) y L3 (Roquetes, línea verde) a pocos minutos caminando.{' '}
                 <span className="font-semibold text-foreground">Autobuses cercanos:</span> Líneas en Via Júlia y Ronda de Dalt.
               </motion.div>
             )}
