@@ -4,7 +4,7 @@ import { Target, Heart, BookOpen, Send } from 'lucide-react';
 
 const pillars = [
 { icon: Target, word: "Ganar", desc: "Alcanzar a quienes a\xFAn no conocen a Cristo con amor y autenticidad." },
-{ icon: Heart, word: "Consolidar", desc: "Fortalecer a cada persona en su fe y carácter." },
+{ icon: Heart, word: "Consolidar", desc: "Acompa\xF1ar a los nuevos creyentes en sus primeros pasos " },
 { icon: BookOpen, word: "Discipular", desc: "Formar creyentes maduros que conozcan la Palabra." },
 { icon: Send, word: "Enviar", desc: "Movilizar al pueblo de Dios a cumplir su llamado." }];
 
