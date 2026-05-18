@@ -109,16 +109,34 @@ export default function ConnectionSection() {
           </motion.p>
         </div>
 
-        <div className="grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
-          {revelations.map((item, index) => (
-            <RevelationButton
-              key={item.title}
-              item={item}
-              index={index}
-              isInView={isInView}
-              onClick={() => setSelected(item)}
-            />
-          ))}
+        <div className="grid items-center gap-10 lg:grid-cols-[0.95fr_1.05fr] lg:gap-14">
+          <motion.div
+            initial={{ opacity: 0, x: -36 }}
+            animate={isInView ? { opacity: 1, x: 0 } : {}}
+            transition={{ duration: 0.8, delay: 0.2, ease: [0.22, 1, 0.36, 1] }}
+            className="relative"
+          >
+            <div className="overflow-hidden rounded-[32px] border border-cyan-300/20 bg-white/8 p-2 backdrop-blur-xl" style={{ boxShadow: '0 26px 80px rgba(0,0,0,0.32)' }}>
+              <img
+                src="https://media.base44.com/images/public/69ea6ca06c4574e55a2de28d/0c14075e4_WEB.jpg"
+                alt="Dos mujeres interactuando felices en SOS Barcelona"
+                className="h-full max-h-[620px] w-full rounded-[24px] object-cover object-center"
+              />
+            </div>
+            <div className="absolute -bottom-5 -right-5 h-32 w-32 rounded-[28px] border border-amber-200/20 bg-amber-300/10 blur-sm" />
+          </motion.div>
+
+          <div className="grid gap-4">
+            {revelations.map((item, index) => (
+              <RevelationButton
+                key={item.title}
+                item={item}
+                index={index}
+                isInView={isInView}
+                onClick={() => setSelected(item)}
+              />
+            ))}
+          </div>
         </div>
       </div>
 
