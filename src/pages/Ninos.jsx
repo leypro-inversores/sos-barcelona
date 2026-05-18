@@ -47,16 +47,16 @@ export default function Ninos() {
         
         <div className="absolute inset-0 bg-gradient-to-t from-black/75 via-black/20 to-transparent" />
         <div className="relative z-10 w-full min-h-[520px] md:min-h-[680px]">
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            className="absolute bottom-0 right-4 w-[58%] max-w-2xl translate-y-6 rounded-[2rem] bg-white/80 px-6 py-7 text-center shadow-2xl shadow-black/20 backdrop-blur-md md:bottom-2 md:right-12 md:translate-y-8 md:px-10 md:py-9 lg:bottom-4 lg:right-20 lg:translate-y-10 hidden">
-            
-            <h1 className="font-display text-5xl md:text-7xl font-semibold text-[#17233d] mb-6">Ministerio infantil</h1>
-            <p className="text-[#17233d]/90 font-light text-xl md:text-2xl leading-relaxed">
-              Un espacio lleno de amor, creatividad y diversión donde los niños descubren a Jesús de forma auténtica, divertida y a su nivel
-            </p>
-          </motion.div>
+          
+
+
+
+
+
+
+
+
+          
         </div>
       </div>
 
