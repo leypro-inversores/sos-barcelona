@@ -46,8 +46,12 @@ export default function Ninos() {
         style={{ backgroundImage: "url('https://media.base44.com/images/public/69ea6ca06c4574e55a2de28d/904504f23_image.png')" }}
       >
         <div className="absolute inset-0 bg-gradient-to-t from-black/75 via-black/20 to-transparent" />
-        <div className="relative z-10 max-w-4xl mx-auto text-center pb-14 md:pb-20">
-          <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }}>
+        <div className="relative z-10 w-full min-h-[520px] md:min-h-[680px]">
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            className="absolute bottom-8 right-4 w-[58%] max-w-2xl text-center md:bottom-14 md:right-12 lg:bottom-16 lg:right-20"
+          >
             <h1 className="font-display text-5xl md:text-7xl font-semibold text-white mb-6 drop-shadow-2xl">Ministerio infantil</h1>
             <p className="text-white/95 font-light text-xl md:text-2xl leading-relaxed drop-shadow-lg">
               Un espacio lleno de amor, creatividad y diversión donde los niños descubren a Jesús de forma auténtica, divertida y a su nivel
