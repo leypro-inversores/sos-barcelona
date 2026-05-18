@@ -15,20 +15,40 @@ async function fetchLatestVideos() {
   }
   const uploadsId = channelData.items[0].contentDetails.relatedPlaylists.uploads;
 
-  const playlistRes = await fetch(
-    `https://www.googleapis.com/youtube/v3/playlistItems?part=snippet&maxResults=6&playlistId=${uploadsId}&key=${API_KEY}`
-  );
-  const playlistData = await playlistRes.json();
-  if (!playlistData.items) throw new Error(playlistData.error?.message || 'Sin videos');
+  const uniqueVideos = [];
+  const seenVideoIds = new Set();
+  let pageToken = '';
 
-  return playlistData.items.map((item) => ({
-    id: item.snippet.resourceId.videoId,
-    title: item.snippet.title,
-    thumbnail:
-      item.snippet.thumbnails?.maxres?.url ||
-      item.snippet.thumbnails?.high?.url ||
-      item.snippet.thumbnails?.medium?.url,
-  }));
+  while (uniqueVideos.length < 6) {
+    const playlistRes = await fetch(
+      `https://www.googleapis.com/youtube/v3/playlistItems?part=snippet&maxResults=25&playlistId=${uploadsId}&key=${API_KEY}${pageToken ? `&pageToken=${pageToken}` : ''}`
+    );
+    const playlistData = await playlistRes.json();
+    if (!playlistData.items) throw new Error(playlistData.error?.message || 'Sin videos');
+
+    playlistData.items.forEach((item) => {
+      const videoId = item.snippet?.resourceId?.videoId;
+      if (!videoId || seenVideoIds.has(videoId) || uniqueVideos.length >= 6) return;
+
+      seenVideoIds.add(videoId);
+      uniqueVideos.push({
+        id: videoId,
+        title: item.snippet.title,
+        publishedAt: item.snippet.publishedAt,
+        thumbnail:
+          item.snippet.thumbnails?.maxres?.url ||
+          item.snippet.thumbnails?.high?.url ||
+          item.snippet.thumbnails?.medium?.url,
+      });
+    });
+
+    if (!playlistData.nextPageToken) break;
+    pageToken = playlistData.nextPageToken;
+  }
+
+  return uniqueVideos
+    .sort((a, b) => new Date(b.publishedAt) - new Date(a.publishedAt))
+    .slice(0, 6);
 }
 
 function VideoCard({ video, index, isInView }) {
