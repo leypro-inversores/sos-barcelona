@@ -67,6 +67,15 @@ export default function Ninos() {
         </motion.div>
       </div>
 
+      <section className="bg-white px-6 py-16 md:py-20">
+        <div className="max-w-3xl mx-auto text-center">
+          <h2 className="font-display text-3xl font-medium text-foreground text-center mb-6">Ministerio infantil</h2>
+          <p className="text-muted-foreground font-light text-lg md:text-xl leading-relaxed">
+            Un espacio lleno de amor, creatividad y diversión donde los niños descubren a Jesús de forma auténtica, divertida y a su nivel.
+          </p>
+        </div>
+      </section>
+
       <div className="max-w-6xl mx-auto px-6 py-16">
         {/* Age Groups */}
         <div className="mb-16">
