@@ -1,87 +1,59 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { motion } from 'framer-motion';
-import { ChevronLeft, ShoppingCart, Star, Clock, Users, Heart } from 'lucide-react';
+import { ChevronLeft } from 'lucide-react';
 import SOSLogo from '../components/landing/SOSLogo';
+import CourseCard from '../components/courses/CourseCard';
 
 const COURSES = [
   {
     id: 1,
-    title: "Fundamentos de Fe",
-    subtitle: "Taller de bases bíblicas",
-    desc: "Descubre los fundamentos esenciales de la fe cristiana. Ideal para nuevos creyentes o quienes quieran profundizar.",
-    price: "Gratis",
+    title: "Curso Prematrimonial — Construyendo un Matrimonio de Élite",
+    image: "https://media.base44.com/images/public/69ea6ca06c4574e55a2de28d/e9cefa338_WhatsAppImage2026-05-13at2152321.jpg",
+    price: "400€",
     duration: "4 semanas",
-    sessions: "8 sesiones",
-    category: "Formación",
-    emoji: "📖",
-    color: "bg-blue-50 border-blue-100",
-    badgeColor: "bg-blue-100 text-blue-700",
+    intro: "En SOS Barcelona creemos que el matrimonio no solo es una decisión emocional, sino un pacto diseñado por Dios para construir una familia sana, fuerte y llena de propósito.",
+    details: [
+      "Nuestro Curso Prematrimonial ha sido creado para ayudar a las parejas a prepararse de manera práctica, emocional y espiritual antes de dar uno de los pasos más importantes de sus vidas. A través de principios bíblicos y herramientas científicas prácticas reales, aprenderán a fortalecer áreas fundamentales como:",
+      [
+        "Comunicación y resolución de conflictos",
+        "Amor, compromiso y vida espiritual",
+        "Temperamentos y diferencias en pareja",
+        "Sexualidad bajo el diseño de Dios",
+        "Finanzas y mayordomía familiar",
+        "Sanidad emocional y pasión sostenida",
+      ],
+      "Más que un curso, es un proceso de crecimiento y preparación para formar un matrimonio sólido, guiado por Dios y basado en el amor, la verdad y el servicio mutuo. Porque un matrimonio fuerte no se construye solo con emociones… se construye con propósito, principios y la presencia de Dios en el centro del hogar. Si estás pensando en casarte o quieres fortalecer las bases de tu relación, este curso puede marcar un antes y un después en vuestra historia.",
+    ],
   },
   {
     id: 2,
-    title: "Retiro de Parejas",
-    subtitle: "Construyendo juntos",
-    desc: "Un fin de semana especial para parejas casadas o de novios. Herramientas prácticas para fortalecer la relación.",
-    price: "€149 por pareja",
-    duration: "1 fin de semana",
-    sessions: "Junio 6-8",
-    category: "Parejas",
-    emoji: "💑",
-    color: "bg-pink-50 border-pink-100",
-    badgeColor: "bg-pink-100 text-pink-700",
+    title: "Reiniciando nuestro amor",
+    image: "https://media.base44.com/images/public/69ea6ca06c4574e55a2de28d/11fccbe3a_CursoReiniciandonuestroamor.jpg",
+    price: "290€",
+    duration: "12 sábados",
+    intro: "Reiniciar el amor es dar al pasado el valor correcto, es no permitir que este arruine nuestro destino...",
+    details: [
+      "...es permitir que Dios transforme el corazón para construir un hogar más experimentado, más fuerte, más sano y más lleno de propósito. En SOS creemos que ningún matrimonio está demasiado roto, ninguna familia está perdida y ningún corazón está lejos de la restauración. Cada crisis puede convertirse en un nuevo comienzo cuando el amor deja de ser solo emoción y se convierte en decisión, entrega y fe.",
+      "Reiniciando Nuestro Amor no es solo un taller… es una oportunidad para sanar heridas, recuperar la intimidad, reconstruir la confianza y volver a mirar a tu familia como el proyecto más importante de tu vida y lograrlo acompañados de mentores experimentados. Porque cuando una pareja sana, una familia se transforma. Y cuando una familia se transforma, generaciones enteras cambian.",
+    ],
   },
   {
     id: 3,
-    title: "Escuela de Liderazgo",
-    subtitle: "Desarrolla tu potencial",
-    desc: "Formación intensiva para líderes y servidores. Aprende a liderar con carácter, visión y amor.",
-    price: "€89",
-    duration: "6 semanas",
-    sessions: "12 sesiones",
-    category: "Liderazgo",
-    emoji: "🌟",
-    color: "bg-amber-50 border-amber-100",
-    badgeColor: "bg-amber-100 text-amber-700",
-  },
-  {
-    id: 4,
-    title: "Noche de Adoración Especial",
-    subtitle: "Encuentro con Dios",
-    desc: "Una noche de adoración profunda con música en vivo, ministración y presencia del Espíritu Santo.",
-    price: "€15",
-    duration: "1 noche",
-    sessions: "Mayo 10",
-    category: "Evento",
-    emoji: "✨",
-    color: "bg-purple-50 border-purple-100",
-    badgeColor: "bg-purple-100 text-purple-700",
-  },
-  {
-    id: 5,
-    title: "Taller: Propósito de Vida",
-    subtitle: "Descubre tu llamado",
-    desc: "¿Para qué estás aquí? Este taller te ayudará a descubrir y activar el propósito que Dios puso en ti.",
-    price: "€49",
-    duration: "2 días",
-    sessions: "Julio 11-12",
-    category: "Taller",
-    emoji: "🧭",
-    color: "bg-green-50 border-green-100",
-    badgeColor: "bg-green-100 text-green-700",
-  },
-  {
-    id: 6,
-    title: "Familia Bendecida",
-    subtitle: "Taller para familias",
-    desc: "Un taller práctico para construir familias saludables, llenas de amor, comunicación y fe.",
-    price: "€65 por familia",
-    duration: "3 días",
-    sessions: "Agosto",
-    category: "Familia",
-    emoji: "🏠",
-    color: "bg-orange-50 border-orange-100",
-    badgeColor: "bg-orange-100 text-orange-700",
+    title: "Escuela de Liderazgo — Cimientos 2026",
+    image: "https://media.base44.com/images/public/69ea6ca06c4574e55a2de28d/9bf83bee7_image.png",
+    price: "Inversión: $40.000",
+    duration: "Ciclo #4",
+    intro: "Inscripciones abiertas hasta el 20 de Mayo. Inicio de clases el 25 de Mayo.",
+    details: [
+      "Formación integral para el desarrollo del carácter y habilidades de liderazgo bajo principios del Reino. Modalidades disponibles para adaptarse a tu ritmo:",
+      [
+        "Presencial: Vivencia y comunidad en nuestro campus.",
+        "Virtual: Clases en vivo con interacción directa.",
+        "Asincrónica: Estudia a tu propio ritmo con material pregrabado de alta calidad.",
+      ],
+      "No dejes pasar la oportunidad de capacitarte y edificar tu vida sobre cimientos firmes.",
+    ],
   },
 ];
 
@@ -111,36 +83,9 @@ export default function Cursos() {
           <p className="text-muted-foreground font-light text-lg max-w-xl mx-auto">Crece en fe, carácter y propósito con nuestros programas de formación y eventos especiales.</p>
         </motion.div>
 
-        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+        <div className="grid gap-8 lg:grid-cols-3">
           {COURSES.map((course, i) => (
-            <motion.div
-              key={course.id}
-              initial={{ opacity: 0, y: 30 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.5, delay: i * 0.1 }}
-              className={`rounded-2xl border p-6 flex flex-col ${course.color} hover:shadow-lg transition-all duration-300`}
-            >
-              <div className="text-4xl mb-4">{course.emoji}</div>
-              <span className={`text-xs font-semibold px-3 py-1 rounded-full w-fit mb-4 ${course.badgeColor}`}>
-                {course.category}
-              </span>
-              <h3 className="text-xl font-bold text-foreground mb-1">{course.title}</h3>
-              <p className="text-sm font-medium text-muted-foreground mb-3">{course.subtitle}</p>
-              <p className="text-sm text-foreground/70 font-light leading-relaxed mb-6 flex-1">{course.desc}</p>
-
-              <div className="flex gap-4 text-xs text-muted-foreground mb-6">
-                <span className="flex items-center gap-1"><Clock className="w-3.5 h-3.5" />{course.duration}</span>
-                <span className="flex items-center gap-1"><Users className="w-3.5 h-3.5" />{course.sessions}</span>
-              </div>
-
-              <div className="flex items-center justify-between">
-                <span className="text-xl font-bold text-foreground">{course.price}</span>
-                <button className="flex items-center gap-2 bg-primary text-primary-foreground px-5 py-2.5 rounded-full text-sm font-semibold hover:bg-primary/90 transition-all duration-200">
-                  <ShoppingCart className="w-4 h-4" />
-                  Inscribirse
-                </button>
-              </div>
-            </motion.div>
+            <CourseCard key={course.id} course={course} index={i} />
           ))}
         </div>
 
