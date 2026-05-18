@@ -57,6 +57,10 @@ const COURSES = [
     title: "Escuela de Liderazgo — Cimientos 2026",
     summary: "Carácter y habilidades de Reino para edificar tu vida sobre cimientos firmes. Modalidad virtual disponible.",
     meta: ["Inversión: $40.000 pesos colombianos", "Ciclo #4", "Modalidad: Virtual"],
+    cta: {
+      label: "Iniciar Inscripción",
+      url: "https://www.sosparatuvida.com",
+    },
     details: [
       "Inscripciones abiertas hasta el 20 de Mayo. Inicio de clases el 25 de Mayo.",
       "Formación integral para el desarrollo del carácter y habilidades de liderazgo bajo principios del Reino. Modalidad disponible para adaptarse a tu ritmo:",

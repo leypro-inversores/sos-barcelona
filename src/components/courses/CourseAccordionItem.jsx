@@ -55,6 +55,17 @@ export default function CourseAccordionItem({ course }) {
                   <p key={index}>{item}</p>
                 )
               ))}
+
+              {course.cta && (
+                <a
+                  href={course.cta.url}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="mt-3 inline-flex w-full items-center justify-center rounded-full bg-primary px-7 py-4 text-sm font-bold uppercase tracking-[0.16em] text-white shadow-lg shadow-primary/30 transition-all duration-300 hover:-translate-y-0.5 hover:bg-primary/90 hover:shadow-xl hover:shadow-primary/40 sm:w-auto"
+                >
+                  {course.cta.label}
+                </a>
+              )}
             </div>
           </motion.div>
         )}
