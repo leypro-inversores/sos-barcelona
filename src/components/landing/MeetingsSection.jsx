@@ -1,6 +1,6 @@
-import React, { useRef } from 'react';
+import React, { useRef, useState } from 'react';
 import { motion, useInView } from 'framer-motion';
-import { Calendar, Users, Star, MapPin } from 'lucide-react';
+import { Calendar, Users, Star, MapPin, Bus } from 'lucide-react';
 
 const stats = [
   { icon: Calendar, label: "Reuniones", value: "1 a la semana" },
@@ -11,6 +11,7 @@ const stats = [
 export default function MeetingsSection() {
   const ref = useRef(null);
   const isInView = useInView(ref, { once: true, margin: "-80px" });
+  const [showTransitInfo, setShowTransitInfo] = useState(false);
 
   return (
     <section className="py-24 md:py-36 px-6 relative overflow-hidden" ref={ref}
@@ -74,18 +75,41 @@ export default function MeetingsSection() {
           transition={{ duration: 0.6, delay: 0.7 }}
           className="text-center mt-12"
         >
-          <p className="text-muted-foreground font-light">
-            <a
-              href="https://www.google.com/maps/search/?api=1&query=Carrer+de+Teresa+de+Cofrents+23+Barcelona"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="group inline-flex items-center gap-2 font-medium text-foreground transition-colors duration-300 hover:text-primary"
-            >
-              <MapPin className="h-4 w-4 text-primary transition-transform duration-300 group-hover:-translate-y-0.5" />
-              <span className="underline decoration-transparent underline-offset-4 transition-colors duration-300 group-hover:decoration-primary">C/ Teresa de Cofrents 23</span>
-            </a>{' '}
-            · Barcelona, España
-          </p>
+          <div className="flex flex-col items-center gap-4">
+            <div className="flex flex-col sm:flex-row items-center justify-center gap-3">
+              <a
+                href="https://www.google.com/maps/place/Carrer+de+Teresa+de+Cofrents,+23,+Nou+Barris,+08042+Barcelona/"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="group inline-flex items-center gap-2 rounded-full border border-primary/25 bg-primary/10 px-6 py-3 text-sm font-semibold text-primary transition-all duration-300 hover:-translate-y-0.5 hover:bg-primary hover:text-white hover:shadow-lg hover:shadow-primary/20"
+              >
+                <MapPin className="h-4 w-4 transition-transform duration-300 group-hover:-translate-y-0.5" />
+                Ver en Google Maps
+              </a>
+
+              <button
+                type="button"
+                onClick={() => setShowTransitInfo(!showTransitInfo)}
+                onMouseEnter={() => setShowTransitInfo(true)}
+                className="group inline-flex items-center gap-2 rounded-full border border-foreground/10 bg-white/80 px-6 py-3 text-sm font-semibold text-foreground transition-all duration-300 hover:-translate-y-0.5 hover:border-primary/30 hover:text-primary hover:shadow-lg hover:shadow-black/5"
+              >
+                <Bus className="h-4 w-4 text-primary transition-transform duration-300 group-hover:-translate-y-0.5" />
+                ¿Cómo llegar en Transporte Público?
+              </button>
+            </div>
+
+            {showTransitInfo && (
+              <motion.div
+                initial={{ opacity: 0, y: 10 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.35 }}
+                className="max-w-2xl rounded-2xl border border-primary/15 bg-white/75 px-5 py-4 text-center text-sm leading-relaxed text-muted-foreground shadow-lg shadow-black/5 backdrop-blur-xl"
+              >
+                <span className="font-semibold text-foreground">Estación más cercana:</span> Metro L4 (Vía Júlia) a pocos minutos caminando.{' '}
+                <span className="font-semibold text-foreground">Autobuses cercanos:</span> Líneas en Via Júlia y Ronda de Dalt.
+              </motion.div>
+            )}
+          </div>
         </motion.div>
       </div>
     </section>
