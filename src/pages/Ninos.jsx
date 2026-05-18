@@ -41,14 +41,16 @@ export default function Ninos() {
       </div>
 
       {/* Hero */}
-      <div className="bg-gradient-to-br from-primary/10 to-primary/5 py-20 px-6">
-        <div className="max-w-3xl mx-auto text-center">
+      <div
+        className="relative min-h-[520px] md:min-h-[680px] px-6 overflow-hidden bg-cover bg-center flex items-end justify-center"
+        style={{ backgroundImage: "url('https://media.base44.com/images/public/69ea6ca06c4574e55a2de28d/904504f23_image.png')" }}
+      >
+        <div className="absolute inset-0 bg-gradient-to-t from-black/75 via-black/20 to-transparent" />
+        <div className="relative z-10 max-w-4xl mx-auto text-center pb-14 md:pb-20">
           <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }}>
-            <div className="text-6xl mb-6">🎉</div>
-            <span className="text-primary text-sm tracking-[0.25em] uppercase font-semibold block mb-4">Ministerio Infantil</span>
-            <h1 className="font-display text-4xl md:text-5xl font-medium text-foreground mb-6">SOS Kids</h1>
-            <p className="text-muted-foreground font-light text-xl leading-relaxed">
-              Un espacio lleno de amor, creatividad y diversión donde los niños descubren a Jesús de forma auténtica, divertida y a su nivel.
+            <h1 className="font-display text-5xl md:text-7xl font-semibold text-white mb-6 drop-shadow-2xl">Ministerio infantil</h1>
+            <p className="text-white/95 font-light text-xl md:text-2xl leading-relaxed drop-shadow-lg">
+              Un espacio lleno de amor, creatividad y diversión donde los niños descubren a Jesús de forma auténtica, divertida y a su nivel
             </p>
           </motion.div>
         </div>
