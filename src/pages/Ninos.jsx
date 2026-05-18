@@ -50,7 +50,7 @@ export default function Ninos() {
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
-            className="absolute bottom-8 right-4 w-[58%] max-w-2xl text-center md:bottom-14 md:right-12 lg:bottom-16 lg:right-20"
+            className="absolute bottom-0 right-4 w-[58%] max-w-2xl translate-y-6 text-center md:bottom-2 md:right-12 md:translate-y-8 lg:bottom-4 lg:right-20 lg:translate-y-10"
           >
             <h1 className="font-display text-5xl md:text-7xl font-semibold text-white mb-6 drop-shadow-2xl">Ministerio infantil</h1>
             <p className="text-white/95 font-light text-xl md:text-2xl leading-relaxed drop-shadow-lg">
