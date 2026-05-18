@@ -1,6 +1,6 @@
 import React, { useRef } from 'react';
 import { motion, useInView } from 'framer-motion';
-import { Calendar, Users, Star } from 'lucide-react';
+import { Calendar, Users, Star, MapPin } from 'lucide-react';
 
 const stats = [
   { icon: Calendar, label: "Reuniones", value: "1 a la semana" },
@@ -75,7 +75,16 @@ export default function MeetingsSection() {
           className="text-center mt-12"
         >
           <p className="text-muted-foreground font-light">
-            <span className="font-medium text-foreground">C/ Teresa de Cofrents 23</span> · Barcelona, España
+            <a
+              href="https://www.google.com/maps/search/?api=1&query=Carrer+de+Teresa+de+Cofrents+23+Barcelona"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="group inline-flex items-center gap-2 font-medium text-foreground transition-colors duration-300 hover:text-primary"
+            >
+              <MapPin className="h-4 w-4 text-primary transition-transform duration-300 group-hover:-translate-y-0.5" />
+              <span className="underline decoration-transparent underline-offset-4 transition-colors duration-300 group-hover:decoration-primary">C/ Teresa de Cofrents 23</span>
+            </a>{' '}
+            · Barcelona, España
           </p>
         </motion.div>
       </div>
