@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import { motion } from 'framer-motion';
-import { Clock, MapPin, ChevronLeft } from 'lucide-react';
+import { Clock, MapPin, ChevronLeft, Calendar } from 'lucide-react';
 import SOSLogo from '../components/landing/SOSLogo';
 
 const ACTIVITIES = [
@@ -54,6 +54,14 @@ const ACTIVITIES = [
   desc: "Formando líderes con carácter, visión y corazón de servicio.",
   time: "Mensual · Por confirmar",
   image: "https://media.base44.com/images/public/69ea6ca06c4574e55a2de28d/694483fa7_REUNINLIDERAZGO.jpg"
+},
+{
+  id: 8,
+  title: "Bautismo",
+  desc: "Un paso de obediencia y fe pública, donde enterramos el pasado y celebramos una nueva vida en Cristo. El testimonio visible de un corazón transformado por Dios.",
+  time: "Próximas fechas · Consultar",
+  image: "https://media.base44.com/images/public/69ea6ca06c4574e55a2de28d/e2a3653a4_ChatGPTImage18may202612_28_39pm.png",
+  footerIcon: Calendar
 }];
 
 
@@ -97,7 +105,7 @@ export default function Calendario() {
         <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.6 }} className="text-center mb-16">
           
           <h1 className="font-display text-4xl md:text-5xl font-medium text-foreground mb-4">Esto es lo que vivirás </h1>
-          <p className="text-muted-foreground font-light text-lg">En SOS para tu vida, encontraras un hogar donde la vida y el propósito se encuentran. Somos una familia activa, donde cada generación encuentra compañía para crecer y el impulso para transformar su realidad a travé</p>
+          <p className="text-muted-foreground font-light text-lg max-w-4xl mx-auto">En SOS para tu vida, encontrarás un hogar donde la vida y el propósito se encuentran. Somos una familia activa, donde cada generación encuentra compañía para crecer y el impulso para transformar su realidad a través de la fe, el amor y el poder de Dios.</p>
         </motion.div>
 
         {/* Activity Cards */}
@@ -132,7 +140,7 @@ export default function Calendario() {
                   <h3 className="font-semibold text-foreground text-base mb-2">{act.title}</h3>
                   <p className="text-muted-foreground text-sm font-light leading-relaxed mb-3">{act.desc}</p>
                   <span className="flex items-center gap-1.5 text-xs text-primary font-medium">
-                    <Clock className="w-3.5 h-3.5" />{act.time}
+                    {act.footerIcon ? <act.footerIcon className="w-3.5 h-3.5" /> : <Clock className="w-3.5 h-3.5" />}{act.time}
                   </span>
                 </div>
               </motion.div>
