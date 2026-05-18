@@ -6,7 +6,7 @@ const pillars = [
 { icon: Target, word: "Ganar", desc: "Alcanzar a quienes a\xFAn no conocen a Cristo con amor y autenticidad." },
 { icon: Heart, word: "Consolidado", desc: "Acompa\xF1ar a los nuevos creyentes en sus primeros pasos de fe." },
 { icon: BookOpen, word: "De disc\xEDpulo", desc: "Formar vidas transformadas por la palabra y" },
-{ icon: Send, word: "Enviar", desc: "Movilizar al pueblo de Dios a cumplir su llamado." }];
+{ icon: Send, word: "Enviar", desc: "Lanzar a cada persona a cum" }];
 
 
 export default function PurposeSection() {
