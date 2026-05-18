@@ -31,6 +31,24 @@ const PASTORES = [
   verse: '"Que nadie te subestime por ser joven…" — 1 Timoteo 4:12',
   photo: "https://media.base44.com/images/public/69ea6ca06c4574e55a2de28d/6a22c2536_NICOL.jpg",
   location: "Barcelona, España"
+},
+{
+  id: 4,
+  name: "Liz Daza\nLíder de mujeres",
+  role: "Líder de mujeres — SOS Barcelona",
+  bio: "Liz Daza lidera el ministerio de mujeres en SOS Barcelona con un corazón profundamente apasionado por ver a cada mujer caminar en su verdadera identidad y valor en Cristo. Convencida de que una mujer sanada por Dios levanta hogares firmes y transforma entornos enteros, acompaña a las mujeres de la comunidad a superar heridas del pasado, descubrir su propósito eterno y liderar con gracia, fe y fortaleza en su día a día.",
+  verse: '"Dios está en medio de ella; no será conmovida. Dios la ayudará al clarear la mañana." — Salmos 46:5',
+  photo: "",
+  location: "Barcelona, España"
+},
+{
+  id: 5,
+  name: "Santiago Vega\nLíder de jóvenes",
+  role: "Líder de jóvenes — SOS Barcelona",
+  bio: "Junto a Nicole, Santiago Vega lidera a la juventud de SOS Barcelona con la visión clara de levantar una generación apasionada, íntegra y radical por Jesús. Su enfoque se centra en desafiar a los jóvenes a salir de lo superficial, equipándolos con herramientas prácticas y espirituales para que descubran su diseño divino y se conviertan en agentes de cambio con una fe real, madura e inconmovible.",
+  verse: '"¿Con qué limpiará el joven su camino? Con guardar tu palabra." — Salmos 119:9',
+  photo: "",
+  location: "Barcelona, España"
 }];
 
 
@@ -72,7 +90,13 @@ export default function Pastores() {
               {/* Photo */}
               <div className={`${i % 2 === 1 ? 'md:col-start-2' : ''}`}>
                 <div className="aspect-[4/5] rounded-2xl overflow-hidden">
-                  <img src={pastor.photo} alt={pastor.name} className="w-full h-full object-cover" />
+                  {pastor.photo ? (
+                    <img src={pastor.photo} alt={pastor.name} className="w-full h-full object-cover" />
+                  ) : (
+                    <div className="flex h-full w-full items-center justify-center bg-secondary text-center">
+                      <span className="px-8 text-sm font-semibold uppercase tracking-[0.22em] text-muted-foreground">Foto pendiente</span>
+                    </div>
+                  )}
                 </div>
               </div>
               {/* Info */}
