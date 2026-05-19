@@ -42,11 +42,11 @@ export default function Ninos() {
 
       {/* Hero */}
       <div
-        className="relative aspect-[16/10] h-auto min-h-0 w-full px-6 overflow-hidden bg-white bg-[length:100%_auto] bg-top bg-no-repeat flex items-end justify-center md:aspect-auto md:min-h-[680px] md:bg-cover md:bg-center"
+        className="relative aspect-[16/10] h-auto min-h-0 w-full px-6 overflow-hidden bg-white bg-contain bg-top bg-no-repeat flex items-end justify-center md:aspect-auto md:min-h-[680px] md:bg-cover md:bg-center"
         style={{ backgroundImage: "url('https://media.base44.com/images/public/69ea6ca06c4574e55a2de28d/904504f23_image.png')" }}>
         
         <div className="absolute inset-0 bg-gradient-to-t from-black/75 via-black/20 to-transparent" />
-        <div className="relative z-10 w-full min-h-[520px] md:min-h-[680px]">
+        <div className="relative z-10 w-full h-auto md:min-h-[680px]">
           
 
 
