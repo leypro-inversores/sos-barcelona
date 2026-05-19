@@ -62,8 +62,20 @@ export default function Ninos() {
 
       {/* Gallery */}
       <div className="max-w-6xl mx-auto px-6 pt-12 pb-4">
-        <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.2 }}>
-          <KidsGallery />
+        <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.2 }} className="grid md:grid-cols-2 gap-6 items-stretch">
+          <div className="w-full aspect-[16/9] md:aspect-auto md:h-full rounded-2xl overflow-hidden bg-foreground/5">
+            <video
+              src="https://media.base44.com/videos/public/69ea6ca06c4574e55a2de28d/4ac968ec3_2026051919352.mp4"
+              className="w-full h-full object-cover"
+              autoPlay
+              loop
+              muted
+              playsInline
+            />
+          </div>
+          <div className="w-full h-full">
+            <KidsGallery />
+          </div>
         </motion.div>
       </div>
 
