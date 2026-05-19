@@ -43,7 +43,7 @@ const ACTIVITIES = [
 },
 {
   id: 6,
-  title: "Reuni\xF3n de f",
+  title: "Reuni\xF3n de finanzas",
   desc: "Enseñanzas prácticas sobre finanzas desde una perspectiva bíblica y real.",
   time: "Ocasional · Por confirmar",
   image: "https://media.base44.com/images/public/69ea6ca06c4574e55a2de28d/3fc1280e6_WhatsAppImage2026-04-24at2013028.jpg"
