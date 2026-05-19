@@ -15,6 +15,7 @@ import StepsSection from '../components/landing/StepsSection';
 import FinalCTASection from '../components/landing/FinalCTASection';
 import ContactForm from '../components/landing/ContactForm';
 import VideosSection from '../components/landing/VideosSection';
+import BooksSection from '../components/landing/BooksSection';
 import Footer from '../components/landing/Footer';
 
 // Images
@@ -86,7 +87,10 @@ export default function Home() {
       {/* 11. PASOS — Tu primer paso */}
       <StepsSection />
 
-      {/* 12. INSTAGRAM */}
+      {/* 12. LIBROS */}
+      <BooksSection />
+
+      {/* 13. INSTAGRAM */}
       <InstagramSection />
 
       {/* 13. CIERRE FINAL */}
