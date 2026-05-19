@@ -45,6 +45,22 @@ export default function MeetingsSection() {
           </motion.p>
         </div>
 
+        <motion.div
+          initial={{ opacity: 0, y: 24 }}
+          animate={isInView ? { opacity: 1, y: 0 } : {}}
+          transition={{ duration: 0.7, delay: 0.3 }}
+          className="w-full mb-8"
+        >
+          <video
+            src="https://media.base44.com/videos/public/69ea6ca06c4574e55a2de28d/8e38acc51_2026051921052.mp4"
+            className="w-full rounded-2xl object-cover shadow-lg shadow-black/10"
+            autoPlay
+            loop
+            muted
+            playsInline
+          />
+        </motion.div>
+
         <div className="grid md:grid-cols-3 gap-6">
           {stats.map((s, i) => (
             <motion.div
