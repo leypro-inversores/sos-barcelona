@@ -58,7 +58,7 @@ export default function PastoresHistorySection() {
               transition={{ duration: 0.8, delay: 0.2 }}
               className="text-muted-foreground text-lg font-light leading-relaxed mb-10"
             >
-              Un solo instante en un encuentro personal con Dios fue suficiente para que los hoy pastores Mauricio y Mónica Rodríguez comprendieran el propósito divino para sus vidas. Desde aquel momento, el fuego de su llamado arde en sus corazones, impulsándolos a superar cualquier obstáculo hasta ver la gloria de Dios manifiesta. Sus vidas, aunque marcadas por un pasado tormentoso, han sido plenamente restauradas a través de la obediencia, la perseverancia y, sobre todo, la inmerecida gracia de Dios.
+              Un solo instante en un encuentro personal con Dios fue suficiente para que los pastores Mauricio y Mónica Rodríguez comprendieran el propósito divino para sus vidas. Desde aquel momento, el fuego de su llamado arde en sus corazones y los impulsa a superar cualquier obstáculo hasta ver la gloria de Dios manifiesta. Sus vidas, aunque marcadas por un pasado tormentoso, han sido plenamente restauradas a través de la obediencia, la perseverancia y, sobre todo, la inmerecida gracia de Dios.
             </motion.p>
 
             <div className="grid gap-4">
