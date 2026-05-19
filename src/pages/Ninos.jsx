@@ -66,7 +66,7 @@ export default function Ninos() {
           <div className="w-full aspect-[16/9] md:aspect-auto md:h-full rounded-2xl overflow-hidden bg-foreground/5">
             <video
               src="https://media.base44.com/videos/public/69ea6ca06c4574e55a2de28d/4ac968ec3_2026051919352.mp4"
-              className="w-full h-full object-cover"
+              className="w-full h-full object-contain bg-foreground/5"
               autoPlay
               loop
               muted
