@@ -26,7 +26,7 @@ const values = [
 {
   icon: Zap,
   title: "Poder",
-  desc: "No vivimos de teorías, sino de Su presencia real y poderosa, que se mueve y actúa en comunión con la fe de Sus hijos."
+  desc: "No vivimos de teor\xEDas, sino de Su presencia real y poderosa, que se mueve y act\xFAa en comuni\xF3n con la fe de sus hijos."
 }];
 
 
