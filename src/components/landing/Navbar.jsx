@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useLocation, useNavigate } from 'react-router-dom';
 import { Menu, X } from 'lucide-react';
 import { motion, AnimatePresence } from 'framer-motion';
 import SOSLogo from './SOSLogo';
@@ -7,6 +7,8 @@ import SOSLogo from './SOSLogo';
 export default function Navbar() {
   const [scrolled, setScrolled] = useState(false);
   const [mobileOpen, setMobileOpen] = useState(false);
+  const location = useLocation();
+  const navigate = useNavigate();
 
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 50);
@@ -23,13 +25,25 @@ export default function Navbar() {
   { label: 'Libros', href: '#libros' },
   { label: 'Contacto', href: '#contacto' }];
 
+  const scrollToSection = (href) => {
+    const sectionId = href.replace('#', '');
+    const scroll = () => document.getElementById(sectionId)?.scrollIntoView({ behavior: 'smooth', block: 'start' });
+
+    setMobileOpen(false);
+
+    if (location.pathname !== '/') {
+      navigate(`/${href}`);
+      setTimeout(scroll, 120);
+      return;
+    }
+
+    window.history.replaceState(null, '', href);
+    scroll();
+  };
 
   return (
-    <nav
-      className="fixed top-0 left-0 right-0 z-[9999] h-auto border-b border-border/70 bg-background shadow-lg backdrop-blur-2xl transition-all duration-500"
-      style={{ height: 'auto', pointerEvents: 'none' }}
-    >
-      <div className="max-w-7xl mx-auto px-6 lg:px-8 pointer-events-auto" style={{ pointerEvents: 'auto' }}>
+    <nav className="fixed top-0 left-0 right-0 z-[9999] h-auto border-b border-border/70 bg-background shadow-lg backdrop-blur-2xl transition-all duration-500">
+      <div className="max-w-7xl mx-auto px-6 lg:px-8">
         <div className="flex items-center justify-between h-20">
           <Link to="/" className="flex items-center gap-2.5">
             <SOSLogo size={40} />
@@ -42,18 +56,19 @@ export default function Navbar() {
           <div className="hidden md:flex items-center gap-8">
             {links.map((link) =>
             link.href.startsWith('#') ?
-            <a
+            <button
               key={link.href}
-              href={link.href}
-              className="pointer-events-auto text-sm font-medium tracking-wide text-foreground/70 transition-colors duration-300 hover:text-primary">
+              type="button"
+              onClick={() => scrollToSection(link.href)}
+              className="text-sm font-medium tracking-wide text-foreground/70 transition-colors duration-300 hover:text-primary">
               
                   {link.label}
-                </a> :
+                </button> :
 
             <Link
               key={link.href}
               to={link.href}
-              className="pointer-events-auto text-sm font-medium tracking-wide text-foreground/70 transition-colors duration-300 hover:text-primary">
+              className="text-sm font-medium tracking-wide text-foreground/70 transition-colors duration-300 hover:text-primary">
               
                   {link.label}
                 </Link>
@@ -64,7 +79,7 @@ export default function Navbar() {
 
           <button
             onClick={() => setMobileOpen(!mobileOpen)}
-            className="pointer-events-auto md:hidden text-foreground transition-colors hover:text-primary">
+            className="md:hidden text-foreground transition-colors hover:text-primary">
             
             {mobileOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
           </button>
@@ -77,24 +92,35 @@ export default function Navbar() {
           initial={{ opacity: 0, height: 0 }}
           animate={{ opacity: 1, height: 'auto' }}
           exit={{ opacity: 0, height: 0 }}
-          className="pointer-events-auto md:hidden bg-background/95 backdrop-blur-xl border-t border-border"
-          style={{ pointerEvents: 'auto' }}>
+          className="md:hidden bg-background/95 backdrop-blur-xl border-t border-border">
           
             <div className="px-6 py-6 space-y-4">
               {links.map((link) =>
-            <a
+            link.href.startsWith('#') ?
+            <button
               key={link.href}
-              href={link.href}
-              onClick={() => setMobileOpen(false)}
-              className="pointer-events-auto block text-base font-medium text-foreground/80 hover:text-primary transition-colors">
+              type="button"
+              onClick={() => scrollToSection(link.href)}
+              className="block w-full text-left text-base font-medium text-foreground/80 hover:text-primary transition-colors">
               
                   {link.label}
-                </a>
+                </button> :
+            <Link
+              key={link.href}
+              to={link.href}
+              onClick={() => setMobileOpen(false)}
+              className="block text-base font-medium text-foreground/80 hover:text-primary transition-colors">
+              
+                  {link.label}
+                </Link>
             )}
               <a
               href="#contacto"
-              onClick={() => setMobileOpen(false)}
-              className="pointer-events-auto block bg-primary text-primary-foreground px-6 py-3 rounded-full text-center text-sm font-semibold">
+              onClick={(event) => {
+                event.preventDefault();
+                scrollToSection('#contacto');
+              }}
+              className="block bg-primary text-primary-foreground px-6 py-3 rounded-full text-center text-sm font-semibold">
               
                 Planear mi visita
               </a>

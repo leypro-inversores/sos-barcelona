@@ -79,13 +79,17 @@ export default function Home() {
       <CultureSection />
 
       {/* 10. SOBRE NOSOTROS — identidad de la iglesia */}
-      <AboutSection image={IMAGES.jesus} />
+      <div id="sobre" className="scroll-mt-24">
+        <AboutSection image={IMAGES.jesus} />
+      </div>
 
       {/* 11. PASOS — Tu primer paso */}
       <StepsSection />
 
       {/* 12. LIBROS */}
-      <BooksSection />
+      <div id="libros" className="scroll-mt-24">
+        <BooksSection />
+      </div>
 
       {/* 13. INSTAGRAM */}
       <InstagramSection />
@@ -97,7 +101,9 @@ export default function Home() {
       <VideosSection />
 
       {/* 16. CONTACTO */}
-      <ContactForm />
+      <div id="contacto" className="scroll-mt-24">
+        <ContactForm />
+      </div>
 
       <Footer />
     </div>
