@@ -25,17 +25,11 @@ export default function Navbar() {
 
 
   return (
-    <nav className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 backdrop-blur-2xl ${
-      scrolled
-        ? 'shadow-lg border-b border-white/20'
-        : 'border-b border-white/10'
-    }`}
-    style={scrolled ? { background: 'rgba(255,255,255,0.72)', backdropFilter: 'blur(24px) saturate(180%)' } : { background: 'rgba(0,0,0,0.12)', backdropFilter: 'blur(18px) saturate(140%)' }}
-    >
+    <nav className="sticky top-0 left-0 right-0 z-50 border-b border-border/70 bg-background/95 shadow-sm backdrop-blur-2xl transition-all duration-500">
       <div className="max-w-7xl mx-auto px-6 lg:px-8">
         <div className="flex items-center justify-between h-20">
           <Link to="/" className="flex items-center gap-2.5">
-            {scrolled && <SOSLogo size={40} />}
+            <SOSLogo size={40} />
             <div>
               
               
@@ -48,7 +42,7 @@ export default function Navbar() {
             <a
               key={link.href}
               href={link.href}
-              className={`text-sm font-medium tracking-wide transition-colors duration-300 hover:text-primary ${scrolled ? 'text-foreground/70' : 'text-white/80'}`}>
+              className="text-sm font-medium tracking-wide text-foreground/70 transition-colors duration-300 hover:text-primary">
               
                   {link.label}
                 </a> :
@@ -56,7 +50,7 @@ export default function Navbar() {
             <Link
               key={link.href}
               to={link.href}
-              className={`text-sm font-medium tracking-wide transition-colors duration-300 hover:text-primary ${scrolled ? 'text-foreground/70' : 'text-white/80'}`}>
+              className="text-sm font-medium tracking-wide text-foreground/70 transition-colors duration-300 hover:text-primary">
               
                   {link.label}
                 </Link>
@@ -67,7 +61,7 @@ export default function Navbar() {
 
           <button
             onClick={() => setMobileOpen(!mobileOpen)}
-            className={`md:hidden transition-colors ${scrolled ? 'text-foreground' : 'text-white'}`}>
+            className="md:hidden text-foreground transition-colors hover:text-primary">
             
             {mobileOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
           </button>

@@ -1,5 +1,4 @@
 import React from 'react';
-import Navbar from '../components/landing/Navbar';
 import HeroSection from '../components/landing/HeroSection';
 import WelcomeSection from '../components/landing/WelcomeSection';
 import MessageSection from '../components/landing/MessageSection';
@@ -45,8 +44,6 @@ const IMAGES = {
 export default function Home() {
   return (
     <div className="min-h-screen bg-background">
-      <Navbar />
-
       {/* 1. HERO — video fullscreen */}
       <HeroSection heroImage={IMAGES.hero} />
 

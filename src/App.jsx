@@ -12,6 +12,7 @@ import Pastores from './pages/Pastores';
 import Colaboradores from './pages/Colaboradores';
 import Ninos from './pages/Ninos';
 import PoliticaDePrivacidad from './pages/PoliticaDePrivacidad';
+import Navbar from './components/landing/Navbar';
 // Add page imports here
 
 const AuthenticatedApp = () => {
@@ -39,16 +40,19 @@ const AuthenticatedApp = () => {
 
   // Render the main app
   return (
-    <Routes>
-      <Route path="/" element={<Home />} />
-      <Route path="/calendario" element={<Calendario />} />
-      <Route path="/cursos" element={<Cursos />} />
-      <Route path="/pastores" element={<Pastores />} />
-      <Route path="/colaboradores" element={<Colaboradores />} />
-      <Route path="/ninos" element={<Ninos />} />
-      <Route path="/politica-de-privacidad" element={<PoliticaDePrivacidad />} />
-      <Route path="*" element={<PageNotFound />} />
-    </Routes>
+    <>
+      <Navbar />
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="/calendario" element={<Calendario />} />
+        <Route path="/cursos" element={<Cursos />} />
+        <Route path="/pastores" element={<Pastores />} />
+        <Route path="/colaboradores" element={<Colaboradores />} />
+        <Route path="/ninos" element={<Ninos />} />
+        <Route path="/politica-de-privacidad" element={<PoliticaDePrivacidad />} />
+        <Route path="*" element={<PageNotFound />} />
+      </Routes>
+    </>
   );
 };
 
