@@ -11,6 +11,7 @@ import Cursos from './pages/Cursos';
 import Pastores from './pages/Pastores';
 import Colaboradores from './pages/Colaboradores';
 import Ninos from './pages/Ninos';
+import PoliticaDePrivacidad from './pages/PoliticaDePrivacidad';
 // Add page imports here
 
 const AuthenticatedApp = () => {
@@ -45,6 +46,7 @@ const AuthenticatedApp = () => {
       <Route path="/pastores" element={<Pastores />} />
       <Route path="/colaboradores" element={<Colaboradores />} />
       <Route path="/ninos" element={<Ninos />} />
+      <Route path="/politica-de-privacidad" element={<PoliticaDePrivacidad />} />
       <Route path="*" element={<PageNotFound />} />
     </Routes>
   );
