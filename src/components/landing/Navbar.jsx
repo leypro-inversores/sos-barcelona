@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { Link, useLocation, useNavigate } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 import { Menu, X } from 'lucide-react';
 import { motion, AnimatePresence } from 'framer-motion';
 import SOSLogo from './SOSLogo';
@@ -7,8 +7,6 @@ import SOSLogo from './SOSLogo';
 export default function Navbar() {
   const [scrolled, setScrolled] = useState(false);
   const [mobileOpen, setMobileOpen] = useState(false);
-  const location = useLocation();
-  const navigate = useNavigate();
 
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 50);
@@ -17,28 +15,27 @@ export default function Navbar() {
   }, []);
 
   const links = [
-  { label: 'Sobre Nosotros', href: '#sobre' },
+  { label: 'Sobre Nosotros', href: '/#sobre-nosotros' },
   { label: 'Actividades', href: '/calendario' },
   { label: 'Cursos', href: '/cursos' },
   { label: 'Pastores', href: '/pastores' },
   { label: 'Niños', href: '/ninos' },
-  { label: 'Libros', href: '#libros' },
-  { label: 'Contacto', href: '#contacto' }];
+  { label: 'Libros', href: '/#libros' },
+  { label: 'Contacto', href: '/#contacto' }];
 
-  const scrollToSection = (href) => {
-    const sectionId = href.replace('#', '');
-    const scroll = () => document.getElementById(sectionId)?.scrollIntoView({ behavior: 'smooth', block: 'start' });
-
+  const handleAnchorClick = (event, href) => {
     setMobileOpen(false);
 
-    if (location.pathname !== '/') {
-      navigate(`/${href}`);
-      setTimeout(scroll, 120);
+    const [path, hash] = href.split('#');
+    const sectionId = hash;
+
+    if (window.location.pathname !== path) {
       return;
     }
 
-    window.history.replaceState(null, '', href);
-    scroll();
+    event.preventDefault();
+    window.history.pushState(null, '', href);
+    document.getElementById(sectionId)?.scrollIntoView({ behavior: 'smooth', block: 'start' });
   };
 
   return (
@@ -55,20 +52,20 @@ export default function Navbar() {
 
           <div className="hidden md:flex items-center gap-8">
             {links.map((link) =>
-            link.href.startsWith('#') ?
-            <button
+            link.href.startsWith('/#') ?
+            <a
               key={link.href}
-              type="button"
-              onClick={() => scrollToSection(link.href)}
-              className="text-sm font-medium tracking-wide text-foreground/70 transition-colors duration-300 hover:text-primary">
+              href={link.href}
+              onClick={(event) => handleAnchorClick(event, link.href)}
+              className="pointer-events-auto text-sm font-medium tracking-wide text-foreground/70 transition-colors duration-300 hover:text-primary">
               
                   {link.label}
-                </button> :
+                </a> :
 
             <Link
               key={link.href}
               to={link.href}
-              className="text-sm font-medium tracking-wide text-foreground/70 transition-colors duration-300 hover:text-primary">
+              className="pointer-events-auto text-sm font-medium tracking-wide text-foreground/70 transition-colors duration-300 hover:text-primary">
               
                   {link.label}
                 </Link>
@@ -79,7 +76,7 @@ export default function Navbar() {
 
           <button
             onClick={() => setMobileOpen(!mobileOpen)}
-            className="md:hidden text-foreground transition-colors hover:text-primary">
+            className="pointer-events-auto md:hidden text-foreground transition-colors hover:text-primary">
             
             {mobileOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
           </button>
@@ -96,31 +93,28 @@ export default function Navbar() {
           
             <div className="px-6 py-6 space-y-4">
               {links.map((link) =>
-            link.href.startsWith('#') ?
-            <button
+            link.href.startsWith('/#') ?
+            <a
               key={link.href}
-              type="button"
-              onClick={() => scrollToSection(link.href)}
-              className="block w-full text-left text-base font-medium text-foreground/80 hover:text-primary transition-colors">
+              href={link.href}
+              onClick={(event) => handleAnchorClick(event, link.href)}
+              className="pointer-events-auto block text-base font-medium text-foreground/80 hover:text-primary transition-colors">
               
                   {link.label}
-                </button> :
+                </a> :
             <Link
               key={link.href}
               to={link.href}
               onClick={() => setMobileOpen(false)}
-              className="block text-base font-medium text-foreground/80 hover:text-primary transition-colors">
+              className="pointer-events-auto block text-base font-medium text-foreground/80 hover:text-primary transition-colors">
               
                   {link.label}
                 </Link>
             )}
               <a
-              href="#contacto"
-              onClick={(event) => {
-                event.preventDefault();
-                scrollToSection('#contacto');
-              }}
-              className="block bg-primary text-primary-foreground px-6 py-3 rounded-full text-center text-sm font-semibold">
+              href="/#contacto"
+              onClick={(event) => handleAnchorClick(event, '/#contacto')}
+              className="pointer-events-auto block bg-primary text-primary-foreground px-6 py-3 rounded-full text-center text-sm font-semibold">
               
                 Planear mi visita
               </a>

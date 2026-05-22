@@ -79,7 +79,7 @@ export default function Home() {
       <CultureSection />
 
       {/* 10. SOBRE NOSOTROS — identidad de la iglesia */}
-      <div id="sobre" className="scroll-mt-24">
+      <div id="sobre-nosotros" className="scroll-mt-24">
         <AboutSection image={IMAGES.jesus} />
       </div>
 
