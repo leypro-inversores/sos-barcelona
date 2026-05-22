@@ -134,6 +134,9 @@ export default function Footer() {
           <p className="text-background/40 text-sm font-light">
             © {new Date().getFullYear()} SOS Barcelona. Iglesia centrada en Jesús.
           </p>
+          <Link to="/politica-de-privacidad" className="mt-3 inline-block text-xs font-light text-background/35 transition-colors hover:text-background/60">
+            Política de privacidad
+          </Link>
         </div>
       </div>
     </footer>);
