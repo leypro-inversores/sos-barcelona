@@ -25,8 +25,11 @@ export default function Navbar() {
 
 
   return (
-    <nav className="fixed top-0 left-0 right-0 z-[9999] border-b border-border/70 bg-background shadow-lg backdrop-blur-2xl transition-all duration-500">
-      <div className="max-w-7xl mx-auto px-6 lg:px-8">
+    <nav
+      className="fixed top-0 left-0 right-0 z-[9999] h-auto border-b border-border/70 bg-background shadow-lg backdrop-blur-2xl transition-all duration-500"
+      style={{ height: 'auto', pointerEvents: 'none' }}
+    >
+      <div className="max-w-7xl mx-auto px-6 lg:px-8 pointer-events-auto" style={{ pointerEvents: 'auto' }}>
         <div className="flex items-center justify-between h-20">
           <Link to="/" className="flex items-center gap-2.5">
             <SOSLogo size={40} />
@@ -42,7 +45,7 @@ export default function Navbar() {
             <a
               key={link.href}
               href={link.href}
-              className="text-sm font-medium tracking-wide text-foreground/70 transition-colors duration-300 hover:text-primary">
+              className="pointer-events-auto text-sm font-medium tracking-wide text-foreground/70 transition-colors duration-300 hover:text-primary">
               
                   {link.label}
                 </a> :
@@ -50,7 +53,7 @@ export default function Navbar() {
             <Link
               key={link.href}
               to={link.href}
-              className="text-sm font-medium tracking-wide text-foreground/70 transition-colors duration-300 hover:text-primary">
+              className="pointer-events-auto text-sm font-medium tracking-wide text-foreground/70 transition-colors duration-300 hover:text-primary">
               
                   {link.label}
                 </Link>
@@ -61,7 +64,7 @@ export default function Navbar() {
 
           <button
             onClick={() => setMobileOpen(!mobileOpen)}
-            className="md:hidden text-foreground transition-colors hover:text-primary">
+            className="pointer-events-auto md:hidden text-foreground transition-colors hover:text-primary">
             
             {mobileOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
           </button>
@@ -74,7 +77,8 @@ export default function Navbar() {
           initial={{ opacity: 0, height: 0 }}
           animate={{ opacity: 1, height: 'auto' }}
           exit={{ opacity: 0, height: 0 }}
-          className="md:hidden bg-background/95 backdrop-blur-xl border-t border-border">
+          className="pointer-events-auto md:hidden bg-background/95 backdrop-blur-xl border-t border-border"
+          style={{ pointerEvents: 'auto' }}>
           
             <div className="px-6 py-6 space-y-4">
               {links.map((link) =>
@@ -82,7 +86,7 @@ export default function Navbar() {
               key={link.href}
               href={link.href}
               onClick={() => setMobileOpen(false)}
-              className="block text-base font-medium text-foreground/80 hover:text-primary transition-colors">
+              className="pointer-events-auto block text-base font-medium text-foreground/80 hover:text-primary transition-colors">
               
                   {link.label}
                 </a>
@@ -90,7 +94,7 @@ export default function Navbar() {
               <a
               href="#contacto"
               onClick={() => setMobileOpen(false)}
-              className="block bg-primary text-primary-foreground px-6 py-3 rounded-full text-center text-sm font-semibold">
+              className="pointer-events-auto block bg-primary text-primary-foreground px-6 py-3 rounded-full text-center text-sm font-semibold">
               
                 Planear mi visita
               </a>
