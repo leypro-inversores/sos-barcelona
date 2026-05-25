@@ -172,7 +172,7 @@ export default function VideosSection() {
               className="flex items-center gap-3 mb-5"
             >
               <div className="w-8 h-8 rounded-lg flex items-center justify-center"
-                style={{ background: 'linear-gradient(135deg, hsl(var(--primary)), hsl(var(--accent)))' }}>
+                style={{ background: '#FF0000' }}>
                 <Youtube className="w-4 h-4 text-white" />
               </div>
               <span className="text-primary text-sm tracking-[0.25em] uppercase font-semibold">Prédicas</span>
@@ -241,7 +241,7 @@ export default function VideosSection() {
                 onMouseEnter={e => e.currentTarget.style.borderColor = 'hsl(var(--primary))'}
                 onMouseLeave={e => e.currentTarget.style.borderColor = 'hsla(var(--primary)/0.4)'}
               >
-                <Youtube className="w-4 h-4 text-primary" />
+                <Youtube className="w-4 h-4 text-[#FF0000]" />
                 Suscríbete al canal
                 <span className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none"
                   style={{ background: 'linear-gradient(135deg, hsla(var(--primary)/0.06), hsla(var(--accent)/0.06))' }} />

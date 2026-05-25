@@ -51,6 +51,10 @@ export default function PoliticaDePrivacidad() {
                 http://www.google.com/policies/privacy
               </a>
             </p>
+
+            <p>
+              Uso de Cookies y Almacenamiento local: Le informamos que al utilizar las secciones de reproducción de vídeo integradas en este sitio web, los servicios de la API de YouTube y terceros autorizados pueden almacenar, acceder o recopilar información de forma directa o indirecta en los dispositivos de los usuarios. Esto incluye la colocación, reconocimiento o acceso a cookies, identificadores de publicidad o tecnologías similares en sus navegadores con el único fin de permitir el funcionamiento técnico del reproductor multimedia y analizar métricas de visualización estándar conforme a las directrices de privacidad de Google.
+            </p>
           </div>
         </article>
       </main>
