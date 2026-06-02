@@ -68,8 +68,8 @@ export default function Footer() {
             <div className="flex flex-col gap-3">
               <a href="https://www.youtube.com/@somoss.o.sbarcelona8475" target="_blank" rel="noopener noreferrer"
                 className="flex items-center gap-3 bg-background/10 hover:bg-background/20 transition-all duration-300 rounded-xl px-4 py-3">
-                <div className="w-9 h-9 rounded-lg bg-red-600 flex items-center justify-center shrink-0">
-                  <Youtube className="w-4 h-4 text-white" />
+                <div className="w-6 h-6 rounded-lg bg-red-600 flex items-center justify-center shrink-0">
+                  <Youtube className="w-6 h-6 text-white" />
                 </div>
                 <div>
                   <p className="text-background text-sm font-semibold leading-none mb-0.5">YouTube</p>
