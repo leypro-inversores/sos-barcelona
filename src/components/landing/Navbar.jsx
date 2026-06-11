@@ -20,22 +20,25 @@ export default function Navbar() {
   { label: 'Cursos', href: '/cursos' },
   { label: 'Pastores', href: '/pastores' },
   { label: 'Niños', href: '/ninos' },
-  { label: 'Libros', href: 'https://sos-barcelona.com/#libros' },
+  { label: 'Libros', href: '#libros' },
   { label: 'Contacto', href: '/#contacto' }];
 
   const handleAnchorClick = (event, href) => {
     setMobileOpen(false);
 
-    const [path, hash] = href.split('#');
-    const sectionId = hash;
+    const sectionId = href.split('#')[1];
+    if (!sectionId) return;
 
-    if (window.location.pathname !== path) {
+    event.preventDefault();
+    const section = document.getElementById(sectionId);
+
+    if (section) {
+      window.history.pushState(null, '', `#${sectionId}`);
+      section.scrollIntoView({ behavior: 'smooth', block: 'start' });
       return;
     }
 
-    event.preventDefault();
-    window.history.pushState(null, '', href);
-    document.getElementById(sectionId)?.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    window.location.href = `/#${sectionId}`;
   };
 
   return (
@@ -52,7 +55,7 @@ export default function Navbar() {
 
           <div className="hidden md:flex items-center gap-8">
             {links.map((link) =>
-            link.href.startsWith('/#') ?
+            link.href.includes('#') && !link.href.startsWith('http') ?
             <a
               key={link.href}
               href={link.href}
@@ -93,7 +96,7 @@ export default function Navbar() {
           
             <div className="px-6 py-6 space-y-4">
               {links.map((link) =>
-            link.href.startsWith('/#') ?
+            link.href.includes('#') && !link.href.startsWith('http') ?
             <a
               key={link.href}
               href={link.href}

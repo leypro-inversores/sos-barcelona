@@ -87,9 +87,7 @@ export default function Home() {
       <StepsSection />
 
       {/* 12. LIBROS */}
-      <div id="libros" className="scroll-mt-24">
-        <BooksSection />
-      </div>
+      <BooksSection />
 
       {/* 13. INSTAGRAM */}
       <InstagramSection />
