@@ -29,11 +29,12 @@ export default function KidsGallery() {
           key={current}
           src={IMAGES[current]}
           alt="SOS Kids"
-          className="absolute inset-0 w-full h-full object-contain"
+          className="absolute inset-0 w-full h-full object-cover md:object-contain"
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           exit={{ opacity: 0 }}
-          transition={{ duration: 2, ease: 'easeInOut' }}
+          transition={{ duration: 0.6, ease: 'easeInOut' }}
+          loading="lazy"
         />
       </AnimatePresence>
 

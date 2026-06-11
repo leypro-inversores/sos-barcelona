@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useLocation, useNavigate } from 'react-router-dom';
 import { Menu, X } from 'lucide-react';
 import { motion, AnimatePresence } from 'framer-motion';
 import SOSLogo from './SOSLogo';
@@ -7,6 +7,8 @@ import SOSLogo from './SOSLogo';
 export default function Navbar() {
   const [scrolled, setScrolled] = useState(false);
   const [mobileOpen, setMobileOpen] = useState(false);
+  const navigate = useNavigate();
+  const location = useLocation();
 
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 50);
@@ -20,7 +22,7 @@ export default function Navbar() {
   { label: 'Cursos', href: '/cursos' },
   { label: 'Pastores', href: '/pastores' },
   { label: 'Niños', href: '/ninos' },
-  { label: 'Libros', href: '#libros' },
+  { label: 'Libros', href: 'https://sos-barcelona.com/#libros' },
   { label: 'Contacto', href: '/#contacto' }];
 
   const handleAnchorClick = (event, href) => {
@@ -30,15 +32,25 @@ export default function Navbar() {
     if (!sectionId) return;
 
     event.preventDefault();
-    const section = document.getElementById(sectionId);
 
-    if (section) {
-      window.history.pushState(null, '', `#${sectionId}`);
-      section.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    const targetPath = href.startsWith('http') ? new URL(href).pathname : href.split('#')[0] || '/';
+    const scrollToTarget = (attempts = 0) => {
+      const section = document.getElementById(sectionId);
+      if (section) {
+        section.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        return;
+      }
+      if (attempts < 10) setTimeout(() => scrollToTarget(attempts + 1), 80);
+    };
+
+    if (location.pathname !== targetPath) {
+      navigate(`${targetPath}#${sectionId}`);
+      setTimeout(scrollToTarget, 80);
       return;
     }
 
-    window.location.href = `/#${sectionId}`;
+    window.history.pushState(null, '', `${targetPath}#${sectionId}`);
+    scrollToTarget();
   };
 
   return (
@@ -55,7 +67,7 @@ export default function Navbar() {
 
           <div className="hidden md:flex items-center gap-8">
             {links.map((link) =>
-            link.href.includes('#') && !link.href.startsWith('http') ?
+            link.href.includes('#') ?
             <a
               key={link.href}
               href={link.href}
@@ -96,7 +108,7 @@ export default function Navbar() {
           
             <div className="px-6 py-6 space-y-4">
               {links.map((link) =>
-            link.href.includes('#') && !link.href.startsWith('http') ?
+            link.href.includes('#') ?
             <a
               key={link.href}
               href={link.href}
