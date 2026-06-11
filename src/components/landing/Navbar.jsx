@@ -20,7 +20,7 @@ export default function Navbar() {
   { label: 'Cursos', href: '/cursos' },
   { label: 'Pastores', href: '/pastores' },
   { label: 'Niños', href: '/ninos' },
-  { label: 'Libros', href: '/#libros' },
+  { label: 'Libros', href: 'https://sos-barcelona.com/#libros' },
   { label: 'Contacto', href: '/#contacto' }];
 
   const handleAnchorClick = (event, href) => {
