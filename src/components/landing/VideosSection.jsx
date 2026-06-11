@@ -231,7 +231,7 @@ export default function VideosSection() {
                 href="https://www.youtube.com/@somoss.o.sbarcelona8475"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="group inline-flex items-center gap-3 px-9 py-4 rounded-full font-semibold text-sm transition-all duration-300 relative overflow-hidden"
+                className="group inline-flex items-center gap-2.5 px-6 py-3 rounded-full font-semibold text-sm transition-all duration-300 relative overflow-hidden"
                 style={{
                   border: '1.5px solid hsla(var(--primary)/0.4)',
                   color: 'hsl(var(--foreground))',
