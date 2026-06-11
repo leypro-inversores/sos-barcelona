@@ -1,7 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { motion } from 'framer-motion';
-import { ChevronLeft, Instagram, Youtube, Heart } from 'lucide-react';
+import { ChevronLeft, Instagram, Heart } from 'lucide-react';
 import SOSLogo from '../components/landing/SOSLogo';
 
 const PASTORES = [

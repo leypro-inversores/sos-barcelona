@@ -1,6 +1,7 @@
 import React, { useRef, useState, useEffect } from 'react';
 import { motion, useInView } from 'framer-motion';
-import { Play, ExternalLink, Loader2, AlertCircle, Youtube } from 'lucide-react';
+import { Play, ExternalLink, Loader2, AlertCircle } from 'lucide-react';
+import OfficialYouTubeLogo from '../brand/OfficialYouTubeLogo';
 
 const CHANNEL_ID = 'UCHPgrvFRfAD9U7Bb6NWkvGQ';
 const API_KEY = 'AIzaSyD7BqqPqyBMbYoKsS_d8_UhuPib2jbYJNw';
@@ -171,10 +172,7 @@ export default function VideosSection() {
               transition={{ duration: 0.6 }}
               className="flex items-center gap-3 mb-5"
             >
-              <div className="w-6 h-6 rounded-lg flex items-center justify-center"
-                style={{ background: '#FF0000' }}>
-                <Youtube className="w-6 h-6 text-white" />
-              </div>
+              <OfficialYouTubeLogo variant="red" />
               <span className="text-primary text-sm tracking-[0.25em] uppercase font-semibold">Prédicas</span>
             </motion.div>
             <motion.h2
@@ -241,7 +239,7 @@ export default function VideosSection() {
                 onMouseEnter={e => e.currentTarget.style.borderColor = 'hsl(var(--primary))'}
                 onMouseLeave={e => e.currentTarget.style.borderColor = 'hsla(var(--primary)/0.4)'}
               >
-                <Youtube className="w-6 h-6 text-[#FF0000]" />
+                <OfficialYouTubeLogo variant="red" />
                 Suscríbete al canal
                 <span className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none"
                   style={{ background: 'linear-gradient(135deg, hsla(var(--primary)/0.06), hsla(var(--accent)/0.06))' }} />
