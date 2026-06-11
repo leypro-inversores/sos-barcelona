@@ -61,12 +61,12 @@ export default function Ninos() {
       </div>
 
       {/* Gallery */}
-      <div className="w-full md:max-w-6xl md:mx-auto md:px-6 pt-0 md:pt-12 pb-4 overflow-hidden">
-        <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.2 }} className="grid md:grid-cols-2 gap-0 md:gap-6 items-stretch">
-          <div className="w-screen -mx-0 aspect-[9/16] md:w-full md:mx-0 md:aspect-auto md:h-full md:rounded-2xl overflow-hidden bg-black">
+      <div className="w-full pt-0 md:pt-12 pb-4 overflow-hidden">
+        <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.2 }} className="flex flex-col items-center gap-8 md:gap-10">
+          <div className="w-screen aspect-[9/16] overflow-hidden bg-black md:w-full md:max-w-md md:rounded-3xl md:shadow-2xl md:shadow-black/15">
             <video
               src="https://media.base44.com/videos/public/69ea6ca06c4574e55a2de28d/4ac968ec3_2026051919352.mp4"
-              className="w-full h-full object-cover md:object-contain bg-black"
+              className="block w-full h-full object-cover bg-black"
               autoPlay
               loop
               muted
@@ -75,7 +75,7 @@ export default function Ninos() {
               poster="https://media.base44.com/images/public/69ea6ca06c4574e55a2de28d/f409b915b_ACTIVIDADNIOS.jpg"
             />
           </div>
-          <div className="w-full h-full px-6 pt-8 md:px-0 md:pt-0">
+          <div className="w-full max-w-6xl px-6">
             <KidsGallery />
           </div>
         </motion.div>
