@@ -1,7 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { motion } from 'framer-motion';
-import { ChevronLeft, Instagram, Heart } from 'lucide-react';
+import { ChevronLeft } from 'lucide-react';
 import SOSLogo from '../components/landing/SOSLogo';
 
 const PASTORES = [
@@ -11,7 +11,7 @@ const PASTORES = [
   role: "Pastor Principal — SOS Barcelona",
   bio: "Mauricio Rodríguez es el pastor principal de SOS Barcelona. Su vida es en sí misma un testimonio del poder transformador de Dios: criado en un ambiente marcado por el dolor y la búsqueda de identidad, fue en un encuentro real con Jesús donde todo cambió. Desde ese momento, su vida tomó un rumbo radicalmente diferente — del vacío a la plenitud, de la confusión al propósito. Hoy lidera SOS Barcelona con la misma pasión que vivió esa transformación, convencido de que lo sobrenatural no es solo posible, sino normal cuando te acercas a Dios. Cada domingo, predica con autoridad y corazón abierto, invitando a cada persona a experimentar lo que él mismo vivió: un encuentro real con el Padre.",
   verse: '"De modo que si alguno está en Cristo, nueva criatura es; las cosas viejas pasaron; he aquí todas son hechas nuevas." — 2 Corintios 5:17',
-  photo: "https://media.base44.com/images/public/69ea6ca06c4574e55a2de28d/896529113_PASTORMAURICIO6.jpg",
+  photo: "/images/896529113_PASTORMAURICIO6.jpg",
   location: "Barcelona, España"
 },
 {
@@ -20,7 +20,7 @@ const PASTORES = [
   role: "Pastora — SOS Barcelona",
   bio: "Junto a Mauricio, Mónica Rendón es co-pastora de SOS Barcelona y una de las voces más poderosas del ministerio. Apasionada por ver familias restauradas y matrimonios que reflejen el amor de Dios, lidera con la Palabra en mano y el corazón abierto. Cree firmemente que el hogar es el primer lugar donde se manifiesta la gloria de Dios, y su ministerio está enfocado en sanar, fortalecer y transformar familias enteras para el Reino de Dios.",
   verse: '"El amor nunca deja de ser..." — 1 Corintios 13:8',
-  photo: "https://media.base44.com/images/public/69ea6ca06c4574e55a2de28d/7d6326a3f_PASTORAWEB.jpg",
+  photo: "/images/7d6326a3f_PASTORAWEB.jpg",
   location: "Barcelona, España"
 },
 {
@@ -29,7 +29,7 @@ const PASTORES = [
   role: "Liderando la nueva generación en Barcelona",
   bio: "Acompaña a jóvenes a descubrir su propósito, acercarse a Dios y vivir una fe real en medio de su día a día. Cree en una generación que no solo escucha, sino que vive lo que cree.",
   verse: '"Que nadie te subestime por ser joven…" — 1 Timoteo 4:12',
-  photo: "https://media.base44.com/images/public/69ea6ca06c4574e55a2de28d/6a22c2536_NICOL.jpg",
+  photo: "/images/6a22c2536_NICOL.jpg",
   location: "Barcelona, España"
 },
 {
@@ -38,7 +38,7 @@ const PASTORES = [
   role: "Líder de mujeres — SOS Barcelona",
   bio: "Liz Daza lidera el ministerio de mujeres en SOS Barcelona con un corazón profundamente apasionado por ver a cada mujer caminar en su verdadera identidad y valor en Cristo. Convencida de que una mujer sanada por Dios levanta hogares firmes y transforma entornos enteros, acompaña a las mujeres de la comunidad a superar heridas del pasado, descubrir su propósito eterno y liderar con gracia, fe y fortaleza en su día a día.",
   verse: '"Dios está en medio de ella; no será conmovida. Dios la ayudará al clarear la mañana." — Salmos 46:5',
-  photo: "https://media.base44.com/images/public/69ea6ca06c4574e55a2de28d/89bf0b87d_LIZDAZA.png",
+  photo: "/images/89bf0b87d_LIZDAZA.png",
   location: "Barcelona, España"
 },
 {
@@ -47,7 +47,7 @@ const PASTORES = [
   role: "Líder de jóvenes — SOS Barcelona",
   bio: "Junto a Nicole, Santiago Vega lidera a la juventud de SOS Barcelona con la visión clara de levantar una generación apasionada, íntegra y radical por Jesús. Su enfoque se centra en desafiar a los jóvenes a salir de lo superficial, equipándolos con herramientas prácticas y espirituales para que descubran su diseño divino y se conviertan en agentes de cambio con una fe real, madura e inconmovible.",
   verse: '"¿Con qué limpiará el joven su camino? Con guardar tu palabra." — Salmos 119:9',
-  photo: "https://media.base44.com/images/public/69ea6ca06c4574e55a2de28d/cf3fbc8d5_SantiagoVega.jpg",
+  photo: "/images/cf3fbc8d5_SantiagoVega.jpg",
   location: "Barcelona, España"
 }];
 

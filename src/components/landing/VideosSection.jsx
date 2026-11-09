@@ -4,42 +4,19 @@ import { Play, ExternalLink, Loader2, AlertCircle } from 'lucide-react';
 import OfficialYouTubeLogo from '../brand/OfficialYouTubeLogo';
 
 const CHANNEL_ID = 'UCHPgrvFRfAD9U7Bb6NWkvGQ';
-const API_KEY = 'AIzaSyD7BqqPqyBMbYoKsS_d8_UhuPib2jbYJNw';
+
 
 async function fetchLatestVideos() {
-  const uniqueVideos = [];
-  const seenVideoIds = new Set();
-  let pageToken = '';
+  const response = await fetch('/api/youtube-videos');
+  const data = await response.json();
 
-  while (uniqueVideos.length < 6) {
-    const streamsRes = await fetch(
-      `https://www.googleapis.com/youtube/v3/search?part=snippet&channelId=${CHANNEL_ID}&eventType=completed&type=video&order=date&maxResults=25&key=${API_KEY}${pageToken ? `&pageToken=${pageToken}` : ''}`
-    );
-    const streamsData = await streamsRes.json();
-    if (!streamsData.items) throw new Error(streamsData.error?.message || 'Sin videos');
-
-    streamsData.items.forEach((item) => {
-      const videoId = item.id?.videoId;
-      if (!videoId || seenVideoIds.has(videoId) || uniqueVideos.length >= 6) return;
-
-      seenVideoIds.add(videoId);
-      uniqueVideos.push({
-        id: videoId,
-        title: item.snippet.title,
-        publishedAt: item.snippet.publishedAt,
-        thumbnail:
-          item.snippet.thumbnails?.high?.url ||
-          item.snippet.thumbnails?.medium?.url ||
-          item.snippet.thumbnails?.default?.url,
-      });
-    });
-
-    if (!streamsData.nextPageToken) break;
-    pageToken = streamsData.nextPageToken;
+  if (!response.ok) {
+    throw new Error(data.error || 'No se pudieron cargar los videos.');
   }
 
-  return uniqueVideos.slice(0, 6);
+  return data.videos || [];
 }
+
 
 function VideoCard({ video, index, isInView }) {
   const [playing, setPlaying] = useState(false);

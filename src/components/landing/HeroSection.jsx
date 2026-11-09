@@ -1,7 +1,7 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 
-const VIDEO_URL = "https://media.base44.com/videos/public/69ea6ca06c4574e55a2de28d/28f92cbb4_Video.mp4";
+const VIDEO_URL = "/videos/28f92cbb4_Video.mp4";
 
 export default function HeroSection({ heroImage }) {
   return (

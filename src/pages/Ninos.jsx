@@ -43,7 +43,7 @@ export default function Ninos() {
       {/* Hero */}
       <div
         className="relative aspect-[16/10] h-auto min-h-0 w-full px-6 overflow-hidden bg-white bg-contain bg-top bg-no-repeat flex items-end justify-center md:aspect-auto md:min-h-[680px] md:bg-cover md:bg-center"
-        style={{ backgroundImage: "url('https://media.base44.com/images/public/69ea6ca06c4574e55a2de28d/904504f23_image.png')" }}>
+        style={{ backgroundImage: "url('/images/904504f23_image.png')" }}>
         
         <div className="absolute inset-0 bg-gradient-to-t from-black/75 via-black/20 to-transparent" />
         <div className="relative z-10 w-full h-auto md:min-h-[680px]">
@@ -65,14 +65,14 @@ export default function Ninos() {
         <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.2 }} className="flex flex-col items-center gap-8 md:gap-10">
           <div className="w-screen aspect-[9/16] overflow-hidden bg-black md:w-full md:max-w-md md:rounded-3xl md:shadow-2xl md:shadow-black/15">
             <video
-              src="https://media.base44.com/videos/public/69ea6ca06c4574e55a2de28d/4ac968ec3_2026051919352.mp4"
+              src="/videos/4ac968ec3_2026051919352.mp4"
               className="block w-full h-full object-cover bg-black"
               autoPlay
               loop
               muted
               playsInline
               preload="metadata"
-              poster="https://media.base44.com/images/public/69ea6ca06c4574e55a2de28d/f409b915b_ACTIVIDADNIOS.jpg"
+              poster="/images/f409b915b_ACTIVIDADNIOS.jpg"
             />
           </div>
           <div className="w-full max-w-6xl px-6">

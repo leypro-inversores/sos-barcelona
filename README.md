@@ -1,40 +1,89 @@
-**Welcome to your Base44 project** 
+# SOS Barcelona Life
 
-**About**
+Sitio web oficial de SOS Barcelona Life.
 
-View and Edit  your app on [Base44.com](http://Base44.com) 
+## Tecnologías
 
-This project contains everything you need to run your app locally.
+- React 18
+- Vite 6
+- React Router
+- Tailwind CSS
+- Vercel Functions
+- YouTube Data API v3
 
-**Edit the code in your local development environment**
+## Requisitos
 
-Any change pushed to the repo will also be reflected in the Base44 Builder.
+- Node.js
+- npm
 
-**Prerequisites:** 
+## Instalación
 
-1. Clone the repository using the project's Git URL 
-2. Navigate to the project directory
-3. Install dependencies: `npm install`
-4. Create an `.env.local` file and set the right environment variables
+Clona el repositorio y entra en la carpeta del proyecto:
 
+```bash
+git clone https://github.com/leypro-inversores/sos-barcelona.git sos-bcn-life
+cd sos-bcn-life
+npm ci
 ```
-VITE_BASE44_APP_ID=your_app_id
-VITE_BASE44_APP_BASE_URL=your_backend_url
 
-e.g.
-VITE_BASE44_APP_ID=cbef744a8545c389ef439ea6
-VITE_BASE44_APP_BASE_URL=https://my-to-do-list-81bfaad7.base44.app
+## Desarrollo local
+
+Para ejecutar la aplicación con Vite:
+
+```bash
+npm run dev
 ```
 
-Run the app: `npm run dev`
+Para ejecutar la aplicación junto con las funciones de servidor de Vercel:
 
-**Publish your changes**
+```bash
+npx vercel dev
+```
 
-Open [Base44.com](http://Base44.com) and click on Publish.
+La segunda opción permite probar las rutas de servidor ubicadas en la carpeta `api/`.
 
-**Docs & Support**
+## Compilación de producción
 
-Documentation: [https://docs.base44.com/Integrations/Using-GitHub](https://docs.base44.com/Integrations/Using-GitHub)
+Para generar la versión optimizada:
 
-Support: [https://app.base44.com/support](https://app.base44.com/support)
-Deployment test
+```bash
+npm run build
+```
+
+Para visualizar la compilación local:
+
+```bash
+npm run preview
+```
+
+## Variables de entorno
+
+La integración con YouTube utiliza una función de servidor que requiere la siguiente variable:
+
+```env
+YOUTUBE_API_KEY=tu_clave_de_youtube
+```
+
+En el entorno local, esta variable debe guardarse en `.env.local`.
+
+En producción, debe configurarse en las variables de entorno del proyecto de Vercel.
+
+**Importante:** nunca incluyas claves API directamente en el código del navegador ni publiques archivos con credenciales en GitHub.
+
+## Recursos multimedia
+
+Las imágenes y los videos utilizados por el sitio se encuentran almacenados localmente dentro de `public/`.
+
+Esto evita depender de los enlaces multimedia del servicio anterior.
+
+## Funciones de servidor
+
+Las funciones de servidor se encuentran en la carpeta `api/`.
+
+Actualmente, la función `api/youtube-videos.js` consulta YouTube Data API v3 para obtener las prédicas recientes del canal.
+
+## Despliegue
+
+El proyecto está preparado para desplegarse en Vercel mediante su conexión con el repositorio de GitHub.
+
+Las variables de entorno necesarias deben configurarse directamente en Vercel.

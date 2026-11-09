@@ -10,35 +10,35 @@ const ACTIVITIES = [
   title: "Reunión Dominical",
   desc: "Todos los domingos a las 11h. Un encuentro lleno de adoración, palabra y comunidad.",
   time: "Domingos · 11:00h",
-  image: "https://media.base44.com/images/public/69ea6ca06c4574e55a2de28d/1dd8a621f_PREDICA.jpg"
+  image: "/images/1dd8a621f_PREDICA.jpg"
 },
 {
   id: 2,
   title: "Reunión de Mujeres",
   desc: "Un espacio de encuentro, oración y comunidad para las mujeres de SOS Barcelona.",
   time: "Mensual · Por confirmar",
-  image: "https://media.base44.com/images/public/69ea6ca06c4574e55a2de28d/c038d2c24_REUNINMUJERES.jpg"
+  image: "/images/c038d2c24_REUNINMUJERES.jpg"
 },
 {
   id: 3,
   title: "Reunión de Hombres",
   desc: "Un espacio real para hombres que quieren crecer, conectar y ser mejores.",
   time: "Mensual · Por confirmar",
-  image: "https://media.base44.com/images/public/69ea6ca06c4574e55a2de28d/f9b036bd0_REUNINHOMBRES.jpg"
+  image: "/images/f9b036bd0_REUNINHOMBRES.jpg"
 },
 {
   id: 4,
   title: "Reunión de Parejas",
   desc: "Fortalecemos los matrimonios y familias desde la fe y el amor.",
   time: "Mensual · Por confirmar",
-  image: "https://media.base44.com/images/public/69ea6ca06c4574e55a2de28d/dd2875175_REUNINPAREJAS.jpg"
+  image: "/images/dd2875175_REUNINPAREJAS.jpg"
 },
 {
   id: 5,
   title: "Reunión de Jóvenes",
   desc: "Una generación que no solo escucha, sino que vive lo que cree.",
   time: "Mensual · Por confirmar",
-  image: "https://media.base44.com/images/public/69ea6ca06c4574e55a2de28d/ab8b3c041_JOVENES2.jpg",
+  image: "/images/ab8b3c041_JOVENES2.jpg",
   aspectRatio: "aspect-[3/4]"
 },
 {
@@ -46,21 +46,21 @@ const ACTIVITIES = [
   title: "Reuni\xF3n de finanzas",
   desc: "Enseñanzas prácticas sobre finanzas desde una perspectiva bíblica y real.",
   time: "Ocasional · Por confirmar",
-  image: "https://media.base44.com/images/public/69ea6ca06c4574e55a2de28d/3fc1280e6_WhatsAppImage2026-04-24at2013028.jpg"
+  image: "/images/3fc1280e6_WhatsAppImage2026-04-24at2013028.jpg"
 },
 {
   id: 7,
   title: "Reunión de Liderazgo",
   desc: "Formando líderes con carácter, visión y corazón de servicio.",
   time: "Mensual · Por confirmar",
-  image: "https://media.base44.com/images/public/69ea6ca06c4574e55a2de28d/694483fa7_REUNINLIDERAZGO.jpg"
+  image: "/images/694483fa7_REUNINLIDERAZGO.jpg"
 },
 {
   id: 8,
   title: "Bautismo",
   desc: "Un paso de obediencia y fe pública, donde enterramos el pasado y celebramos una nueva vida en Cristo. El testimonio visible de un corazón transformado por Dios.",
   time: "Próximas fechas · Consultar",
-  image: "https://media.base44.com/images/public/69ea6ca06c4574e55a2de28d/e2a3653a4_ChatGPTImage18may202612_28_39pm.png",
+  image: "/images/e2a3653a4_ChatGPTImage18may202612_28_39pm.png",
   footerIcon: Calendar
 }];
 

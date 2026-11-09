@@ -70,7 +70,10 @@ Tu pasado no tiene la última palabra. Dios todavía puede escribir una nueva hi
   }
 ];
 
-export default function ConnectionSection() {
+/**
+ * @param {{ image?: string }} props
+ */
+export default function ConnectionSection({ image = "/images/0c14075e4_WEB.jpg" }) {
   const ref = useRef(null);
   const isInView = useInView(ref, { once: true, margin: '-100px' });
   const [selected, setSelected] = useState(null);
@@ -118,7 +121,7 @@ export default function ConnectionSection() {
           >
             <div className="overflow-hidden rounded-[32px] border border-cyan-300/20 bg-white/8 p-2 backdrop-blur-xl" style={{ boxShadow: '0 26px 80px rgba(0,0,0,0.32)' }}>
               <img
-                src="https://media.base44.com/images/public/69ea6ca06c4574e55a2de28d/0c14075e4_WEB.jpg"
+                src={image}
                 alt="Dos mujeres interactuando felices en SOS Barcelona"
                 className="h-full max-h-[620px] w-full rounded-[24px] object-cover object-center"
               />

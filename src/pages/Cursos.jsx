@@ -7,15 +7,15 @@ import CoursesImageCarousel from '../components/courses/CoursesImageCarousel';
 import CourseAccordionItem from '../components/courses/CourseAccordionItem';
 
 const COURSE_IMAGES = [
-  "https://media.base44.com/images/public/69ea6ca06c4574e55a2de28d/39d2d4895_WhatsAppImage2026-05-13at2152321.jpg",
-  "https://media.base44.com/images/public/69ea6ca06c4574e55a2de28d/70143da25_WhatsAppImage2026-05-13at2152332.jpg",
-  "https://media.base44.com/images/public/69ea6ca06c4574e55a2de28d/a708484f2_WhatsAppImage2026-05-13at2152334.jpg",
-  "https://media.base44.com/images/public/69ea6ca06c4574e55a2de28d/a59463399_WhatsAppImage2026-05-13at2152336.jpg",
-  "https://media.base44.com/images/public/69ea6ca06c4574e55a2de28d/6a8f9402d_WhatsAppImage2026-05-13at215336.jpg",
-  "https://media.base44.com/images/public/69ea6ca06c4574e55a2de28d/3231f48f9_WhatsAppImage2026-05-13at2213151.jpg",
-  "https://media.base44.com/images/public/69ea6ca06c4574e55a2de28d/e414f7109_WhatsAppImage2026-05-13at2213153.jpg",
-  "https://media.base44.com/images/public/69ea6ca06c4574e55a2de28d/711837ffc_WhatsAppImage2026-05-13at221315.jpg",
-  "https://media.base44.com/images/public/69ea6ca06c4574e55a2de28d/a1cf7862a_CursoReiniciandonuestroamor.jpg",
+  "/images/39d2d4895_WhatsAppImage2026-05-13at2152321.jpg",
+  "/images/70143da25_WhatsAppImage2026-05-13at2152332.jpg",
+  "/images/a708484f2_WhatsAppImage2026-05-13at2152334.jpg",
+  "/images/a59463399_WhatsAppImage2026-05-13at2152336.jpg",
+  "/images/6a8f9402d_WhatsAppImage2026-05-13at215336.jpg",
+  "/images/3231f48f9_WhatsAppImage2026-05-13at2213151.jpg",
+  "/images/e414f7109_WhatsAppImage2026-05-13at2213153.jpg",
+  "/images/711837ffc_WhatsAppImage2026-05-13at221315.jpg",
+  "/images/a1cf7862a_CursoReiniciandonuestroamor.jpg",
 ];
 
 const COURSES = [

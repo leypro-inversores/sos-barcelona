@@ -48,7 +48,7 @@ export default function WelcomeSection() {
           transition={{ duration: 0.9, delay: 0.6 }}
           className="w-full max-w-2xl mx-auto">
           
-          <img src="https://media.base44.com/images/public/69ea6ca06c4574e55a2de28d/e0f58a8e2_NUEVA_PORTADA.png"
+          <img src="/images/e0f58a8e2_NUEVA_PORTADA.png"
 
           alt="Familia SOS Barcelona"
           className="w-full h-auto object-contain rounded-2xl px-2 py-2 mx-2" />

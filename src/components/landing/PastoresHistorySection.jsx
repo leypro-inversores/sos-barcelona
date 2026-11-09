@@ -24,7 +24,7 @@ export default function PastoresHistorySection() {
           >
             <div className="aspect-[4/5] rounded-2xl overflow-hidden">
               <img
-                src="https://media.base44.com/images/public/69ea6ca06c4574e55a2de28d/bb2bd5d31_PASTORES8.jpg"
+                src="/images/bb2bd5d31_PASTORES8.jpg"
                 alt="Pastores Mauricio y Mónica Rodríguez"
                 className="w-full h-full object-cover"
               />

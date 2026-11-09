@@ -4,16 +4,16 @@ import { useInView } from 'framer-motion';
 import { useRef } from 'react';
 
 const ALL_IMAGES = [
-"https://media.base44.com/images/public/69ea6ca06c4574e55a2de28d/e372e3868_ALABARADIOS.jpg",
-"https://media.base44.com/images/public/69ea6ca06c4574e55a2de28d/008666904_CENANAVIDAD.jpg",
-"https://media.base44.com/images/public/69ea6ca06c4574e55a2de28d/0d4494408_COMPROMISO.jpg",
-"https://media.base44.com/images/public/69ea6ca06c4574e55a2de28d/c889e7178_LIBERACIN2.jpg",
-"https://media.base44.com/images/public/69ea6ca06c4574e55a2de28d/9b30f4ae6_LIBERACIN3.jpg",
-"https://media.base44.com/images/public/69ea6ca06c4574e55a2de28d/fda781bfd_MATRIMONIO2.jpg",
-"https://media.base44.com/images/public/69ea6ca06c4574e55a2de28d/998d2aa90_MATRIMONIO.jpg",
-"https://media.base44.com/images/public/69ea6ca06c4574e55a2de28d/9b139975d_PREDICAGENTE.jpg",
-"https://media.base44.com/images/public/69ea6ca06c4574e55a2de28d/9e182142d_WhatsAppImage2026-04-24at2013027.jpg",
-"https://media.base44.com/images/public/69ea6ca06c4574e55a2de28d/c7b1ac399_WhatsAppImage2026-04-24at2013032.jpg"];
+"/images/e372e3868_ALABARADIOS.jpg",
+"/images/008666904_CENANAVIDAD.jpg",
+"/images/0d4494408_COMPROMISO.jpg",
+"/images/c889e7178_LIBERACIN2.jpg",
+"/images/9b30f4ae6_LIBERACIN3.jpg",
+"/images/fda781bfd_MATRIMONIO2.jpg",
+"/images/998d2aa90_MATRIMONIO.jpg",
+"/images/9b139975d_PREDICAGENTE.jpg",
+"/images/9e182142d_WhatsAppImage2026-04-24at2013027.jpg",
+"/images/c7b1ac399_WhatsAppImage2026-04-24at2013032.jpg"];
 
 
 // Layout: 5 cells — [big-left, top-right, mid-right, bottom-right-a, bottom-right-b]

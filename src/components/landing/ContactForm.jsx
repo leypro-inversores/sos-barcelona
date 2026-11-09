@@ -1,3 +1,4 @@
+
 import React, { useRef, useState } from 'react';
 import { motion, useInView } from 'framer-motion';
 import { Input } from '@/components/ui/input';
@@ -7,17 +8,13 @@ import { Send, CheckCircle2, Loader2 } from 'lucide-react';
 export default function ContactForm() {
   const ref = useRef(null);
   const isInView = useInView(ref, { once: true, margin: "-100px" });
+
   const [form, setForm] = useState({ name: '', email: '', phone: '' });
-  const [status, setStatus] = useState('idle'); // idle | loading | success
+  const [status, setStatus] = useState('idle');
+  const [errorMessage, setErrorMessage] = useState('');
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
-
-    if (!form.name.trim() || !form.email.trim()) {
-      return;
-    }
-
-    setStatus('loading');
 
     const contactData = {
       name: form.name.trim(),
@@ -25,20 +22,49 @@ export default function ContactForm() {
       phone: form.phone.trim(),
     };
 
-    const subject = 'Nuevo contacto desde la web';
-    const body = `Has recibido un nuevo contacto desde la web de SOS Barcelona:\n\nNombre: ${contactData.name}\nEmail: ${contactData.email}\nTeléfono: ${contactData.phone || 'No proporcionado'}\n\nPuedes responderle directamente a: ${contactData.email}`;
-    const mailtoUrl = `mailto:sos.barcelonaa@gmail.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+    if (!contactData.name || !contactData.email) {
+      setStatus('error');
+      setErrorMessage('Por favor, completa tu nombre y correo electrónico.');
+    } else {
+      setStatus('loading');
+      setErrorMessage('');
 
-    window.setTimeout(() => {
-      window.location.href = mailtoUrl;
-      setForm({ name: '', email: '', phone: '' });
-      setStatus('success');
-    }, 300);
+      try {
+        const response = await fetch('/api/enviar-contacto', {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json',
+          },
+          body: JSON.stringify(contactData),
+        });
+
+        const data = await response.json();
+
+        if (response.ok && data.success) {
+          setForm({ name: '', email: '', phone: '' });
+          setStatus('success');
+        } else {
+          setStatus('error');
+          setErrorMessage(
+            data.error || 'No fue posible enviar tu mensaje. Inténtalo nuevamente.'
+          );
+        }
+      } catch {
+        setStatus('error');
+        setErrorMessage(
+          'No pudimos conectar con el servidor. Comprueba tu conexión e inténtalo nuevamente.'
+        );
+      }
+    }
   };
 
   return (
-    <section id="contacto" className="py-24 md:py-36 px-6 relative overflow-hidden"
-      style={{ background: 'linear-gradient(160deg, hsl(200 30% 97%) 0%, hsl(var(--background)) 60%)' }}
+    <section
+      id="contacto"
+      className="py-24 md:py-36 px-6 relative overflow-hidden"
+      style={{
+        background: 'linear-gradient(160deg, hsl(200 30% 97%) 0%, hsl(var(--background)) 60%)'
+      }}
     >
       <div ref={ref} className="max-w-2xl mx-auto">
         <div className="text-center mb-12">
@@ -50,6 +76,7 @@ export default function ContactForm() {
           >
             Contacto
           </motion.span>
+
           <motion.h2
             initial={{ opacity: 0, y: 30 }}
             animate={isInView ? { opacity: 1, y: 0 } : {}}
@@ -58,6 +85,7 @@ export default function ContactForm() {
           >
             Da el primer paso
           </motion.h2>
+
           <motion.p
             initial={{ opacity: 0, y: 20 }}
             animate={isInView ? { opacity: 1, y: 0 } : {}}
@@ -74,7 +102,8 @@ export default function ContactForm() {
           transition={{ duration: 0.8, delay: 0.3 }}
         >
           {status === 'success' ? (
-            <div className="text-center py-16 px-8 rounded-[28px]"
+            <div
+              className="text-center py-16 px-8 rounded-[28px]"
               style={{
                 background: 'rgba(255,255,255,0.72)',
                 backdropFilter: 'blur(24px)',
@@ -83,13 +112,17 @@ export default function ContactForm() {
               }}
             >
               <CheckCircle2 className="w-16 h-16 text-primary mx-auto mb-6" />
-              <h3 className="text-2xl font-semibold text-foreground mb-3">¡Enviado! Nos vemos pronto</h3>
+              <h3 className="text-2xl font-semibold text-foreground mb-3">
+                ¡Enviado! Nos vemos pronto
+              </h3>
               <p className="text-muted-foreground font-light">
                 Hemos recibido tu información correctamente. Nos pondremos en contacto contigo pronto.
               </p>
             </div>
           ) : (
-            <form onSubmit={handleSubmit} className="rounded-2xl p-8 md:p-12 space-y-6"
+            <form
+              onSubmit={handleSubmit}
+              className="rounded-2xl p-8 md:p-12 space-y-6"
               style={{
                 background: 'rgba(255,255,255,0.7)',
                 backdropFilter: 'blur(24px)',
@@ -98,7 +131,9 @@ export default function ContactForm() {
               }}
             >
               <div>
-                <label className="block text-sm font-medium text-foreground mb-2">Nombre</label>
+                <label className="block text-sm font-medium text-foreground mb-2">
+                  Nombre
+                </label>
                 <Input
                   required
                   placeholder="Tu nombre"
@@ -107,8 +142,11 @@ export default function ContactForm() {
                   className="h-12 bg-background border-border/50 rounded-xl"
                 />
               </div>
+
               <div>
-                <label className="block text-sm font-medium text-foreground mb-2">Email</label>
+                <label className="block text-sm font-medium text-foreground mb-2">
+                  Email
+                </label>
                 <Input
                   required
                   type="email"
@@ -118,8 +156,11 @@ export default function ContactForm() {
                   className="h-12 bg-background border-border/50 rounded-xl"
                 />
               </div>
+
               <div>
-                <label className="block text-sm font-medium text-foreground mb-2">Teléfono</label>
+                <label className="block text-sm font-medium text-foreground mb-2">
+                  Teléfono
+                </label>
                 <Input
                   placeholder="+34 600 000 000"
                   value={form.phone}
@@ -127,11 +168,24 @@ export default function ContactForm() {
                   className="h-12 bg-background border-border/50 rounded-xl"
                 />
               </div>
+
+              {status === 'error' && (
+                <p
+                  role="alert"
+                  className="text-sm text-red-600 text-center"
+                >
+                  {errorMessage}
+                </p>
+              )}
+
               <Button
                 type="submit"
                 disabled={status === 'loading'}
                 className="w-full h-14 rounded-full text-white text-base font-semibold transition-all duration-300 hover:scale-[1.02]"
-                style={{ background: 'linear-gradient(135deg, hsl(var(--primary)), hsl(var(--accent)))', boxShadow: '0 4px 24px hsla(var(--primary)/0.35)' }}
+                style={{
+                  background: 'linear-gradient(135deg, hsl(var(--primary)), hsl(var(--accent)))',
+                  boxShadow: '0 4px 24px hsla(var(--primary)/0.35)'
+                }}
               >
                 {status === 'loading' ? (
                   <>

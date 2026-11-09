@@ -4,27 +4,27 @@ import { motion } from 'framer-motion';
 const BOOKS = [
   {
     title: 'Matrimonio animal: El espíritu del matrimonio',
-    cover: 'https://media.base44.com/images/public/69ea6ca06c4574e55a2de28d/cbf4ee3a1_Capturadepantalla2026-05-19211906.png',
+    cover: '/images/cbf4ee3a1_Capturadepantalla2026-05-19211906.png',
     link: 'https://amzn.eu/d/0f1x0hCk',
   },
   {
     title: 'Espíritu Santo: Relación, unción y poder',
-    cover: 'https://media.base44.com/images/public/69ea6ca06c4574e55a2de28d/d760ede5b_Capturadepantalla2026-05-19211925.png',
+    cover: '/images/d760ede5b_Capturadepantalla2026-05-19211925.png',
     link: 'https://amzn.eu/d/0bAwPe2P',
   },
   {
     title: 'Un día en Su presencia: Devocional de 100 días para construir tu vida sobre la roca',
-    cover: 'https://media.base44.com/images/public/69ea6ca06c4574e55a2de28d/af2c5ecf4_Capturadepantalla2026-05-19211948.png',
+    cover: '/images/af2c5ecf4_Capturadepantalla2026-05-19211948.png',
     link: 'https://amzn.eu/d/01Dd2rww',
   },
   {
     title: 'Espíritu Santo: El secreto de Su voz',
-    cover: 'https://media.base44.com/images/public/69ea6ca06c4574e55a2de28d/77ad814b3_Capturadepantalla2026-05-19212002.png',
+    cover: '/images/77ad814b3_Capturadepantalla2026-05-19212002.png',
     link: 'https://amzn.eu/d/06C4aWB2',
   },
   {
     title: 'La fe lo es todo',
-    cover: 'https://media.base44.com/images/public/69ea6ca06c4574e55a2de28d/6743a31a3_Capturadepantalla2026-05-19212036.png',
+    cover: '/images/6743a31a3_Capturadepantalla2026-05-19212036.png',
     link: 'https://amzn.eu/d/05FejENI',
   },
 ];

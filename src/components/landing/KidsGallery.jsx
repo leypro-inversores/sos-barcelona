@@ -2,14 +2,14 @@ import React, { useState, useEffect } from 'react';
 import { AnimatePresence, motion } from 'framer-motion';
 
 const IMAGES = [
-  "https://media.base44.com/images/public/69ea6ca06c4574e55a2de28d/f409b915b_ACTIVIDADNIOS.jpg",
-  "https://media.base44.com/images/public/69ea6ca06c4574e55a2de28d/864d17f6a_NIOS1.jpg",
-  "https://media.base44.com/images/public/69ea6ca06c4574e55a2de28d/6c371c9c0_NIOS2.jpg",
-  "https://media.base44.com/images/public/69ea6ca06c4574e55a2de28d/6e7f988ca_NIOBATERIA.jpg",
-  "https://media.base44.com/images/public/69ea6ca06c4574e55a2de28d/037085c5f_NIOSACTIVIDAD.jpg",
-  "https://media.base44.com/images/public/69ea6ca06c4574e55a2de28d/36bc00ad4_MATERIALKIDS1.jpg",
-  "https://media.base44.com/images/public/69ea6ca06c4574e55a2de28d/03e8e2dc0_MATERIALKIDS2.jpg",
-  "https://media.base44.com/images/public/69ea6ca06c4574e55a2de28d/c8825f346_WhatsAppImage2026-04-24at2013073.jpg",
+  "/images/f409b915b_ACTIVIDADNIOS.jpg",
+  "/images/864d17f6a_NIOS1.jpg",
+  "/images/6c371c9c0_NIOS2.jpg",
+  "/images/6e7f988ca_NIOBATERIA.jpg",
+  "/images/037085c5f_NIOSACTIVIDAD.jpg",
+  "/images/36bc00ad4_MATERIALKIDS1.jpg",
+  "/images/03e8e2dc0_MATERIALKIDS2.jpg",
+  "/images/c8825f346_WhatsAppImage2026-04-24at2013073.jpg",
 ];
 
 export default function KidsGallery() {

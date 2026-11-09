@@ -14,12 +14,12 @@ const AREAS = [
 ];
 
 const COLABORADORES = [
-  { name: "Ana Martínez", role: "Líder de Alabanza", area: "Alabanza & Adoración", photo: "https://media.base44.com/images/public/69ea6ca06c4574e55a2de28d/c58f199e3_generated_e7d53658.png" },
-  { name: "Carlos Ruiz", role: "Coordinador de Medios", area: "Medios & Tecnología", photo: "https://media.base44.com/images/public/69ea6ca06c4574e55a2de28d/fca46ef15_generated_ade8d6a9.png" },
-  { name: "Laura Gómez", role: "Líder de Bienvenida", area: "Bienvenida & Protocolo", photo: "https://media.base44.com/images/public/69ea6ca06c4574e55a2de28d/8da471a00_generated_2e762c51.png" },
-  { name: "David López", role: "Líder de Jóvenes", area: "Alabanza & Adoración", photo: "https://media.base44.com/images/public/69ea6ca06c4574e55a2de28d/20eb32156_generated_00136330.png" },
-  { name: "María Torres", role: "Maestra de Niños", area: "Escuela de Niños", photo: "https://media.base44.com/images/public/69ea6ca06c4574e55a2de28d/c58f199e3_generated_e7d53658.png" },
-  { name: "José Fernández", role: "Intercesor", area: "Intercesión", photo: "https://media.base44.com/images/public/69ea6ca06c4574e55a2de28d/fca46ef15_generated_ade8d6a9.png" },
+  { name: "Ana Martínez", role: "Líder de Alabanza", area: "Alabanza & Adoración", photo: "/images/c58f199e3_generated_e7d53658.png" },
+  { name: "Carlos Ruiz", role: "Coordinador de Medios", area: "Medios & Tecnología", photo: "/images/fca46ef15_generated_ade8d6a9.png" },
+  { name: "Laura Gómez", role: "Líder de Bienvenida", area: "Bienvenida & Protocolo", photo: "/images/8da471a00_generated_2e762c51.png" },
+  { name: "David López", role: "Líder de Jóvenes", area: "Alabanza & Adoración", photo: "/images/20eb32156_generated_00136330.png" },
+  { name: "María Torres", role: "Maestra de Niños", area: "Escuela de Niños", photo: "/images/c58f199e3_generated_e7d53658.png" },
+  { name: "José Fernández", role: "Intercesor", area: "Intercesión", photo: "/images/fca46ef15_generated_ade8d6a9.png" },
 ];
 
 export default function Colaboradores() {
