@@ -1,7 +1,14 @@
+
 import React, { useRef, useState } from 'react';
 import { motion, useInView } from 'framer-motion';
 import { Heart, Search, Compass, RefreshCw, Sunrise } from 'lucide-react';
-import { Dialog, DialogContent, DialogHeader, DialogTitle } from '@/components/ui/dialog';
+import {
+  Dialog,
+  DialogContent,
+  DialogHeader,
+  DialogTitle,
+  DialogDescription
+} from '@/components/ui/dialog';
 import RevelationButton from './RevelationButton';
 
 const revelations = [
@@ -70,17 +77,22 @@ Tu pasado no tiene la última palabra. Dios todavía puede escribir una nueva hi
   }
 ];
 
-/**
- * @param {{ image?: string }} props
- */
-export default function ConnectionSection({ image = "/images/0c14075e4_WEB.jpg" }) {
+export default function ConnectionSection({
+  image = '/images/foto-conexion-sos.png'
+}) {
   const ref = useRef(null);
   const isInView = useInView(ref, { once: true, margin: '-100px' });
   const [selected, setSelected] = useState(null);
   const SelectedIcon = selected?.icon;
 
   return (
-    <section className="relative overflow-hidden px-6 py-24 md:py-36" style={{ background: 'linear-gradient(145deg, #05142f 0%, #08214d 52%, #020817 100%)' }}>
+    <section
+      className="relative overflow-hidden px-6 py-24 md:py-36"
+      style={{
+        background:
+          'linear-gradient(145deg, #05142f 0%, #08214d 52%, #020817 100%)'
+      }}
+    >
       <div className="absolute -top-40 right-0 h-96 w-96 rounded-full bg-cyan-300/15 blur-3xl" />
       <div className="absolute bottom-0 left-0 h-80 w-80 rounded-full bg-amber-300/10 blur-3xl" />
 
@@ -94,6 +106,7 @@ export default function ConnectionSection({ image = "/images/0c14075e4_WEB.jpg" 
           >
             Revela tu siguiente paso
           </motion.span>
+
           <motion.h2
             initial={{ opacity: 0, y: 28 }}
             animate={isInView ? { opacity: 1, y: 0 } : {}}
@@ -102,13 +115,15 @@ export default function ConnectionSection({ image = "/images/0c14075e4_WEB.jpg" 
           >
             Tal vez esto es para ti
           </motion.h2>
+
           <motion.p
             initial={{ opacity: 0, y: 22 }}
             animate={isInView ? { opacity: 1, y: 0 } : {}}
             transition={{ duration: 0.8, delay: 0.2 }}
             className="mx-auto mt-6 max-w-2xl text-lg font-light leading-relaxed text-cyan-50/75"
           >
-            Elige la frase que más conecta contigo y descubre una palabra de esperanza para este momento.
+            Elige la frase que más conecta contigo y descubre una palabra de
+            esperanza para este momento.
           </motion.p>
         </div>
 
@@ -116,16 +131,24 @@ export default function ConnectionSection({ image = "/images/0c14075e4_WEB.jpg" 
           <motion.div
             initial={{ opacity: 0, x: -36 }}
             animate={isInView ? { opacity: 1, x: 0 } : {}}
-            transition={{ duration: 0.8, delay: 0.2, ease: [0.22, 1, 0.36, 1] }}
+            transition={{
+              duration: 0.8,
+              delay: 0.2,
+              ease: [0.22, 1, 0.36, 1]
+            }}
             className="relative"
           >
-            <div className="overflow-hidden rounded-[32px] border border-cyan-300/20 bg-white/8 p-2 backdrop-blur-xl" style={{ boxShadow: '0 26px 80px rgba(0,0,0,0.32)' }}>
+            <div
+              className="overflow-hidden rounded-[32px] border border-cyan-300/20 bg-white/8 p-2 backdrop-blur-xl"
+              style={{ boxShadow: '0 26px 80px rgba(0,0,0,0.32)' }}
+            >
               <img
                 src={image}
                 alt="Dos mujeres interactuando felices en SOS Barcelona"
                 className="h-full max-h-[620px] w-full rounded-[24px] object-cover object-center"
               />
             </div>
+
             <div className="absolute -bottom-5 -right-5 h-32 w-32 rounded-[28px] border border-amber-200/20 bg-amber-300/10 blur-sm" />
           </motion.div>
 
@@ -143,21 +166,76 @@ export default function ConnectionSection({ image = "/images/0c14075e4_WEB.jpg" 
         </div>
       </div>
 
-      <Dialog open={!!selected} onOpenChange={(open) => !open && setSelected(null)}>
-        <DialogContent className="max-h-[88vh] max-w-3xl overflow-y-auto border border-cyan-200/25 bg-white/10 p-0 text-white shadow-2xl backdrop-blur-2xl duration-500 sm:rounded-[32px]">
+      <Dialog
+        open={!!selected}
+        onOpenChange={(open) => {
+          if (!open) {
+            setSelected(null);
+          }
+        }}
+      >
+        <DialogContent
+          className="
+            fixed left-1/2 top-1/2 z-[60]
+            flex h-[85dvh] max-h-[720px] min-h-0
+            w-[calc(100vw-1rem)] max-w-3xl
+            -translate-x-1/2 -translate-y-1/2
+            flex-col overflow-hidden
+            border border-cyan-200/25
+            bg-slate-950 p-0 text-white
+            shadow-2xl backdrop-blur-2xl
+            sm:h-[80dvh] sm:w-[calc(100vw-2rem)]
+            sm:rounded-[32px]
+            [&>button]:!absolute
+            [&>button]:!right-3
+            [&>button]:!top-3
+            [&>button]:!z-[100]
+            [&>button]:!flex
+            [&>button]:!h-12
+            [&>button]:!w-12
+            [&>button]:!items-center
+            [&>button]:!justify-center
+            [&>button]:!rounded-full
+            [&>button]:!border
+            [&>button]:!border-cyan-200/50
+            [&>button]:!bg-slate-950
+            [&>button]:!text-white
+            [&>button]:!opacity-100
+            [&>button]:!shadow-lg
+            [&>button]:!pointer-events-auto
+          "
+        >
           {selected && (
-            <div className="relative overflow-hidden p-7 md:p-10" style={{ background: 'linear-gradient(145deg, rgba(8,33,77,0.78), rgba(2,8,23,0.82))' }}>
-              <div className="absolute -right-24 -top-24 h-64 w-64 rounded-full bg-cyan-300/20 blur-3xl" />
-              <div className="absolute -bottom-24 -left-24 h-56 w-56 rounded-full bg-amber-300/15 blur-3xl" />
+            <div
+              className="relative min-h-0 flex-1 overflow-y-auto overscroll-contain p-5 pt-20 sm:p-8 sm:pt-20 md:p-10"
+              style={{
+                background:
+                  'linear-gradient(145deg, rgba(8,33,77,0.95), rgba(2,8,23,0.98))'
+              }}
+            >
+              <div className="pointer-events-none absolute -right-24 -top-24 h-64 w-64 rounded-full bg-cyan-300/20 blur-3xl" />
+              <div className="pointer-events-none absolute -bottom-24 -left-24 h-56 w-56 rounded-full bg-amber-300/15 blur-3xl" />
+
               <div className="relative">
                 <DialogHeader>
-                  <div className="mb-5 flex h-16 w-16 items-center justify-center rounded-2xl border border-cyan-300/35 bg-cyan-300/15 text-cyan-100" style={{ boxShadow: '0 0 36px rgba(34,211,238,0.22)' }}>
+                  <div
+                    className="mb-5 flex h-16 w-16 items-center justify-center rounded-2xl border border-cyan-300/35 bg-cyan-300/15 text-cyan-100"
+                    style={{
+                      boxShadow: '0 0 36px rgba(34,211,238,0.22)'
+                    }}
+                  >
                     {SelectedIcon && <SelectedIcon className="h-7 w-7" />}
                   </div>
+
                   <DialogTitle className="font-display text-3xl font-semibold leading-tight text-white md:text-4xl">
                     {selected.title}
                   </DialogTitle>
                 </DialogHeader>
+
+                <DialogDescription className="sr-only">
+                  {selected.content.replace(/\n\n/g, ' ')}
+                </DialogDescription>
+
                 <div className="mt-7 space-y-5 text-base font-light leading-relaxed text-cyan-50/85 md:text-lg">
                   {selected.content.split('\n\n').map((paragraph) => (
                     <p key={paragraph}>{paragraph}</p>

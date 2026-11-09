@@ -51,7 +51,7 @@ export default function Home() {
       <WelcomeSection />
 
       {/* 3. IDENTIFICACIÓN — "Tal vez esto es para ti" */}
-      <ConnectionSection image={IMAGES.liberacion} />
+      <ConnectionSection image="/images/foto-conexion-sos.png" />
 
       {/* 4. TRANSFORMACIÓN — "Una vida con Dios lo cambia todo" */}
       <MessageSection />
